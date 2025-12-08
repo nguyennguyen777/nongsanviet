@@ -39,11 +39,20 @@ class ProductController extends Controller
     // 📌 Trang chi tiết sản phẩm
     public function show($slug)
     {
-        $product = Product::with('category')
-            ->where('slug', $slug)
-            ->where('status', 1)
-            ->firstOrFail();
+        // Tải product kèm category và images (giả sử Product hasMany images relation)
+        $product = Product::with(['category','images'])
+                    ->where('slug', $slug)
+                    ->where('status', 1)
+                    ->firstOrFail();
 
-        return view('product.show', compact('product'));
+        // Related products: cùng category, khác id, lấy 4, sắp xếp mới nhất
+        $related = Product::where('category_id', $product->category_id)
+                    ->where('id', '!=', $product->id)
+                    ->where('status', 1)
+                    ->orderByDesc('created_at')
+                    ->take(4)
+                    ->get();
+
+        return view('product.show', compact('product', 'related'));
     }
 }
