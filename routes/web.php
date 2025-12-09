@@ -14,3 +14,6 @@ Route::get('/products', [ProductController::class, 'index'])
     ->name('products.index');
 Route::get('/product/{slug}', [ProductController::class, 'show'])
     ->name('product.show');
+Route::get('/search', function() {
+    return 'search page';
+})->name('search');
