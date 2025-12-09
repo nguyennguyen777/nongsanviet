@@ -1,4 +1,4 @@
-<header class="bg-white border-b shadow-sm pb-8">
+<header class="bg-white shadow-sm pb-8">
   <div class="container mx-auto">
 
     <div class="grid grid-cols-3 items-center gap-4 py-3">

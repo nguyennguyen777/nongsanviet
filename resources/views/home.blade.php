@@ -4,20 +4,6 @@
 
 @section('content')
 
-{{-- HERO SECTION --}}
-<section class="bg-green-600 text-white py-20">
-    <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">Nông sản sạch - Chất lượng từ Việt Nam</h1>
-        <p class="text-lg mb-6">
-            Cung cấp sản phẩm nông nghiệp tươi ngon, an toàn, rõ nguồn gốc.
-        </p>
-        <a href="{{ url('/products') }}"
-           class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100">
-            Xem sản phẩm
-        </a>
-    </div>
-</section>
-
 {{-- FEATURE BOXES --}}
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
