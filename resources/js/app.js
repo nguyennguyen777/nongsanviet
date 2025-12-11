@@ -1,2 +1,2 @@
-import './bootstrap';
-import './product.js';
+import "./bootstrap";
+import "./product.js";
