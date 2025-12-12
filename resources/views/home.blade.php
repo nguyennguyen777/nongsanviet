@@ -10,6 +10,7 @@
         <div class="container-content1">
           <div class="front-content-wrapper-page">
             <div class="region region-content">
+
               <div id="block-alla-tech-block-slide-san-pham" class="block block-alla-tech">
 
                 <div class="content">
@@ -210,6 +211,7 @@
                   </div>
                 </div>
               </div>
+
               <div id="block-views-block-page-block" class="block block-views">
 
                 <div class="content">
@@ -271,6 +273,7 @@
                   </div>
                 </div>
               </div>
+
               <div id="block-views-block-gioi-thieu-block-1" class="block block-views">
 
                 <div class="content">
@@ -310,6 +313,7 @@
                   </div>
                 </div>
               </div>
+
               <div id="block-views-block-san-pham-block" class="block block-views title-icon">
 
                 <div class="block-title">
@@ -633,6 +637,7 @@
                   </div>
                 </div>
               </div>
+
               <div id="block-views-block-san-pham-block-6" class="block block-views title-icon">
 
                 <div class="block-title">
@@ -755,6 +760,7 @@
         <div class="container-content1">
           <div class="front-content-wrapper-page">
             <div class="region region-content-bottom2">
+
               <div id="block-alla-tech-block-slide-doi-tac"
                 class="block block-alla-tech block-alla-tech-block-slide-doi-tac title-icon">
 
@@ -764,9 +770,6 @@
 
                 <div class="content">
                   <div class="block-slide-doi-tac owl-carousel owl-theme owl-loaded owl-drag">
-
-
-
 
                     <div class="owl-stage-outer">
                       <div class="owl-stage"
@@ -961,6 +964,7 @@
                   </div>
                 </div>
               </div>
+
               <div id="block-alla-tech-block-slide-partner" class="block block-alla-tech title-icon">
 
                 <div class="block-title">
@@ -1172,6 +1176,7 @@
                   </div>
                 </div>
               </div>
+
               <div id="block-views-block-bai-viet-block-12" class="block block-views title-icon">
 
                 <div class="block-title">

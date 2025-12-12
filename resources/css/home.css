@@ -212,3 +212,68 @@
     height: 35px;
     background-size: cover;
 }
+
+/* GIỚI THIỆU *****************************************************************************/
+#block-views-block-gioi-thieu-block-1 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    background: #f5f5f5;
+    position: relative;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field-field-noi-dung-tam-nhin {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field .views-label {
+    max-width: 115px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #8bc34a;
+    color: #8bc34a;
+    text-transform: uppercase;
+    background: #fff;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    text-align: center;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field-field-anh-dai-dien {
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    position: relative;
+    z-index: 9;
+}
+
+#block-views-block-gioi-thieu-block-1
+    .views-field-field-anh-dai-dien
+    .field-content {
+    position: absolute;
+    top: -33px;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+}
+
+#block-views-block-gioi-thieu-block-1
+    .views-field-field-anh-dai-dien
+    .field-content
+    img {
+    width: 510px;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field-field-noi-dung-su-menh {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    position: relative;
+    z-index: 9;
+}
