@@ -1,0 +1,279 @@
+.container-content-common-all {
+    background: url(/public/storage/products/bg-common-01.jpg) repeat;
+    float: left;
+    width: 100%;
+    margin-top: 33px;
+    position: initial;
+}
+
+@media (min-width: 1200px) {
+    .container-home {
+        width: 1170px;
+    }
+}
+
+.container-home {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.front-content-wrapper-page {
+    background: #fff;
+    background-size: cover;
+    padding-left: 50px;
+    padding-right: 50px;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+        12px 0 15px -4px rgba(0, 0, 0, 0.2),
+        -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+}
+
+#block-alla-tech-block-slide-san-pham {
+    margin-top: 30px !important;
+}
+
+.owl-carousel.owl-loaded {
+    display: block;
+}
+
+.owl-carousel {
+    width: 100%;
+    z-index: 1;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+}
+
+.owl-carousel.owl-drag .owl-item {
+    user-select: none;
+}
+
+.owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+}
+
+.block-slide-san-pham-dich-vu .item-wrapper {
+    position: relative;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+.block-slide-san-pham-dich-vu img {
+    border-radius: 10px;
+}
+
+.block-slide-san-pham-dich-vu .term-name {
+    position: absolute;
+    background-color: rgba(70, 70, 70, 0.5);
+    color: #fff !important;
+    bottom: 0px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    left: 0px;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "UTM-AvoBold";
+}
+
+.container-home:before {
+    display: table;
+    content: " ";
+}
+
+.front-content-wrapper-page .block:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#block-views-block-page-block {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row:before {
+    display: table;
+    content: " ";
+}
+
+#block-views-block-page-block .view-content ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* nếu muốn xuống dòng khi nhỏ màn hình */
+    justify-content: center; /* căn giữa hàng */
+    gap: 20px; /* khoảng cách giữa các feature */
+}
+
+#block-views-block-page-block .view-content ul li {
+    list-style: none;
+    margin: 0px;
+    flex: 1 1 220px; /* mỗi item rộng tối thiểu 220px, co giãn */
+    max-width: 250px; /* giới hạn rộng nhất */
+    text-align: center;
+}
+
+.list .views-row {
+    padding: 15px;
+}
+
+#block-views-block-page-block .views-field-field-anh-dai-dien {
+    margin-bottom: 10px;
+}
+
+/* Ảnh căn giữa trong LI */
+#block-views-block-page-block .views-field-field-anh-dai-dien img {
+    display: block;
+    margin: 0 auto 10px auto; /* margin trên/dưới 0/10px, căn giữa */
+    max-width: 100%;
+    height: auto;
+}
+
+#block-views-block-page-block .views-field-title {
+    text-transform: uppercase;
+}
+
+.views-field-title a {
+    color: #000;
+    font-family: "UTM-AvoBold";
+}
+
+.row:after {
+    clear: both;
+}
+
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.owl-theme .owl-nav {
+    margin: 0px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.alla-theme .owl-theme .owl-nav .owl-prev {
+    position: absolute;
+    left: -48px;
+    top: 30%;
+    background: url(/public/storage/products/left.png) no-repeat;
+    text-indent: -9999px;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+    color: #fff;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.alla-theme .owl-theme .owl-nav .owl-next {
+    position: absolute;
+    right: -48px;
+    top: 30%;
+    background: url(/public/storage/products/right.png) no-repeat;
+    text-indent: -9999px;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+/* GIỚI THIỆU *****************************************************************************/
+#block-views-block-gioi-thieu-block-1 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    background: #f5f5f5;
+    position: relative;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field-field-noi-dung-tam-nhin {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field .views-label {
+    max-width: 115px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #8bc34a;
+    color: #8bc34a;
+    text-transform: uppercase;
+    background: #fff;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    text-align: center;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field-field-anh-dai-dien {
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    position: relative;
+    z-index: 9;
+}
+
+#block-views-block-gioi-thieu-block-1
+    .views-field-field-anh-dai-dien
+    .field-content {
+    position: absolute;
+    top: -33px;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+}
+
+#block-views-block-gioi-thieu-block-1
+    .views-field-field-anh-dai-dien
+    .field-content
+    img {
+    width: 510px;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+#block-views-block-gioi-thieu-block-1 .views-field-field-noi-dung-su-menh {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    position: relative;
+    z-index: 9;
+}
