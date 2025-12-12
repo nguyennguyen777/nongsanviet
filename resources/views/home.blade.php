@@ -648,7 +648,7 @@
                   <div
                     class="view view-block-san-pham view-id-block_san_pham view-display-id-block_6 row list san-pham-list view-dom-id-ff5ed477fccf8f9232b19b4b157382ea jquery-once-1-processed refresh-processed">
 
-                    <div class="view-content">
+                    <div class="view-content d-flex flex-wrap">
                       <div class="views-row views-row-1 views-row-odd views-row-first col-md-3 col-sm-6 col-xs-12">
 
                         <div class="views-field views-field-field-anh-dai-dien">
