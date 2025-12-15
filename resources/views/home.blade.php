@@ -734,17 +734,8 @@
 
 
         <div class="content">
-          <style type="text/css">
-            .banner-attachment {
-              background: url(https://www.nongsanviet.net.vn/sites/default/files/822876680.jpg) no-repeat center center;
-              background-size: cover;
-              background-attachment: fixed;
-              min-height: 350px;
-              color: #fff;
-            }
-          </style>
           <div class="banner-attachment text-center">
-            <div class="container">
+            <div class="container-home">
               <div class="content-banner">
                 <p><strong>CHÚNG TÔI TỰ HÀO ĐEM SỨC KHỎE VÀ CHẤT LƯỢNG<br>
                     ĐẾN 50000 KHÁCH HÀNG TIN DÙNG TRÊN CẢ NƯỚC </strong><br>
