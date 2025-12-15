@@ -320,10 +320,6 @@
     background: #555555;
 }
 
-.list .views-row {
-    padding: 15px;
-}
-
 .san-pham-list .views-row {
     text-align: center;
     width: 25%; /* 4 item trên 1 hàng */
@@ -370,4 +366,320 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* đảm bảo item luôn sát trái */
+}
+
+/* banner********************************************************* */
+.banner-attachment {
+    background: url(https://www.nongsanviet.net.vn/sites/default/files/822876680.jpg)
+        no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed !important;
+    min-height: 350px;
+    color: #fff;
+}
+
+@media (min-width: 1200px) {
+    .banner-attachment .container-home {
+        width: 1170px;
+    }
+}
+
+.banner-attachment .container-home {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.banner-attachment .container-home:before {
+    display: table;
+    content: " ";
+}
+
+.banner-attachment .content-banner {
+    margin-top: 120px;
+    font-size: 22px;
+}
+
+.banner-attachment .container:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+@media (min-width: 1200px) {
+    .content-common .container {
+        width: 1170px;
+    }
+}
+
+.content-common .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content-common .container:before {
+    display: table;
+    content: " ";
+}
+
+.content-common .container:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+.front-content-wrapper-page {
+    background: #fff;
+    background-size: cover;
+    padding-left: 50px;
+    padding-right: 50px;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+        12px 0 15px -4px rgba(0, 0, 0, 0.2),
+        -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+}
+
+.block-alla-tech-block-slide-doi-tac {
+    background: #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.block-alla-tech-block-slide-doi-tac:before {
+    display: table;
+    content: " ";
+}
+
+.front-content-wrapper-page .block-title {
+    position: relative;
+}
+
+.title-icon .block-title h3 {
+    text-transform: uppercase;
+    color: #555555;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.front-content-wrapper-page h3 {
+    color: #007520;
+    font-family: "UTM-AvoBold";
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+}
+
+.owl-carousel.owl-drag .owl-item {
+    user-select: none;
+}
+
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+}
+
+.block-alla-tech-block-slide-doi-tac .body-summary {
+    padding: 50px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    min-height: 260px;
+    position: relative;
+}
+
+.block-alla-tech-block-slide-doi-tac .body-summary:before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 35px;
+    background: url(/public/storage/products/quote.png) no-repeat center center;
+    background-size: cover;
+    left: 30px;
+    top: 15px;
+}
+
+.block-alla-tech-block-slide-doi-tac .partner-bottom {
+    margin-top: -35px;
+    position: relative;
+}
+
+.block-slide-doi-tac .image {
+    position: relative;
+    float: left;
+    margin-right: 15px;
+}
+
+.block-alla-tech-block-slide-doi-tac .image img {
+    border-radius: 50%;
+}
+
+.block-slide-doi-tac .owl-item img {
+    width: auto;
+    display: inline-block;
+}
+
+.block-alla-tech-block-slide-doi-tac .star {
+    content: "";
+    display: block;
+    width: 100%;
+    background: url(/public/storage/products/star.png) no-repeat center center;
+    background-size: contain;
+    height: 17px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+}
+
+.block-alla-tech-block-slide-doi-tac .name {
+    font-family: "UTM-AvoBold";
+    color: #464646;
+}
+
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.owl-theme .owl-nav {
+    margin: 0px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.alla-theme .block-slide-doi-tac .owl-nav .owl-prev {
+    position: absolute;
+    left: -48px;
+    top: 38%;
+    background: url(/public/storage/products/left2.png) no-repeat;
+    text-indent: -9999px;
+    width: 28px;
+    height: 28px;
+    background-size: cover;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+    color: #fff;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #d6d6d6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.alla-theme .block-slide-doi-tac .owl-nav .owl-next {
+    position: absolute;
+    right: -48px;
+    top: 38%;
+    background: url(/public/storage/products/right2.png) no-repeat;
+    text-indent: -9999px;
+    width: 28px;
+    height: 28px;
+    background-size: cover;
+}
+
+#block-alla-tech-block-slide-partner {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.title-icon .block-title h3:after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    height: 1px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #555555;
+}
+
+.owl-carousel.owl-loaded {
+    display: block;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+}
+
+.owl-carousel.owl-drag .owl-item {
+    user-select: none;
+}
+
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+}
+
+.block-slide-doi-tac-logo .image {
+    height: 60px;
+    position: relative;
+}
+
+#block-alla-tech-block-slide-partner .block-slide-doi-tac-logo img {
+    max-height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .col-md-4 {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+#block-views-block-bai-viet-block-12 .views-field-nothing {
+    position: relative;
+}
+
+#block-views-block-bai-viet-block-12 .content-preview {
+    position: absolute;
+    background: rgba(70, 70, 70, 0.6);
+    left: 0px;
+    padding: 20px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    line-height: normal;
+}
+
+#block-views-block-bai-viet-block-12 .views-field-title a {
+    color: #fff;
 }
