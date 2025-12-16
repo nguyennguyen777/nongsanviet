@@ -39,7 +39,7 @@
             </a>
 
             <!-- DROPDOWN CẤP 1 -->
-            <div class="absolute left-0 top-full w-56 bg-white shadow-xl rounded-md z-[9999]
+            <div class="absolute left-0 top-full w-56 bg-white/70 shadow-xl z-[9999]
               opacity-0 scale-95 transition-all duration-200" x-show="openMain" x-transition
               :class="openMain && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
@@ -48,13 +48,13 @@
                 @mouseleave="openSub = false">
 
                 <a href="/vi/thuc-pham"
-                  class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                  class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                   Thực phẩm
                   <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                 </a>
 
                 <!-- DROPDOWN CẤP 2 -->
-                <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                   opacity-0 scale-95 transition-all duration-200" x-show="openSub" x-transition
                   :class="openSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
@@ -63,18 +63,18 @@
                     @mouseleave="openSubSub = false">
 
                     <a href="/vi/thuc-pham-tuoi-song"
-                      class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                      class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal">
                       Thực phẩm tươi sống
                       <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                     </a>
 
                     <!-- DROPDOWN CẤP 3 -->
-                    <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                    <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="/vi/rau-cu-qua" class="block px-5 py-2.5 hover:bg-gray-50">Rau, củ, quả</a>
-                      <a href="/vi/thit-trung-sua" class="block px-5 py-2.5 hover:bg-gray-50">Thịt, trứng, sữa
+                      <a href="/vi/rau-cu-qua" class="block px-4 py-2 hover:bg-gray-50">Rau, củ, quả</a>
+                      <a href="/vi/thit-trung-sua" class="block px-4 py-2 hover:bg-gray-50">Thịt, trứng, sữa
                         tươi</a>
                     </div>
                   </div>
@@ -84,18 +84,18 @@
                     @mouseleave="openSubSub = false">
 
                     <a href="/vi/thuc-pham-tho-so-che"
-                      class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                      class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal">
                       Thực phẩm thô, sơ chế
                       <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                     </a>
 
                     <!-- DROPDOWN CẤP 3 -->
-                    <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                    <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="/vi/gao-ngu-coc" class="block px-5 py-2.5 hover:bg-gray-50">Gạo, ngũ cốc</a>
-                      <a href="/vi/mat-ong" class="block px-5 py-2.5 hover:bg-gray-50">Mật ong</a>
+                      <a href="/vi/gao-ngu-coc" class="block px-4 py-2 hover:bg-gray-50">Gạo, ngũ cốc</a>
+                      <a href="/vi/mat-ong" class="block px-4 py-2 hover:bg-gray-50">Mật ong</a>
                     </div>
                   </div>
 
@@ -104,41 +104,41 @@
                     @mouseleave="openSubSub = false">
 
                     <a href="/vi/thuc-pham-che-bien"
-                      class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                      class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal">
                       Thực phẩm chế biến
                       <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                     </a>
 
                     <!-- DROPDOWN CẤP 3 -->
-                    <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                    <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="/vi/gao-ngu-coc" class="block px-5 py-2.5 hover:bg-gray-50">Gạo, ngũ cốc</a>
-                      <a href="/vi/rau-cu-qua-hat" class="block px-5 py-2.5 hover:bg-gray-50">Rau, củ, quả, hạt</a>
-                      <a href="/vi/thit-trung-sua" class="block px-5 py-2.5 hover:bg-gray-50">Thịt, trứng, sữa</a>
-                      <a href="/vi/thuy-hai-san" class="block px-5 py-2.5 hover:bg-gray-50">Thủy, hải sản</a>
+                      <a href="/vi/gao-ngu-coc" class="block px-4 py-2 hover:bg-gray-50">Gạo, ngũ cốc</a>
+                      <a href="/vi/rau-cu-qua-hat" class="block px-4 py-2 hover:bg-gray-50">Rau, củ, quả, hạt</a>
+                      <a href="/vi/thit-trung-sua" class="block px-4 py-2 hover:bg-gray-50">Thịt, trứng, sữa</a>
+                      <a href="/vi/thuy-hai-san" class="block px-4 py-2 hover:bg-gray-50">Thủy, hải sản</a>
                     </div>
                   </div>
 
-                  <a href="/vi/gia-vi" class="block px-5 py-3 hover:bg-gray-50 font-medium">
+                  <a href="/vi/gia-vi" class="block px-5 py-3 hover:bg-gray-50 font-normal">
                     Gia vị
                   </a>
                 </div>
               </div>
 
               <!-- đồ uống - giải khát -->
-              <a href="/vi/do-uong-giai-khat" class="block px-5 py-3 hover:bg-gray-50 font-medium">
+              <a href="/vi/do-uong-giai-khat" class="block px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                 đồ uống - giải khát
               </a>
 
               <!-- chắm sóc cá nhân -->
-              <a href="/vi/cham-soc-ca-nhan" class="block px-5 py-3 hover:bg-gray-50 font-medium">
+              <a href="/vi/cham-soc-ca-nhan" class="block px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                 chắm sóc cá nhân
               </a>
 
               <!-- thủ công mỹ nghệ -->
-              <a href="/vi/thu-cong-my-nghe" class="block px-5 py-3 hover:bg-gray-50 font-medium">
+              <a href="/vi/thu-cong-my-nghe" class="block px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                 thủ công mỹ nghệ
               </a>
 
@@ -147,15 +147,15 @@
                 @mouseleave="openSub = false">
 
                 <a href="/vi/hoa-cay-canh"
-                  class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                  class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                   hoa cây cảnh
                   <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                 </a>
 
-                <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                   opacity-0 scale-95 transition-all duration-200" x-show="openSub" x-transition
                   :class="openSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
-                  <a href="/vi/cay-phong-thuy" class="block px-5 py-2.5 hover:bg-gray-50">Cây phong thủy</a>
+                  <a href="/vi/cay-phong-thuy" class="block px-4 py-2 hover:bg-gray-50">Cây phong thủy</a>
                 </div>
               </div>
 
@@ -174,7 +174,7 @@
             </a>
 
             <!-- DROPDOWN CẤP 1 -->
-            <div class="absolute left-0 top-full w-56 bg-white shadow-xl rounded-md z-[9999]
+            <div class="absolute left-0 top-full w-56 bg-white/70 shadow-xl z-[9999]
               opacity-0 scale-95 transition-all duration-200" x-show="openMain" x-transition
               :class="openMain && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
@@ -182,13 +182,14 @@
               <div class="relative" x-data="{ openSub: false }" @mouseenter="openSub = true"
                 @mouseleave="openSub = false">
 
-                <a href="/vi/du-lich" class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                <a href="/vi/du-lich"
+                  class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                   Du lịch
                   <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                 </a>
 
                 <!-- DROPDOWN CẤP 2 -->
-                <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                   opacity-0 scale-95 transition-all duration-200" x-show="openSub" x-transition
                   :class="openSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
@@ -197,31 +198,31 @@
                     @mouseleave="openSubSub = false">
 
                     <a href="/vi/du-lich-mien-bac"
-                      class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                      class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal">
                       Du lịch miền bắc
                       <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                     </a>
 
                     <!-- DROPDOWN CẤP 3 -->
-                    <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                    <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="/vi/du-lich-bac-kan" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Bắc Kạn</a>
-                      <a href="/vi/du-lich-bac-ninh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Bắc Ninh</a>
-                      <a href="/vi/du-lich-ha-giang" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Hà Giang</a>
-                      <a href="/vi/du-lich-ha-noi" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Hà Nội</a>
-                      <a href="/vi/du-lich-lang-son" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Lạng Sơn</a>
-                      <a href="/vi/du-lich-mai-chau" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Mai Châu</a>
-                      <a href="/vi/du-lich-moc-chau" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Mộc Châu</a>
-                      <a href="/vi/du-lich-ninh-binh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Ninh Bình</a>
-                      <a href="/vi/du-lich-quang-ninh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Quảng Ninh</a>
-                      <a href="/vi/du-lich-lao-cai" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Lào Cai</a>
-                      <a href="/vi/du-lich-son-la" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Sơn La</a>
-                      <a href="/vi/du-lich-tay-bac" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Tây Bắc</a>
-                      <a href="/vi/du-lich-dien-bien" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Điện Biên</a>
-                      <a href="/vi/du-lich-dong-bac" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Đông Bắc</a>
-                      <a href="/vi/du-lich-hoa-binh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Hòa Bình</a>
+                      <a href="/vi/du-lich-bac-kan" class="block px-4 py-2 hover:bg-gray-50">Du lịch Bắc Kạn</a>
+                      <a href="/vi/du-lich-bac-ninh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Bắc Ninh</a>
+                      <a href="/vi/du-lich-ha-giang" class="block px-4 py-2 hover:bg-gray-50">Du lịch Hà Giang</a>
+                      <a href="/vi/du-lich-ha-noi" class="block px-4 py-2 hover:bg-gray-50">Du lịch Hà Nội</a>
+                      <a href="/vi/du-lich-lang-son" class="block px-4 py-2 hover:bg-gray-50">Du lịch Lạng Sơn</a>
+                      <a href="/vi/du-lich-mai-chau" class="block px-4 py-2 hover:bg-gray-50">Du lịch Mai Châu</a>
+                      <a href="/vi/du-lich-moc-chau" class="block px-4 py-2 hover:bg-gray-50">Du lịch Mộc Châu</a>
+                      <a href="/vi/du-lich-ninh-binh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Ninh Bình</a>
+                      <a href="/vi/du-lich-quang-ninh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Quảng Ninh</a>
+                      <a href="/vi/du-lich-lao-cai" class="block px-4 py-2 hover:bg-gray-50">Du lịch Lào Cai</a>
+                      <a href="/vi/du-lich-son-la" class="block px-4 py-2 hover:bg-gray-50">Du lịch Sơn La</a>
+                      <a href="/vi/du-lich-tay-bac" class="block px-4 py-2 hover:bg-gray-50">Du lịch Tây Bắc</a>
+                      <a href="/vi/du-lich-dien-bien" class="block px-4 py-2 hover:bg-gray-50">Du lịch Điện Biên</a>
+                      <a href="/vi/du-lich-dong-bac" class="block px-4 py-2 hover:bg-gray-50">Du lịch Đông Bắc</a>
+                      <a href="/vi/du-lich-hoa-binh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Hòa Bình</a>
                     </div>
                   </div>
 
@@ -230,39 +231,39 @@
                     @mouseleave="openSubSub = false">
 
                     <a href="/vi/du-lich-mien-trung"
-                      class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                      class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal">
                       Du lịch miền trung
                       <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                     </a>
 
                     <!-- DROPDOWN CẤP 3 -->
-                    <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                    <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="/vi/du-lich-buon-ma-thuot" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Buôn Ma
+                      <a href="/vi/du-lich-buon-ma-thuot" class="block px-4 py-2 hover:bg-gray-50">Du lịch Buôn Ma
                         Thuột</a>
-                      <a href="/vi/du-lich-binh-thuan" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Bình Thuận</a>
-                      <a href="/vi/du-lich-binh-dinh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Bình Định</a>
-                      <a href="/vi/du-lich-hue" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Huế</a>
-                      <a href="/vi/du-lich-quang-nam" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Quảng Nam</a>
-                      <a href="/vi/du-lich-khanh-hoa" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Khánh Hòa</a>
-                      <a href="/vi/du-lich-nghe-an" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Nghệ An</a>
-                      <a href="/vi/du-lich-ninh-thuan" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Ninh Thuận</a>
-                      <a href="/vi/du-lich-phan-thiet" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Phan Thiết</a>
-                      <a href="/vi/du-lich-phu-yen" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Phú Yên</a>
-                      <a href="/vi/du-lich-quang-binh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Quảng Bình</a>
-                      <a href="/vi/du-lich-quang-nam" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Quảng Nam</a>
-                      <a href="/vi/du-lich-tay-nguyen" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Tây Nguyên</a>
-                      <a href="/vi/du-lich-da-lat" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Đà Lạt</a>
-                      <a href="/vi/du-lich-da-nang" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Đà Nẵng</a>
-                      <a href="/vi/du-lich-dao-binh-ba" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Đảo Bình
+                      <a href="/vi/du-lich-binh-thuan" class="block px-4 py-2 hover:bg-gray-50">Du lịch Bình Thuận</a>
+                      <a href="/vi/du-lich-binh-dinh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Bình Định</a>
+                      <a href="/vi/du-lich-hue" class="block px-4 py-2 hover:bg-gray-50">Du lịch Huế</a>
+                      <a href="/vi/du-lich-quang-nam" class="block px-4 py-2 hover:bg-gray-50">Du lịch Quảng Nam</a>
+                      <a href="/vi/du-lich-khanh-hoa" class="block px-4 py-2 hover:bg-gray-50">Du lịch Khánh Hòa</a>
+                      <a href="/vi/du-lich-nghe-an" class="block px-4 py-2 hover:bg-gray-50">Du lịch Nghệ An</a>
+                      <a href="/vi/du-lich-ninh-thuan" class="block px-4 py-2 hover:bg-gray-50">Du lịch Ninh Thuận</a>
+                      <a href="/vi/du-lich-phan-thiet" class="block px-4 py-2 hover:bg-gray-50">Du lịch Phan Thiết</a>
+                      <a href="/vi/du-lich-phu-yen" class="block px-4 py-2 hover:bg-gray-50">Du lịch Phú Yên</a>
+                      <a href="/vi/du-lich-quang-binh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Quảng Bình</a>
+                      <a href="/vi/du-lich-quang-nam" class="block px-4 py-2 hover:bg-gray-50">Du lịch Quảng Nam</a>
+                      <a href="/vi/du-lich-tay-nguyen" class="block px-4 py-2 hover:bg-gray-50">Du lịch Tây Nguyên</a>
+                      <a href="/vi/du-lich-da-lat" class="block px-4 py-2 hover:bg-gray-50">Du lịch Đà Lạt</a>
+                      <a href="/vi/du-lich-da-nang" class="block px-4 py-2 hover:bg-gray-50">Du lịch Đà Nẵng</a>
+                      <a href="/vi/du-lich-dao-binh-ba" class="block px-4 py-2 hover:bg-gray-50">Du lịch Đảo Bình
                         Ba</a>
-                      <a href="/vi/du-lich-dao-binh-hung" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Đảo Bình
+                      <a href="/vi/du-lich-dao-binh-hung" class="block px-4 py-2 hover:bg-gray-50">Du lịch Đảo Bình
                         Hưng</a>
-                      <a href="/vi/du-lich-quy-nhon" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Quy Nhơn</a>
-                      <a href="/vi/du-lich-dao-ba-lua" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Đảo Bà Lụa</a>
-                      <a href="/vi/du-lich-ha-tinh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Hà Tĩnh</a>
+                      <a href="/vi/du-lich-quy-nhon" class="block px-4 py-2 hover:bg-gray-50">Du lịch Quy Nhơn</a>
+                      <a href="/vi/du-lich-dao-ba-lua" class="block px-4 py-2 hover:bg-gray-50">Du lịch Đảo Bà Lụa</a>
+                      <a href="/vi/du-lich-ha-tinh" class="block px-4 py-2 hover:bg-gray-50">Du lịch Hà Tĩnh</a>
                     </div>
                   </div>
 
@@ -271,33 +272,33 @@
                     @mouseleave="openSubSub = false">
 
                     <a href="/vi/du-lich-mien-nam"
-                      class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                      class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal">
                       Du lịch miền nam
                       <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                     </a>
 
                     <!-- DROPDOWN CẤP 3 -->
-                    <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                    <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="/vi/du-lich-an-giang" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch An Giang</a>
-                      <a href="/vi/du-lich-bac-lieu" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Bạc Liêu</a>
-                      <a href="/vi/du-lich-ben-tre" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Bến Tre</a>
-                      <a href="/vi/du-lich-chau-doc" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Châu Đốc</a>
-                      <a href="/vi/du-lich-ca-mau" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Cà Mau</a>
-                      <a href="/vi/du-lich-con-dao" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Côn Đảo</a>
-                      <a href="/vi/du-lich-can-tho" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Cần Thơ</a>
-                      <a href="/vi/du-lich-ha-tien" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Hà Tiên</a>
-                      <a href="/vi/du-lich-kien-giang" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Kiên Giang</a>
-                      <a href="/vi/du-lich-long-an" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Long An</a>
-                      <a href="/vi/du-lich-mien-tay" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Miền Tây</a>
-                      <a href="/vi/du-lich-nam-du" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Nam Du</a>
-                      <a href="/vi/du-lich-phu-quoc" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Phú Quốc</a>
-                      <a href="/vi/du-lich-soc-trang" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Sóc Trăng</a>
-                      <a href="/vi/du-lich-tien-giang" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Tiền Giang</a>
-                      <a href="/vi/du-lich-vung-tau" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch Vũng Tàu</a>
-                      <a href="/vi/du-lich-tp-ho-chi-minh" class="block px-5 py-2.5 hover:bg-gray-50">Du lịch TP Hồ Chí
+                      <a href="/vi/du-lich-an-giang" class="block px-4 py-2 hover:bg-gray-50">Du lịch An Giang</a>
+                      <a href="/vi/du-lich-bac-lieu" class="block px-4 py-2 hover:bg-gray-50">Du lịch Bạc Liêu</a>
+                      <a href="/vi/du-lich-ben-tre" class="block px-4 py-2 hover:bg-gray-50">Du lịch Bến Tre</a>
+                      <a href="/vi/du-lich-chau-doc" class="block px-4 py-2 hover:bg-gray-50">Du lịch Châu Đốc</a>
+                      <a href="/vi/du-lich-ca-mau" class="block px-4 py-2 hover:bg-gray-50">Du lịch Cà Mau</a>
+                      <a href="/vi/du-lich-con-dao" class="block px-4 py-2 hover:bg-gray-50">Du lịch Côn Đảo</a>
+                      <a href="/vi/du-lich-can-tho" class="block px-4 py-2 hover:bg-gray-50">Du lịch Cần Thơ</a>
+                      <a href="/vi/du-lich-ha-tien" class="block px-4 py-2 hover:bg-gray-50">Du lịch Hà Tiên</a>
+                      <a href="/vi/du-lich-kien-giang" class="block px-4 py-2 hover:bg-gray-50">Du lịch Kiên Giang</a>
+                      <a href="/vi/du-lich-long-an" class="block px-4 py-2 hover:bg-gray-50">Du lịch Long An</a>
+                      <a href="/vi/du-lich-mien-tay" class="block px-4 py-2 hover:bg-gray-50">Du lịch Miền Tây</a>
+                      <a href="/vi/du-lich-nam-du" class="block px-4 py-2 hover:bg-gray-50">Du lịch Nam Du</a>
+                      <a href="/vi/du-lich-phu-quoc" class="block px-4 py-2 hover:bg-gray-50">Du lịch Phú Quốc</a>
+                      <a href="/vi/du-lich-soc-trang" class="block px-4 py-2 hover:bg-gray-50">Du lịch Sóc Trăng</a>
+                      <a href="/vi/du-lich-tien-giang" class="block px-4 py-2 hover:bg-gray-50">Du lịch Tiền Giang</a>
+                      <a href="/vi/du-lich-vung-tau" class="block px-4 py-2 hover:bg-gray-50">Du lịch Vũng Tàu</a>
+                      <a href="/vi/du-lich-tp-ho-chi-minh" class="block px-4 py-2 hover:bg-gray-50">Du lịch TP Hồ Chí
                         Minh</a>
                     </div>
                   </div>
@@ -305,12 +306,12 @@
               </div>
 
               <!-- Khách sạn -->
-              <a href="/vi/khach-san" class="block px-5 py-3 hover:bg-gray-50 font-medium">
+              <a href="/vi/khach-san" class="block px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                 Khách sạn
               </a>
 
               <!-- Nhà hàng -->
-              <a href="/vi/nha-hang" class="block px-5 py-3 hover:bg-gray-50 font-medium">
+              <a href="/vi/nha-hang" class="block px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                 Nhà hàng
               </a>
 
@@ -318,16 +319,17 @@
               <div class="relative" x-data="{ openSub: false }" @mouseenter="openSub = true"
                 @mouseleave="openSub = false">
 
-                <a href="/vi/van-tai" class="flex justify-between items-center px-5 py-3 hover:bg-gray-50 font-medium">
+                <a href="/vi/van-tai"
+                  class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                   Vận tải
                   <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">
                 </a>
 
-                <div class="absolute top-0 left-full w-56 bg-white shadow-xl rounded-md z-[9999]
+                <div class="absolute top-0 left-full w-56 bg-white/70 shadow-xl z-[9999]
                   opacity-0 scale-95 transition-all duration-200" x-show="openSub" x-transition
                   :class="openSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
-                  <a href="/vi/xe-khach" class="block px-5 py-2.5 hover:bg-gray-50">Xe khách</a>
-                  <a href="/vi/van-chuyen-hang-hoa" class="block px-5 py-2.5 hover:bg-gray-50">Vận chuyển hàng hóa</a>
+                  <a href="/vi/xe-khach" class="block px-4 py-2 hover:bg-gray-50">Xe khách</a>
+                  <a href="/vi/van-chuyen-hang-hoa" class="block px-4 py-2 hover:bg-gray-50">Vận chuyển hàng hóa</a>
                 </div>
               </div>
 
