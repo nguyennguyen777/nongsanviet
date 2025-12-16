@@ -1,0 +1,107 @@
+.page-about .container-content {
+    float: left;
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+@media (min-width: 1200px) {
+    .page-about .container {
+        width: 1170px;
+        font-family: "UTM-Avo";
+    }
+}
+
+.page-about .container-content .block {
+    float: left;
+    width: 100%;
+}
+
+.page-about .box-shadow {
+    background: #fff;
+    background-size: cover;
+    padding-left: 50px;
+    padding-right: 50px;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+        12px 0 15px -4px rgba(0, 0, 0, 0.2),
+        -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+}
+
+.page-about .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.page-about .block-icon {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.page-about .block-icon li:nth-child(1) {
+    background: url(/public/storage/products/hoptac.png) no-repeat center 0px;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-about .block-icon li {
+    list-style: none;
+    margin: 0px;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .page-about .col-md-4 {
+        width: 33.33333333%;
+    }
+}
+
+.page-about p {
+    margin: 0 0 10px;
+}
+
+.page-about .rtejustify {
+    text-align: justify;
+}
+
+.page-about .block-icon li:nth-child(2) {
+    background: url(/public/storage/products/hotro.png) no-repeat center 0px;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-about .block-icon li:nth-child(3) {
+    background: url(/public/storage/products/muahang.png) no-repeat center 0px;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-about .row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.page-about .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.page-about a {
+    color: #1e73be; /* xanh dễ đọc */
+    text-decoration: none; /* bỏ gạch mặc định */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.page-about a:hover {
+    text-decoration: underline;
+    color: #f10000; /* xanh đậm hơn khi hover */
+}

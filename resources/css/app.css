@@ -2,6 +2,7 @@
 @import "./product.css";
 @import "./footer.css";
 @import "./home.css";
+@import "./about.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -19,5 +20,12 @@
     src: url("/public/storage/fonts/UTM-AvoBold.ttf") format("truetype"),
         url("/public/storage/fonts/UTM-Avo.ttf") format("truetype");
     font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "UTM-Avo";
+    src: url("/public/storage/fonts/UTM-Avo.ttf") format("truetype");
+    font-weight: 400;
     font-style: normal;
 }

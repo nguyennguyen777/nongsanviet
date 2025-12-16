@@ -20,7 +20,7 @@
         <!-- menu left -->
         <nav class="hidden md:flex md:space-x-6 whitespace-nowrap">
 
-          <a href="{{ url('/ve-chung-toi') }}" class="relative inline-block text-[#464646] text-[15px] font-bold py-[35px] px-[5px] uppercase 
+          <a href="{{ url('/vi/ve-chung-toi') }}" class="relative inline-block text-[#464646] text-[15px] font-bold py-[35px] px-[5px] uppercase 
           after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-9.5 
           after:h-[1px] after:w-[calc(100%-10px)] after:bg-gray-600 after:opacity-0 after:transition-opacity
           hover:after:opacity-100">
