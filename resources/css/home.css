@@ -65,6 +65,52 @@
     -webkit-backface-visibility: hidden;
 }
 
+/* Bọc carousel */
+.block-slide-san-pham-dich-vu {
+    position: relative;
+}
+
+/* Cho phép nút tràn ra ngoài */
+.block-slide-san-pham-dich-vu .owl-stage-outer {
+    overflow: visible;
+}
+
+/* NAV */
+.block-slide-san-pham-dich-vu .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* PREV + NEXT */
+.block-slide-san-pham-dich-vu .owl-prev,
+.block-slide-san-pham-dich-vu .owl-next {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    pointer-events: auto;
+    text-indent: -9999px;
+}
+
+/* PREV */
+.block-slide-san-pham-dich-vu .owl-prev {
+    left: -50px;
+    background-image: url("/public/storage/products/left.png");
+}
+
+/* NEXT */
+.block-slide-san-pham-dich-vu .owl-next {
+    right: -50px;
+    background-image: url("/public/storage/products/right.png");
+}
+
 .block-slide-san-pham-dich-vu .item-wrapper {
     position: relative;
 }
@@ -189,7 +235,6 @@
 
 .owl-theme .owl-nav [class*="owl-"] {
     color: #fff;
-    font-size: 14px;
     margin: 5px;
     padding: 4px 7px;
     display: inline-block;
@@ -373,9 +418,11 @@
     background: url(https://www.nongsanviet.net.vn/sites/default/files/822876680.jpg)
         no-repeat center center;
     background-size: cover;
-    background-attachment: fixed !important;
-    min-height: 350px;
+    background-attachment: fixed;
+    height: 350px;
     color: #fff;
+    margin-top: 3640px;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 1200px) {
@@ -573,17 +620,6 @@
     width: 28px;
     height: 28px;
     background-size: cover;
-}
-
-.owl-theme .owl-nav [class*="owl-"] {
-    color: #fff;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #d6d6d6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
 }
 
 .alla-theme .block-slide-doi-tac .owl-nav .owl-next {

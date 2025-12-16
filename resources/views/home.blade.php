@@ -204,8 +204,8 @@
                       </div>
                     </div>
                     <div class="owl-nav">
-                      <div class="owl-prev">prev</div>
-                      <div class="owl-next">next</div>
+                      <button class="owl-prev"></button>
+                      <button class="owl-next"></button>
                     </div>
                     <div class="owl-dots disabled"></div>
                   </div>
@@ -274,6 +274,7 @@
                 </div>
               </div>
 
+              <!-- Giới thiệu ---------------------------------------------------->
               <div id="block-views-block-gioi-thieu-block-1" class="block block-views">
 
                 <div class="content">
@@ -314,6 +315,7 @@
                 </div>
               </div>
 
+              <!-- Sản phẩm nổi bật ---------------------------------------------->
               <div id="block-views-block-san-pham-block" class="block block-views title-icon">
 
                 <div class="block-title">
@@ -638,6 +640,7 @@
                 </div>
               </div>
 
+              <!-- Dịch vụ nổi bật -------------------------------------------->
               <div id="block-views-block-san-pham-block-6" class="block block-views title-icon">
 
                 <div class="block-title">
@@ -729,9 +732,9 @@
         </div>
       </div>
     </div>
+
     <div class="region region-content-bottom">
       <div id="block-alla-tech-block-banner-san-pham-noi-bat" class="block block-alla-tech">
-
 
         <div class="content">
           <div class="banner-attachment text-center">
@@ -744,14 +747,17 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
+
     <div class="content-common content-front-wrapper">
       <div class="container">
         <div class="container-content1">
           <div class="front-content-wrapper-page">
             <div class="region region-content-bottom2">
 
+              <!-- Đánh giá của khách hàng --------------------------------------------->
               <div id="block-alla-tech-block-slide-doi-tac"
                 class="block block-alla-tech block-alla-tech-block-slide-doi-tac title-icon">
 
@@ -956,6 +962,7 @@
                 </div>
               </div>
 
+              <!-- Đối tác -------------------------------------------->
               <div id="block-alla-tech-block-slide-partner" class="block block-alla-tech title-icon">
 
                 <div class="block-title">
@@ -1168,6 +1175,7 @@
                 </div>
               </div>
 
+              <!-- Tin nổi bật ---------------------------------------------------------->
               <div id="block-views-block-bai-viet-block-12" class="block block-views title-icon">
 
                 <div class="block-title">
@@ -1316,5 +1324,6 @@
       </div>
     </div>
   </div>
+
 
 @endsection
