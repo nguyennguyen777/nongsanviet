@@ -164,7 +164,8 @@
                                         </div>
                                         <div class="gia-tri-cot-loi">
                                             <h2 class="text-center title-gt-common">Giá trị cốt lõi của chúng tôi</h2>
-                                            <p class="rtecenter"><img alt="" src="/sites/default/files/gia_tri_cot_loi.jpg"
+                                            <p class="rtecenter"><img alt=""
+                                                    src="{{ asset('storage/products/gia_tri_cot_loi.jpg') }}"
                                                     style="width: 983px; height: 396px;"></p>
                                         </div>
                                         <p>&nbsp;</p>
