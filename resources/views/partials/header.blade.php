@@ -405,7 +405,7 @@
 
   </div>
   <!-- liên hệ dưới về chúng tôi -->
-  <a href="{{ url('/lien-he') }}" class="relative ml-25 text-[#464646] text-[15px] font-bold py-[35px] px-[25px] uppercase
+  <a href="{{ url('/vi/lien-he') }}" class="relative ml-25 text-[#464646] text-[15px] font-bold py-[35px] px-[25px] uppercase
           after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-9 
           after:h-[1.5px] after:w-[calc(100%-50px)] after:bg-gray-600 after:opacity-0 after:transition-opacity
           hover:after:opacity-100">

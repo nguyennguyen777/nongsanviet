@@ -20,3 +20,6 @@ Route::get('/search', function () {
 Route::get('/vi/ve-chung-toi', function () {
     return view('pages.about');
 });
+Route::get('/vi/lien-he', function () {
+    return view('pages.contact');
+});

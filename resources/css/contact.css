@@ -1,0 +1,244 @@
+.page-contact .content-top-lien-he {
+    background: #ebebeb;
+    position: relative;
+}
+
+@media (min-width: 1200px) {
+    .page-contact .container {
+        width: 1170px;
+    }
+}
+
+.page-contact .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 33px;
+}
+
+.page-contact .container:before {
+    display: table;
+    content: "";
+}
+
+.page-contact .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.page-contact .row:before {
+    display: table;
+    content: " ";
+}
+
+.page-contact #block-views-block-page-block-1 .view-content ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.page-contact #block-views-block-page-block-1 .view-content ul li {
+    margin: 0px;
+}
+
+.page-contact .list .views-row {
+    padding: 15px;
+}
+
+@media (min-width: 992px) {
+    .page-contact .col-md-3 {
+        width: 25%;
+        float: left;
+    }
+
+    .page-contact #block-views-block-page-block-1 .views-field-title {
+        text-transform: uppercase !important;
+        font-size: 14px;
+    }
+
+    .page-contact
+        #block-views-block-page-block-1
+        li:nth-child(2)
+        .views-field-title {
+        padding-top: 15px;
+    }
+
+    .page-contact
+        #block-views-block-page-block-1
+        li:nth-child(4)
+        .views-field-title {
+        padding-top: 15px;
+    }
+
+    .page-contact .col-md-6 {
+        width: 50%;
+        float: left;
+    }
+}
+
+.page-contact #block-views-block-page-block-1 .views-field-field-anh-dai-dien {
+    float: right;
+    margin-left: 15px;
+}
+
+.page-contact #block-views-block-page-block-1 .view-content ul {
+    list-style: none;
+    font-family: "UTM-Avo";
+}
+
+.page-contact
+    #block-views-block-page-block-1
+    .views-field-field-anh-dai-dien
+    .field-content {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: relative;
+}
+
+.page-contact
+    #block-views-block-page-block-1
+    .views-field-field-anh-dai-dien
+    .field-content
+    img {
+    width: 35px;
+}
+
+.page-contact
+    #block-views-block-page-block-1
+    .views-field-field-anh-dai-dien
+    img {
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.page-contact img {
+    max-width: 100% !important;
+    height: auto !important;
+    vertical-align: middle;
+    border: 0;
+}
+
+.page-contact .container-content-common-all {
+    background: url(/public/storage/products/bg-common-01.jpg) repeat !important;
+    float: left;
+    width: 100%;
+    margin-top: -5px;
+    position: initial;
+}
+
+@media (min-width: 1024px) {
+    .page-contact .container-content-common-all .container-content {
+        padding: 15px;
+        background: #fff;
+        box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+            12px 0 15px -4px rgba(0, 0, 0, 0.2),
+            -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+        float: left;
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+
+.page-contact .common-content-wrapper-page {
+    padding-bottom: 50px;
+}
+
+.page-contact h1 {
+    color: #000;
+    font-family: "UTM-AvoBold";
+    line-height: 1.25;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    margin: 0.67em 0;
+}
+
+.page-contact .col-md-6 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.page-contact .container-content .block {
+    float: left;
+    width: 100%;
+}
+
+.page-contact form {
+    margin: 0;
+    padding: 0;
+}
+
+.page-contact .form-item-name,
+.page-contact .form-item-phone {
+    float: left;
+    width: 50%;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.page-contact #alla-tech-lien-he label {
+    display: none;
+}
+
+.page-contact .form-required {
+    color: #f00;
+}
+
+.page-contact .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.page-contact input {
+    font-family: inherit;
+    margin: 0;
+    font: inherit;
+}
+
+.page-contact .form-item-email,
+.page-contact .form-item-address {
+    float: left;
+    width: 50%;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.page-contact .form-item-services {
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.page-contact textarea.form-control {
+    height: auto;
+}
+
+.page-contact .form-textarea-wrapper textarea {
+    display: block;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
