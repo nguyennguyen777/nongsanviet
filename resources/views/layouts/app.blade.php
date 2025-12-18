@@ -49,6 +49,28 @@
     });
   </script>
 
+
+  <script>
+    $(function () {
+      $('.block-slide-san-pham-dich-vu').owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: false,
+        navText: ['', ''],
+        autoplay: false,
+        smartSpeed: 600,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          992: { items: 4 }
+        }
+      });
+    });
+  </script>
+
+
   @stack('scripts')
 
 </body>

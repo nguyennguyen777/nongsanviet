@@ -12,205 +12,90 @@
             <div class="region region-content">
 
               <div id="block-alla-tech-block-slide-san-pham" class="block block-alla-tech">
-
                 <div class="content">
-                  <div class="block-slide-san-pham-dich-vu owl-carousel owl-theme owl-loaded owl-drag">
 
-                    <div class="owl-stage-outer">
-                      <div class="owl-stage"
-                        style="transform: translate3d(-1070px, 0px, 0px); transition: all; width: 3478px;">
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/nhahang.jpg?itok=5gTvIrBa"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0">Nhà hàng</a>
-                              </div>
-                            </div>
-                          </div>
+                  <div class="block-slide-san-pham-dich-vu owl-carousel owl-theme">
+
+                    <div class="item">
+                      <div class="item-wrapper">
+                        <div class="image">
+                          <a href="https://www.nongsanviet.net.vn/vi/thuc-pham">
+                            <img class="img-responsive"
+                              src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/thucpham.jpg?itok=LdkfkW2y"
+                              alt="Thực phẩm">
+                          </a>
                         </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/soday.jpg?itok=fnjux8jm"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat">Đồ uống - Giải khát</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/du-lich-0"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/dulich.jpg?itok=IwxYt0VE"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/du-lich-0">Du lịch</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/thu-cong-my-nghe"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/thucongmynghe.jpg?itok=SDvHTiLc"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/thu-cong-my-nghe">Thủ công mỹ nghệ</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/thuc-pham"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/thucpham.jpg?itok=LdkfkW2y"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/thuc-pham">Thực phẩm</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/nhahang.jpg?itok=5gTvIrBa"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0">Nhà hàng</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/soday.jpg?itok=fnjux8jm"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat">Đồ uống - Giải khát</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/du-lich-0"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/dulich.jpg?itok=IwxYt0VE"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/du-lich-0">Du lịch</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/thu-cong-my-nghe"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/thucongmynghe.jpg?itok=SDvHTiLc"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/thu-cong-my-nghe">Thủ công mỹ nghệ</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/thuc-pham"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/thucpham.jpg?itok=LdkfkW2y"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/thuc-pham">Thực phẩm</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/nhahang.jpg?itok=5gTvIrBa"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0">Nhà hàng</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/soday.jpg?itok=fnjux8jm"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat">Đồ uống - Giải khát</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 237.5px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="item-wrapper">
-                              <div class="image">
-                                <a href="https://www.nongsanviet.net.vn/vi/du-lich-0"><img class="img-responsive"
-                                    src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/dulich.jpg?itok=IwxYt0VE"
-                                    alt="" title=""></a>
-                              </div>
-                              <div class="term-name">
-                                <a href="https://www.nongsanviet.net.vn/vi/du-lich-0">Du lịch</a>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="term-name">
+                          <a href="https://www.nongsanviet.net.vn/vi/thuc-pham">Thực phẩm</a>
                         </div>
                       </div>
                     </div>
-                    <div class="owl-nav">
-                      <button class="owl-prev"></button>
-                      <button class="owl-next"></button>
+
+                    <div class="item">
+                      <div class="item-wrapper">
+                        <div class="image">
+                          <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0">
+                            <img class="img-responsive"
+                              src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/nhahang.jpg?itok=5gTvIrBa"
+                              alt="Nhà hàng">
+                          </a>
+                        </div>
+                        <div class="term-name">
+                          <a href="https://www.nongsanviet.net.vn/vi/nha-hang-0">Nhà hàng</a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="owl-dots disabled"></div>
+
+                    <div class="item">
+                      <div class="item-wrapper">
+                        <div class="image">
+                          <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat">
+                            <img class="img-responsive"
+                              src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/soday.jpg?itok=fnjux8jm"
+                              alt="Đồ uống - Giải khát">
+                          </a>
+                        </div>
+                        <div class="term-name">
+                          <a href="https://www.nongsanviet.net.vn/vi/do-uong-giai-khat">Đồ uống - Giải khát</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="item-wrapper">
+                        <div class="image">
+                          <a href="https://www.nongsanviet.net.vn/vi/du-lich-0">
+                            <img class="img-responsive"
+                              src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/dulich.jpg?itok=IwxYt0VE"
+                              alt="Du lịch">
+                          </a>
+                        </div>
+                        <div class="term-name">
+                          <a href="https://www.nongsanviet.net.vn/vi/du-lich-0">Du lịch</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="item-wrapper">
+                        <div class="image">
+                          <a href="https://www.nongsanviet.net.vn/vi/thu-cong-my-nghe">
+                            <img class="img-responsive"
+                              src="https://www.nongsanviet.net.vn/sites/default/files/styles/anh_danh_muc/public/thucongmynghe.jpg?itok=SDvHTiLc"
+                              alt="Thủ công mỹ nghệ">
+                          </a>
+                        </div>
+                        <div class="term-name">
+                          <a href="https://www.nongsanviet.net.vn/vi/thu-cong-my-nghe">Thủ công mỹ nghệ</a>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
+
                 </div>
               </div>
+
 
               <div id="block-views-block-page-block" class="block block-views">
 
