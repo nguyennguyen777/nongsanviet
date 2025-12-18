@@ -11,6 +11,7 @@
           <div class="front-content-wrapper-page">
             <div class="region region-content">
 
+              <!-- Slide Sản phẩm dịch vụ ---------------------------------------------->
               <div id="block-alla-tech-block-slide-san-pham" class="block block-alla-tech">
                 <div class="content">
 
@@ -96,7 +97,7 @@
                 </div>
               </div>
 
-
+              <!-- 4 lý do chọn Nông sản Việt Nam -------------------------------------->
               <div id="block-views-block-page-block" class="block block-views">
 
                 <div class="content">
@@ -618,6 +619,7 @@
       </div>
     </div>
 
+    <!-- Banner sản phẩm nổi bật -->
     <div class="region region-content-bottom">
       <div id="block-alla-tech-block-banner-san-pham-noi-bat" class="block block-alla-tech">
 
@@ -651,201 +653,75 @@
                 </div>
 
                 <div class="content">
-                  <div class="block-slide-doi-tac owl-carousel owl-theme owl-loaded owl-drag">
+                  <div class="block-slide-doi-tac owl-carousel owl-theme">
 
-                    <div class="owl-stage-outer">
-                      <div class="owl-stage"
-                        style="transform: translate3d(-1070px, 0px, 0px); transition: all; width: 3567px;">
-                        <div class="owl-item cloned" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tôi rất thích mua các thực phẩm của Nông sản Việt Nam vì&nbsp;đảm bảo chất lượng và xuất xứ
-                              rõ ràng để chăm lo từng bữa ăn cho gia đình tôi.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/trinh_que.jpg?itok=gWYLldLS"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Trịnh Quế</div>
-                              <div class="noi-cong-tac">Nội trợ</div>
-                            </div>
-                          </div>
+                    <div class="item">
+                      <div class="body-summary">
+                        Tôi đã từng mua sản phẩm của Nông sản Việt Nam để làm quà tặng Tết cho bố mẹ. Mọi người đều thích
+                        và an tâm khi lựa chọn mua ở đây.
+                      </div>
+                      <div class="partner-bottom">
+                        <div class="image">
+                          <img class="img-responsive"
+                            src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/3_3.jpg?itok=UUX_40so">
                         </div>
-                        <div class="owl-item cloned" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tại Nông Sản Việt Nam&nbsp;có nhiều đặc sản ngon các vùng miền. Tôi rất an tâm khi mua sản
-                              phẩm tại đây, vì tất cả sản phẩm ở đây đều đảm bảo chất lượng và có nguồn gốc rõ ràng.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/artboard_1.png?itok=VcveCgvT"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Anh Mai Đức Thịnh</div>
-                              <div class="noi-cong-tac">Giám Đốc - HTX nông nghiệp 19/5 Mộc Châu</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Các sản phẩm tại Nông Sản Việt Nam đều rất ngon và có nguồn gốc, xuất xứ rõ ràng. Vì vậy,
-                              tôi rất hài lòng và tin tưởng về chất lượng khi mua sản phẩm tại Nông Sản Việt Nam.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/doan_the_xuyen.jpg?itok=zWdA7pIv"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Anh Đoàn Thế Xuyên</div>
-                              <div class="noi-cong-tac">Giám Đốc - Công ty TNHH Phúc Xuyên</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tôi đã từng mua sản phẩm của Nông sản Việt Nam để làm quà tặng Tết cho bố mẹ. Mọi người đều
-                              thích và an tâm khi lựa chọn mua ở đây.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/3_3.jpg?itok=UUX_40so"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Hồng Ngọc</div>
-                              <div class="noi-cong-tac">Ca sĩ</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tôi rất thích mua các thực phẩm của Nông sản Việt Nam vì&nbsp;đảm bảo chất lượng và xuất xứ
-                              rõ ràng để chăm lo từng bữa ăn cho gia đình tôi.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/trinh_que.jpg?itok=gWYLldLS"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Trịnh Quế</div>
-                              <div class="noi-cong-tac">Nội trợ</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item active" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tại Nông Sản Việt Nam&nbsp;có nhiều đặc sản ngon các vùng miền. Tôi rất an tâm khi mua sản
-                              phẩm tại đây, vì tất cả sản phẩm ở đây đều đảm bảo chất lượng và có nguồn gốc rõ ràng.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/artboard_1.png?itok=VcveCgvT"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Anh Mai Đức Thịnh</div>
-                              <div class="noi-cong-tac">Giám Đốc - HTX nông nghiệp 19/5 Mộc Châu</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Các sản phẩm tại Nông Sản Việt Nam đều rất ngon và có nguồn gốc, xuất xứ rõ ràng. Vì vậy,
-                              tôi rất hài lòng và tin tưởng về chất lượng khi mua sản phẩm tại Nông Sản Việt Nam.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/doan_the_xuyen.jpg?itok=zWdA7pIv"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Anh Đoàn Thế Xuyên</div>
-                              <div class="noi-cong-tac">Giám Đốc - Công ty TNHH Phúc Xuyên</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tôi đã từng mua sản phẩm của Nông sản Việt Nam để làm quà tặng Tết cho bố mẹ. Mọi người đều
-                              thích và an tâm khi lựa chọn mua ở đây.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/3_3.jpg?itok=UUX_40so"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Hồng Ngọc</div>
-                              <div class="noi-cong-tac">Ca sĩ</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tôi rất thích mua các thực phẩm của Nông sản Việt Nam vì&nbsp;đảm bảo chất lượng và xuất xứ
-                              rõ ràng để chăm lo từng bữa ăn cho gia đình tôi.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/trinh_que.jpg?itok=gWYLldLS"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Trịnh Quế</div>
-                              <div class="noi-cong-tac">Nội trợ</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 326.667px; margin-right: 30px;">
-                          <div class="item">
-                            <div class="body-summary">
-                              Tại Nông Sản Việt Nam&nbsp;có nhiều đặc sản ngon các vùng miền. Tôi rất an tâm khi mua sản
-                              phẩm tại đây, vì tất cả sản phẩm ở đây đều đảm bảo chất lượng và có nguồn gốc rõ ràng.
-                            </div>
-                            <div class="partner-bottom">
-                              <div class="image">
-                                <img class="img-responsive"
-                                  src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/artboard_1.png?itok=VcveCgvT"
-                                  alt="" title="">
-                              </div>
-                              <div class="star"></div>
-                              <div class="name">Anh Mai Đức Thịnh</div>
-                              <div class="noi-cong-tac">Giám Đốc - HTX nông nghiệp 19/5 Mộc Châu</div>
-                            </div>
-                          </div>
-                        </div>
+                        <div class="star"></div>
+                        <div class="name">Hồng Ngọc</div>
+                        <div class="noi-cong-tac">Ca sĩ</div>
                       </div>
                     </div>
-                    <div class="owl-nav">
-                      <div class="owl-prev">‹‹</div>
-                      <div class="owl-next">››</div>
+
+                    <div class="item">
+                      <div class="body-summary">
+                        Tôi rất thích mua các thực phẩm của Nông sản Việt Nam vì&nbsp;đảm bảo chất lượng và xuất xứ rõ
+                        ràng để chăm lo từng bữa ăn cho gia đình tôi.
+                      </div>
+                      <div class="partner-bottom">
+                        <div class="image">
+                          <img class="img-responsive"
+                            src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/trinh_que.jpg?itok=gWYLldLS">
+                        </div>
+                        <div class="star"></div>
+                        <div class="name">Trịnh Quế</div>
+                        <div class="noi-cong-tac">Nội trợ</div>
+                      </div>
                     </div>
-                    <div class="owl-dots disabled"></div>
+
+                    <div class="item">
+                      <div class="body-summary">
+                        Tại Nông Sản Việt Nam&nbsp;có nhiều đặc sản ngon các vùng miền. Tôi rất an tâm khi mua sản phẩm
+                        tại đây, vì tất cả sản phẩm ở đây đều đảm bảo chất lượng và có nguồn gốc rõ ràng.
+                      </div>
+                      <div class="partner-bottom">
+                        <div class="image">
+                          <img class="img-responsive"
+                            src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/artboard_1.png?itok=VcveCgvT">
+                        </div>
+                        <div class="star"></div>
+                        <div class="name">Anh Mai Đức Thịnh</div>
+                        <div class="noi-cong-tac">Giám Đốc - HTX nông nghiệp</div>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="body-summary">
+                        Các sản phẩm tại Nông Sản Việt Nam đều rất ngon và có nguồn gốc, xuất xứ rõ ràng. Vì vậy, tôi rất
+                        hài lòng và tin tưởng về chất lượng khi mua sản phẩm tại Nông Sản Việt Nam.
+                      </div>
+                      <div class="partner-bottom">
+                        <div class="image">
+                          <img class="img-responsive"
+                            src="https://www.nongsanviet.net.vn/sites/default/files/styles/medium/public/doan_the_xuyen.jpg?itok=zWdA7pIv">
+                        </div>
+                        <div class="star"></div>
+                        <div class="name">Anh Đoàn Thế Xuyên</div>
+                        <div class="noi-cong-tac">Giám Đốc - Công ty TNHH Phúc Xuyên</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+
 
               <!-- Đối tác -------------------------------------------->
               <div id="block-alla-tech-block-slide-partner" class="block block-alla-tech title-icon">
