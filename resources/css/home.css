@@ -829,3 +829,67 @@ ul li.expanded {
 .block-slide-san-pham-dich-vu .owl-next:hover {
     background-color: transparent !important;
 }
+
+/* Khung slider làm mốc */
+.block-slide-doi-tac {
+    position: relative;
+    font-family: "UTM-Avo";
+}
+
+/* Nav phủ ngang slider */
+.block-slide-doi-tac .owl-nav {
+    position: absolute;
+    top: 42%; /* lên trên */
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Prev + Next */
+.block-slide-doi-tac .owl-prev,
+.block-slide-doi-tac .owl-next {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    font-size: 0;
+    cursor: pointer;
+    z-index: 10;
+
+    opacity: 1 !important;
+    display: block !important;
+    pointer-events: auto;
+}
+
+/* Prev */
+.block-slide-doi-tac .owl-prev {
+    left: -50px; /* đẩy ra ngoài */
+    background-image: url("/public/storage/products/left2.png") !important;
+}
+
+/* Next */
+.block-slide-doi-tac .owl-next {
+    right: -50px;
+    background-image: url("/public/storage/products/right2.png") !important;
+}
+
+/* Tắt hover mặc định */
+.block-slide-doi-tac .owl-prev:hover,
+.block-slide-doi-tac .owl-next:hover {
+    background-color: transparent !important;
+}
+
+/* Ẩn text + span mặc định của owl */
+.block-slide-doi-tac .owl-prev span,
+.block-slide-doi-tac .owl-next span {
+    display: none !important;
+}
