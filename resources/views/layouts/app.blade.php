@@ -7,6 +7,7 @@
   <title>@yield('title', 'Nông sản Việt')</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <!-- Import CSS & JS -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -29,7 +30,27 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
+  <!-- nút prev - next block slide trang "về chúng tôi" -->
+  <script>
+    $(function () {
+      $('.block-slide-gioi-thieu').owlCarousel({
+        items: 4,
+        loop: true,
+        nav: true,
+        dots: false,
+        navText: ['', ''],
+        smartSpeed: 600,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          992: { items: 4 }
+        }
+      });
+    });
+  </script>
+
   @stack('scripts')
+
 </body>
 
 </html>

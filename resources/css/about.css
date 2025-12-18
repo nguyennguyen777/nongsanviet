@@ -1,0 +1,285 @@
+.page-about .container-content {
+    float: left;
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+@media (min-width: 1200px) {
+    .page-about .container {
+        width: 1170px;
+        font-family: "UTM-Avo";
+    }
+}
+
+.page-about .container-content .block {
+    float: left;
+    width: 100%;
+}
+
+.page-about .box-shadow {
+    background: #fff;
+    background-size: cover;
+    padding-left: 50px;
+    padding-right: 50px;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+        12px 0 15px -4px rgba(0, 0, 0, 0.2),
+        -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+}
+
+.page-about .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.page-about .block-icon {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.page-about .block-icon li:nth-child(1) {
+    background: url(/public/storage/products/hoptac.png) no-repeat center 0px;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-about .block-icon li {
+    list-style: none;
+    margin: 0px;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .page-about .col-md-4 {
+        width: 33.33333333%;
+    }
+}
+
+.page-about p {
+    margin: 0 0 10px;
+}
+
+.page-about .rtejustify {
+    text-align: justify;
+}
+
+.page-about .block-icon li:nth-child(2) {
+    background: url(/public/storage/products/hotro.png) no-repeat center 0px;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-about .block-icon li:nth-child(3) {
+    background: url(/public/storage/products/muahang.png) no-repeat center 0px;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-about .row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.page-about .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.page-about a {
+    color: #1e73be;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.page-about a:hover {
+    text-decoration: underline;
+    color: #f10000;
+}
+
+.page-about .tam-nhinsumenhbox {
+    background: url(/public/storage/products/bg-tamnhin.jpg) no-repeat center
+        center;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.page-about .text-center {
+    text-align: center;
+}
+
+.page-about h2 {
+    font-size: 20px;
+    font-family: "UTM-AvoBold";
+}
+
+.page-about .tam-nhinsumenhbox .title-box {
+    max-width: 150px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #8bc34a;
+    text-align: center;
+    font-family: "UTM-AvoBold";
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.page-about .tam-nhinsumenhbox .content-box {
+    color: #fff;
+}
+
+.page-about .img-responsive {
+    display: initial;
+}
+
+.page-about .title-node-common {
+    font-family: "UTM-AvoBold";
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.page-about ul.inline,
+ul.links.inline {
+    display: inline;
+    padding-left: 0;
+}
+
+.page-about ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.page-about ul.inline li {
+    display: inline;
+    list-style-type: none;
+    padding: 0 0.5em;
+}
+
+.page-about .translation-link {
+    display: none;
+}
+
+.page-about .title-gt-common {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.page-about .rtecenter {
+    text-align: center;
+}
+
+.page-about .chung-toi-lam-gi {
+    float: left;
+    width: 100%;
+    position: relative;
+    min-height: 830px;
+}
+
+.page-about .chung-toi-lam-gi1 {
+    float: left;
+    width: 60%;
+    padding-right: 30px;
+}
+
+.page-about .box-content-xanh {
+    border: 2px solid #8bc34a;
+    padding: 15px 30px;
+}
+
+.page-about .chung-toi-lam-gi2 {
+    float: left;
+    width: 40%;
+}
+
+.page-about .chung-toi-lam-gi12 {
+    float: left;
+    margin-top: 30px;
+}
+
+.page-about .chung-toi-lam-gi22 {
+    position: absolute;
+    bottom: 0px;
+    left: -30px;
+    max-width: 300px;
+    padding: 0 15px;
+    min-height: 300px;
+}
+
+.page-about .chung-toi-lam-gi3 {
+    position: absolute;
+    bottom: 0px;
+    left: 28%;
+}
+
+.page-about .container:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* Khung slide làm mốc */
+.block-slide-gioi-thieu {
+    position: relative;
+}
+
+/* Nav phủ ngang slide */
+.block-slide-gioi-thieu .owl-nav {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Nút chung */
+.block-slide-gioi-thieu .owl-prev,
+.block-slide-gioi-thieu .owl-next {
+    top: -28px; /* dịch lên */
+    position: absolute;
+    width: 34px; /* đúng kích thước ảnh */
+    height: 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    font-size: 0;
+    text-indent: -9999px;
+    pointer-events: auto;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Prev */
+.block-slide-gioi-thieu .owl-prev {
+    left: 0;
+    background-image: url("/public/storage/products/left1.png") !important;
+}
+
+/* Next */
+.block-slide-gioi-thieu .owl-next {
+    right: 0;
+    background-image: url("/public/storage/products/right1.png") !important;
+}
+
+/* Ép nút luôn hiện */
+.block-slide-gioi-thieu .owl-nav {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
