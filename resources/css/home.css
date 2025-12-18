@@ -770,3 +770,62 @@ ul li.expanded {
     text-transform: uppercase;
     font-size: 15px;
 }
+
+/* Khung slider làm mốc */
+.block-slide-san-pham-dich-vu {
+    position: relative;
+}
+
+/* Nav phủ ngang slider */
+.block-slide-san-pham-dich-vu .owl-nav {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none; /* tránh chắn click item */
+}
+
+/* Prev + Next */
+.block-slide-san-pham-dich-vu .owl-prev,
+.block-slide-san-pham-dich-vu .owl-next {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+    z-index: 10;
+
+    opacity: 1 !important;
+    display: block !important;
+    pointer-events: auto;
+}
+
+/* Prev */
+.block-slide-san-pham-dich-vu .owl-prev {
+    left: -47px;
+    background-image: url("/public/storage/products/left.png") !important;
+}
+
+/* Next */
+.block-slide-san-pham-dich-vu .owl-next {
+    right: -47px;
+    background-image: url("/public/storage/products/right.png") !important;
+}
+
+/* ❌ Tắt hover mặc định của owl */
+.block-slide-san-pham-dich-vu .owl-prev:hover,
+.block-slide-san-pham-dich-vu .owl-next:hover {
+    background-color: transparent !important;
+}
