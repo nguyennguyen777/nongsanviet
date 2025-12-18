@@ -30,7 +30,27 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
+  <!-- nút prev - next block slide trang "về chúng tôi" -->
+  <script>
+    $(function () {
+      $('.block-slide-gioi-thieu').owlCarousel({
+        items: 4,
+        loop: true,
+        nav: true,
+        dots: false,
+        navText: ['', ''],
+        smartSpeed: 600,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          992: { items: 4 }
+        }
+      });
+    });
+  </script>
+
   @stack('scripts')
+
 </body>
 
 </html>

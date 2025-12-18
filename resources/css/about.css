@@ -233,85 +233,53 @@ ul.links.inline {
     display: table;
 }
 
-.page-about .owl-carousel.owl-loaded {
-    display: block;
-}
-
-.page-about .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-}
-
-.page-about .owl-carousel .owl-stage {
+/* Khung slide làm mốc */
+.block-slide-gioi-thieu {
     position: relative;
 }
 
-.page-about .owl-theme .owl-nav {
-    margin: 0px;
-}
-
-.page-about .owl-carousel.owl-drag .owl-item {
-    user-select: none;
-}
-
-.page-about .owl-carousel .owl-item {
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-}
-
-.page-about .owl-carousel .owl-item img {
-    display: block;
+/* Nav phủ ngang slide */
+.block-slide-gioi-thieu .owl-nav {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 0;
     width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
-.page-about .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-}
-
-.page-about .alla-theme .block-slide-gioi-thieu .owl-nav .owl-prev {
-    top: 35%;
-    left: 0px;
-    background: url(/public/storage/products/left1.png) no-repeat;
-    width: 34px;
-    height: 52px;
-}
-
-.page-about .alla-theme .owl-theme .owl-nav .owl-prev {
+/* Nút chung */
+.block-slide-gioi-thieu .owl-prev,
+.block-slide-gioi-thieu .owl-next {
+    top: -28px; /* dịch lên */
     position: absolute;
+    width: 34px; /* đúng kích thước ảnh */
+    height: 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    font-size: 0;
     text-indent: -9999px;
-}
-
-.page-about .owl-theme .owl-nav [class*="owl-"] {
-    color: #fff;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    display: inline-block;
+    pointer-events: auto;
+    z-index: 10;
     cursor: pointer;
-    border-radius: 3px;
 }
 
-.page-about .alla-theme .block-slide-gioi-thieu .owl-nav .owl-next {
-    top: 35%;
-    right: 0px;
-    background: url(/public/storage/products/right1.png) no-repeat;
-    width: 34px;
-    height: 52px;
+/* Prev */
+.block-slide-gioi-thieu .owl-prev {
+    left: 0;
+    background-image: url("/public/storage/products/left1.png") !important;
 }
 
-.page-about .page-about .alla-theme .owl-theme .owl-nav .owl-next {
-    position: absolute;
-    text-indent: -9999px;
+/* Next */
+.block-slide-gioi-thieu .owl-next {
+    right: 0;
+    background-image: url("/public/storage/products/right1.png") !important;
 }
 
-.page-about .owl-carousel .owl-dots.disabled,
-.owl-carousel .owl-nav.disabled {
-    display: none;
+/* Ép nút luôn hiện */
+.block-slide-gioi-thieu .owl-nav {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
