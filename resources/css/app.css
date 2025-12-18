@@ -3,6 +3,8 @@
 @import "./footer.css";
 @import "./home.css";
 @import "./about.css";
+@import "./owl.carousel.min.css";
+@import "./owl.theme.default.min.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

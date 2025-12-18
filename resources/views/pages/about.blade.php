@@ -224,137 +224,31 @@
                                 </div>
 
                                 <div class="slide-gt">
-                                    <div class="block-slide-gioi-thieu owl-carousel owl-theme owl-loaded owl-drag">
+                                    <div class="block-slide-gioi-thieu owl-carousel owl-theme">
 
-                                        <div class="owl-stage-outer">
-                                            <div class="owl-stage"
-                                                style="transform: translate3d(-1265px, 0px, 0px); transition: all; width: 4112px;">
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/2.jpg?itok=1dqemFjO"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/3.jpg?itok=_GYFrWqH"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/4.jpg?itok=HxO2QkIg"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/1_3.jpg?itok=nhp9jjSg"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item active" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/1.jpg?itok=devhvp9H"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item active" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/2.jpg?itok=1dqemFjO"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item active" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/3.jpg?itok=_GYFrWqH"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item active" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/4.jpg?itok=HxO2QkIg"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/1_3.jpg?itok=nhp9jjSg"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/1.jpg?itok=devhvp9H"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/2.jpg?itok=1dqemFjO"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/3.jpg?itok=_GYFrWqH"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item cloned" style="width: 316.25px;">
-                                                    <div class="item">
-                                                        <div class="image">
-                                                            <img class="img-responsive"
-                                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/4.jpg?itok=HxO2QkIg"
-                                                                alt="h" title="h">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="item">
+                                            <img class="img-responsive"
+                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/1.jpg">
                                         </div>
-                                        <div class="owl-nav">
-                                            <div class="owl-prev">prev</div>
-                                            <div class="owl-next">next</div>
+
+                                        <div class="item">
+                                            <img class="img-responsive"
+                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/2.jpg">
                                         </div>
-                                        <div class="owl-dots disabled"></div>
+
+                                        <div class="item">
+                                            <img class="img-responsive"
+                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/3.jpg">
+                                        </div>
+
+                                        <div class="item">
+                                            <img class="img-responsive"
+                                                src="https://www.nongsanviet.net.vn/sites/default/files/styles/slide_gioi_thieu/public/4.jpg">
+                                        </div>
+
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
