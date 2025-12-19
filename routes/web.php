@@ -29,3 +29,6 @@ Route::get('/vi/he-thong-phan-phoi', function () {
 Route::get('/vi/danh-muc-san-pham', function () {
     return view('pages.danhmucsanpham');
 });
+Route::get('/vi/thuc-pham-tho-so-che', function () {
+    return view('pages.thucphamthosoche');
+});
