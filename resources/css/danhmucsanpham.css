@@ -195,18 +195,21 @@ h3 {
     font-family: "UTM-Avo";
 }
 
-.page-thucphamthosoche .page-san-pham-list-title {
+.page-thucphamthosoche .page-san-pham-list-title,
+.page-thucphamchebien .page-san-pham-list-title {
     font-family: "UTM-AvoBold";
     text-transform: uppercase;
     padding-bottom: 10px;
     border-bottom: 2px solid #8bc34a;
 }
 
-.page-thucphamthosoche .page-san-pham-list .view-header {
+.page-thucphamthosoche .page-san-pham-list .view-header,
+.page-thucphamchebien .page-san-pham-list .view-header {
     padding: 0px 15px;
 }
 
-.page-thucphamthosoche .san-pham-list .views-field-view-node a {
+.page-thucphamthosoche .san-pham-list .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-field-view-node a {
     display: inline-block;
     border: 1px solid #8bc34a;
     border-radius: 5px;
@@ -223,8 +226,98 @@ h3 {
     margin-top: 5px !important;
 }
 
-.page-thucphamthosoche .group-class-product {
+.page-thucphamthosoche .group-class-product,
+.page-thucphamchebien .group-class-product {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* ÉP BẮT ĐẦU TỪ TRÁI */
+}
+
+.page-thucphamchebien .san-pham-list .views-row-3 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-4 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-2 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-7 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-8 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-10 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-11 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-16 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-20 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-25 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-27 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-31 .views-field-view-node a,
+.page-thucphamchebien .san-pham-list .views-row-32 .views-field-view-node a {
+    margin-top: 5px !important;
+}
+
+.page-thucphamchebien .element-invisible {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+}
+
+.page-thucphamchebien .item-list .pager {
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    font-family: "UTM-Avo";
+}
+
+.page-thucphamchebien .item-list ul {
+    margin: 0 0 0.75em 0;
+    padding: 0;
+}
+
+.page-thucphamchebien .pager {
+    list-style: none;
+}
+
+.page-thucphamchebien .pager:before {
+    display: table;
+    content: " ";
+}
+
+.page-thucphamchebien .item-list .pager li.pager-current {
+    font-size: 14px;
+    border-radius: 0px;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    font-weight: normal;
+    background: #8bc34a;
+    color: #fff;
+}
+
+.page-thucphamchebien .item-list .pager li {
+    margin: 0px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-image: none;
+    display: inline;
+}
+
+.page-thucphamchebien .pager li > a,
+.pager li > span {
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    color: #333;
+}
+
+.page-thucphamchebien .pager:after {
+    clear: both;
+    display: table;
+    content: " ";
 }

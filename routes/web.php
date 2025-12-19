@@ -32,3 +32,6 @@ Route::get('/vi/danh-muc-san-pham', function () {
 Route::get('/vi/thuc-pham-tho-so-che', function () {
     return view('pages.thucphamthosoche');
 });
+Route::get('/vi/thuc-pham-che-bien', function () {
+    return view('pages.thucphamchebien');
+});
