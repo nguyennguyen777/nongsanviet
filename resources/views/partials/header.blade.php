@@ -32,7 +32,7 @@
             @mouseleave="openMain = false">
 
             <!-- MENU CHA -->
-            <a href="{{ url('/products') }}"
+            <a href="{{ url('/vi/danh-muc-san-pham') }}"
               class="relative flex items-center text-[#464646] text-[15px] font-bold py-[35px] px-[5px] uppercase">
               Sản phẩm
               <img src="{{ asset('storage/products/li-expanded.png') }}" class="ml-1 w-2.5 h-2.5 object-contain">

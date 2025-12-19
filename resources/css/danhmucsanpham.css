@@ -1,0 +1,196 @@
+.page-danhmucsanpham .container-content-common-all {
+    background: url(/public/storage/products/bg-common-01.jpg) repeat;
+    float: left;
+    width: 100%;
+    margin-top: -5px;
+    position: initial;
+}
+
+@media (min-width: 1200px) {
+    .page-danhmucsanpham .container {
+        width: 1170px;
+    }
+}
+
+.page-danhmucsanpham .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.page-danhmucsanpham .container:before {
+    content: "";
+    display: table;
+}
+
+.page-danhmucsanpham .page-detail .container-content {
+    padding-bottom: 30px;
+}
+
+@media (min-width: 1024px) {
+    .page-danhmucsanpham .container-content-common-all .container-content {
+        padding: 15px;
+        background: #fff;
+        box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+            12px 0 15px -4px rgba(0, 0, 0, 0.2),
+            -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+        float: left;
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+
+.page-danhmucsanpham .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.page-danhmucsanpham .row:before {
+    display: table;
+    content: " ";
+}
+
+@media (min-width: 992px) {
+    .page-danhmucsanpham .col-md-9 {
+        width: 75%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 30px;
+        padding-top: 30px;
+    }
+
+    .page-danhmucsanpham .col-md-3 {
+        width: 25%;
+        float: left;
+    }
+}
+
+.page-danhmucsanpham .container-content .block {
+    float: left;
+    width: 100%;
+}
+
+.page-danhmucsanpham .block-san-pham-danh-muc {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.page-danhmucsanpham .block-san-pham-danh-muc .block-title h3 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8bc34a;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.page-danhmucsanpham h1,
+.page-danhmucsanpham h2,
+.page-danhmucsanpham h3,
+.page-danhmucsanpham h4,
+.page-danhmucsanpham h5,
+.page-danhmucsanpham h6 {
+    color: #000;
+    font-family: "UTM-AvoBold";
+    line-height: 1.25;
+}
+
+.page-danhmucsanpham .h1,
+.page-danhmucsanpham .h2,
+.page-danhmucsanpham .h3,
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.page-danhmucsanpham .block-san-pham-danh-muc .view-more {
+    color: #8bc34a;
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    font-size: 14px;
+    font-family: "UTM-Avo";
+}
+
+.page-danhmucsanpham .block-san-pham-danh-muc .view-more:hover {
+    text-decoration: underline;
+}
+
+.page-danhmucsanpham .list .views-row {
+    padding: 15px;
+}
+
+.page-danhmucsanpham .san-pham-list .views-row {
+    text-align: center;
+}
+
+.page-danhmucsanpham .san-pham-list .views-row a:hover {
+    text-decoration: underline;
+}
+
+.page-danhmucsanpham .san-pham-list .views-field-field-anh-dai-dien {
+    margin-bottom: 10px;
+}
+
+.page-danhmucsanpham .block-san-pham-danh-muc .views-field-title {
+    min-height: 50px;
+}
+
+.page-danhmucsanpham #content-right .block {
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-right: 15px;
+}
+
+.page-danhmucsanpham #content-right .block-title h3 {
+    text-transform: uppercase;
+    font-family: "UTM-AvoBold";
+    margin-top: 0px;
+    color: #fff;
+    background: #8bc34a;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.page-danhmucsanpham #content-right .block-border .content {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8bc34a;
+    font-family: "UTM-Avo";
+}
+
+.page-danhmucsanpham #content-right .block-border .views-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.page-danhmucsanpham #content-right .block-border a {
+    color: #333;
+}
+
+.page-danhmucsanpham #content-right .block-border a:hover {
+    text-decoration: underline;
+}
+
+.page-danhmucsanpham #block-views-block-bai-viet-block-1 {
+    margin-top: 10px;
+}
+
+.page-danhmucsanpham #block-views-block-bai-viet-block-1 .views-row {
+    padding: 10px;
+}
+
+.page-danhmucsanpham #content-right .views-field-title a {
+    font-size: 14px;
+}
+
+.page-danhmucsanpham #content-right .views-field-title a:hover {
+    text-decoration: underline;
+}
+
+.page-danhmucsanpham #content-right .views-field-body {
+    font-family: "UTM-Avo";
+}
