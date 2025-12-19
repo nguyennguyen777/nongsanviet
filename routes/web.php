@@ -26,3 +26,6 @@ Route::get('/vi/lien-he', function () {
 Route::get('/vi/he-thong-phan-phoi', function () {
     return view('pages.hethongphanphoi');
 });
+Route::get('/vi/danh-muc-san-pham', function () {
+    return view('pages.danhmucsanpham');
+});
