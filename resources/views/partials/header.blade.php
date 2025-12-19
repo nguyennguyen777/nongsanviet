@@ -350,7 +350,7 @@
       <div class="flex justify-start ml-[-150px] items-center space-x-4 whitespace-nowrap">
         <nav class="hidden md:flex md:space-x-6 whitespace-nowrap">
 
-          <a href="{{ url('/he-thong-phan-phoi') }}" class="relative text-[#464646] text-[15px] font-bold py-[35px] px-[5px] uppercase
+          <a href="{{ url('/vi/he-thong-phan-phoi') }}" class="relative text-[#464646] text-[15px] font-bold py-[35px] px-[5px] uppercase
           after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-9.5 
           after:h-[1px] after:w-[calc(100%-10px)] after:bg-gray-600 after:opacity-0 after:transition-opacity
           hover:after:opacity-100">Hệ thống phân phối</a>

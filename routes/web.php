@@ -23,3 +23,6 @@ Route::get('/vi/ve-chung-toi', function () {
 Route::get('/vi/lien-he', function () {
     return view('pages.contact');
 });
+Route::get('/vi/he-thong-phan-phoi', function () {
+    return view('pages.hethongphanphoi');
+});
