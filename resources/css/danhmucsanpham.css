@@ -196,7 +196,8 @@ h3 {
 }
 
 .page-thucphamthosoche .page-san-pham-list-title,
-.page-thucphamchebien .page-san-pham-list-title {
+.page-thucphamchebien .page-san-pham-list-title,
+.page-giavi .page-san-pham-list-title {
     font-family: "UTM-AvoBold";
     text-transform: uppercase;
     padding-bottom: 10px;
@@ -204,7 +205,8 @@ h3 {
 }
 
 .page-thucphamthosoche .page-san-pham-list .view-header,
-.page-thucphamchebien .page-san-pham-list .view-header {
+.page-thucphamchebien .page-san-pham-list .view-header,
+.page-giavi .page-san-pham-list .view-header {
     padding: 0px 15px;
 }
 
@@ -227,7 +229,8 @@ h3 {
 }
 
 .page-thucphamthosoche .group-class-product,
-.page-thucphamchebien .group-class-product {
+.page-thucphamchebien .group-class-product,
+.page-giavi .group-class-product {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* ÉP BẮT ĐẦU TỪ TRÁI */
@@ -320,4 +323,16 @@ h3 {
     clear: both;
     display: table;
     content: " ";
+}
+
+.page-giavi .san-pham-list .views-row-1 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-2 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-5 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-6 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-7 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-9 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-12 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-14 .views-field-view-node a,
+.page-giavi .san-pham-list .views-row-16 .views-field-view-node a {
+    margin-top: 35px !important;
 }

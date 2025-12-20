@@ -35,3 +35,6 @@ Route::get('/vi/thuc-pham-tho-so-che', function () {
 Route::get('/vi/thuc-pham-che-bien', function () {
     return view('pages.thucphamchebien');
 });
+Route::get('/vi/gia-vi', function () {
+    return view('pages.giavi');
+});
