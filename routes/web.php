@@ -38,3 +38,6 @@ Route::get('/vi/thuc-pham-che-bien', function () {
 Route::get('/vi/gia-vi', function () {
     return view('pages.giavi');
 });
+Route::get('/vi/thuc-pham-tuoi-song', function () {
+    return view('pages.thuc_pham_tuoi_song');
+});

@@ -197,7 +197,8 @@ h3 {
 
 .page-thucphamthosoche .page-san-pham-list-title,
 .page-thucphamchebien .page-san-pham-list-title,
-.page-giavi .page-san-pham-list-title {
+.page-giavi .page-san-pham-list-title,
+.page-thucphamtuoisong .page-san-pham-list-title {
     font-family: "UTM-AvoBold";
     text-transform: uppercase;
     padding-bottom: 10px;
@@ -206,7 +207,8 @@ h3 {
 
 .page-thucphamthosoche .page-san-pham-list .view-header,
 .page-thucphamchebien .page-san-pham-list .view-header,
-.page-giavi .page-san-pham-list .view-header {
+.page-giavi .page-san-pham-list .view-header,
+.page-thucphamtuoisong .page-san-pham-list .view-header {
     padding: 0px 15px;
 }
 
@@ -230,7 +232,8 @@ h3 {
 
 .page-thucphamthosoche .group-class-product,
 .page-thucphamchebien .group-class-product,
-.page-giavi .group-class-product {
+.page-giavi .group-class-product,
+.page-thucphamtuoisong .group-class-product {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* ÉP BẮT ĐẦU TỪ TRÁI */
@@ -252,14 +255,16 @@ h3 {
     margin-top: 5px !important;
 }
 
-.page-thucphamchebien .element-invisible {
+.page-thucphamchebien .element-invisible,
+.page-thucphamtuoisong .element-invisible {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;
     height: 1px;
 }
 
-.page-thucphamchebien .item-list .pager {
+.page-thucphamchebien .item-list .pager,
+.page-thucphamtuoisong .item-list .pager {
     margin-top: 20px;
     float: left;
     width: 100%;
@@ -268,21 +273,25 @@ h3 {
     font-family: "UTM-Avo";
 }
 
-.page-thucphamchebien .item-list ul {
+.page-thucphamchebien .item-list ul,
+.page-thucphamtuoisong .item-list ul {
     margin: 0 0 0.75em 0;
     padding: 0;
 }
 
-.page-thucphamchebien .pager {
+.page-thucphamchebien .pager,
+.page-thucphamtuoisong .pager {
     list-style: none;
 }
 
-.page-thucphamchebien .pager:before {
+.page-thucphamchebien .pager:before,
+.page-thucphamtuoisong .pager:before {
     display: table;
     content: " ";
 }
 
-.page-thucphamchebien .item-list .pager li.pager-current {
+.page-thucphamchebien .item-list .pager li.pager-current,
+.page-thucphamtuoisong .item-list .pager li.pager-current {
     font-size: 14px;
     border-radius: 0px;
     border: 1px solid #ddd;
@@ -297,7 +306,8 @@ h3 {
     color: #fff;
 }
 
-.page-thucphamchebien .item-list .pager li {
+.page-thucphamchebien .item-list .pager li,
+.page-thucphamtuoisong .item-list .pager li {
     margin: 0px;
     list-style-type: none;
     margin: 0px;
@@ -307,6 +317,8 @@ h3 {
 }
 
 .page-thucphamchebien .pager li > a,
+.pager li > span,
+.page-thucphamtuoisong .pager li > a,
 .pager li > span {
     font-size: 14px;
     border: 1px solid #ddd;
@@ -319,7 +331,8 @@ h3 {
     color: #333;
 }
 
-.page-thucphamchebien .pager:after {
+.page-thucphamchebien .pager:after,
+.page-thucphamtuoisong .pager:after {
     clear: both;
     display: table;
     content: " ";
@@ -334,5 +347,30 @@ h3 {
 .page-giavi .san-pham-list .views-row-12 .views-field-view-node a,
 .page-giavi .san-pham-list .views-row-14 .views-field-view-node a,
 .page-giavi .san-pham-list .views-row-16 .views-field-view-node a {
+    margin-top: 35px !important;
+}
+
+.page-thucphamtuoisong .san-pham-list .views-row-1 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-2 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-4 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-5 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-6 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-7 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-8 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-9 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-10 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-11 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-12 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-13 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-15 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-18 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-20 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-21 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-23 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-27 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-28 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-30 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-31 .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-row-32 .views-field-view-node a {
     margin-top: 35px !important;
 }
