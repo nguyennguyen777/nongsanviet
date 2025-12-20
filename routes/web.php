@@ -41,3 +41,6 @@ Route::get('/vi/gia-vi', function () {
 Route::get('/vi/thuc-pham-tuoi-song', function () {
     return view('pages.thuc_pham_tuoi_song');
 });
+Route::get('/vi/rau-cu-qua', function () {
+    return view('pages.rau-cu-qua');
+});

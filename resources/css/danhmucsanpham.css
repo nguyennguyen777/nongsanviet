@@ -198,7 +198,8 @@ h3 {
 .page-thucphamthosoche .page-san-pham-list-title,
 .page-thucphamchebien .page-san-pham-list-title,
 .page-giavi .page-san-pham-list-title,
-.page-thucphamtuoisong .page-san-pham-list-title {
+.page-thucphamtuoisong .page-san-pham-list-title,
+.page-raucuqua .page-san-pham-list-title {
     font-family: "UTM-AvoBold";
     text-transform: uppercase;
     padding-bottom: 10px;
@@ -208,7 +209,8 @@ h3 {
 .page-thucphamthosoche .page-san-pham-list .view-header,
 .page-thucphamchebien .page-san-pham-list .view-header,
 .page-giavi .page-san-pham-list .view-header,
-.page-thucphamtuoisong .page-san-pham-list .view-header {
+.page-thucphamtuoisong .page-san-pham-list .view-header,
+.page-raucuqua .page-san-pham-list .view-header {
     padding: 0px 15px;
 }
 
@@ -233,7 +235,8 @@ h3 {
 .page-thucphamthosoche .group-class-product,
 .page-thucphamchebien .group-class-product,
 .page-giavi .group-class-product,
-.page-thucphamtuoisong .group-class-product {
+.page-thucphamtuoisong .group-class-product,
+.page-raucuqua .group-class-product {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* ÉP BẮT ĐẦU TỪ TRÁI */
@@ -256,7 +259,8 @@ h3 {
 }
 
 .page-thucphamchebien .element-invisible,
-.page-thucphamtuoisong .element-invisible {
+.page-thucphamtuoisong .element-invisible,
+.page-raucuqua .element-invisible {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;
@@ -264,7 +268,8 @@ h3 {
 }
 
 .page-thucphamchebien .item-list .pager,
-.page-thucphamtuoisong .item-list .pager {
+.page-thucphamtuoisong .item-list .pager,
+.page-raucuqua .item-list .pager {
     margin-top: 20px;
     float: left;
     width: 100%;
@@ -274,24 +279,28 @@ h3 {
 }
 
 .page-thucphamchebien .item-list ul,
-.page-thucphamtuoisong .item-list ul {
+.page-thucphamtuoisong .item-list ul,
+.page-raucuqua .item-list ul {
     margin: 0 0 0.75em 0;
     padding: 0;
 }
 
 .page-thucphamchebien .pager,
-.page-thucphamtuoisong .pager {
+.page-thucphamtuoisong .pager,
+.page-raucuqua .pager {
     list-style: none;
 }
 
 .page-thucphamchebien .pager:before,
-.page-thucphamtuoisong .pager:before {
+.page-thucphamtuoisong .pager:before,
+.page-raucuqua .pager:before {
     display: table;
     content: " ";
 }
 
 .page-thucphamchebien .item-list .pager li.pager-current,
-.page-thucphamtuoisong .item-list .pager li.pager-current {
+.page-thucphamtuoisong .item-list .pager li.pager-current,
+.page-raucuqua .item-list .pager li.pager-current {
     font-size: 14px;
     border-radius: 0px;
     border: 1px solid #ddd;
@@ -307,7 +316,8 @@ h3 {
 }
 
 .page-thucphamchebien .item-list .pager li,
-.page-thucphamtuoisong .item-list .pager li {
+.page-thucphamtuoisong .item-list .pager li,
+.page-raucuqua .item-list .pager li {
     margin: 0px;
     list-style-type: none;
     margin: 0px;
@@ -319,6 +329,8 @@ h3 {
 .page-thucphamchebien .pager li > a,
 .pager li > span,
 .page-thucphamtuoisong .pager li > a,
+.pager li > span,
+.page-raucuqua .pager li > a,
 .pager li > span {
     font-size: 14px;
     border: 1px solid #ddd;
@@ -332,7 +344,8 @@ h3 {
 }
 
 .page-thucphamchebien .pager:after,
-.page-thucphamtuoisong .pager:after {
+.page-thucphamtuoisong .pager:after,
+.page-raucuqua .pager:after {
     clear: both;
     display: table;
     content: " ";
@@ -373,4 +386,19 @@ h3 {
 .page-thucphamtuoisong .san-pham-list .views-row-31 .views-field-view-node a,
 .page-thucphamtuoisong .san-pham-list .views-row-32 .views-field-view-node a {
     margin-top: 35px !important;
+}
+
+.page-raucuqua .san-pham-list .views-field-view-node a {
+    margin-top: 35px;
+}
+
+.page-raucuqua .san-pham-list .views-row-3 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-10 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-12 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-13 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-16 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-17 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-18 .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-row-21 .views-field-view-node a {
+    margin-top: 10px !important;
 }
