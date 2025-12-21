@@ -93,13 +93,38 @@
                             <div class="col-md-6 col-sm-12 col-xs-12 contact-center">
                                 <h1 style="color: #333; text-transform: uppercase;font-size: 20px;">Để lại liên hệ để chúng
                                     tôi tư vấn</h1>
+                                    
+                                @if(session('success'))
+                                    <div class="alert alert-success" style="margin-bottom: 20px;">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                                
+                                @if(session('error'))
+                                    <div class="alert alert-danger" style="margin-bottom: 20px;">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+                                
+                                @if($errors->any())
+                                    <div class="alert alert-danger" style="margin-bottom: 20px;">
+                                        <ul style="margin: 0; padding-left: 20px;">
+                                            @foreach($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                
                                 <div class="region region-content">
                                     <div id="block-system-main" class="block block-system">
 
 
                                         <div class="content">
-                                            <form action="/vi/lien-he" method="post" id="alla-tech-lien-he"
+                                            <form action="{{ route('contact') }}" method="post" id="alla-tech-lien-he"
                                                 accept-charset="UTF-8">
+                                                @csrf
+                                                <input type="hidden" name="form_id" value="alla_tech_lien_he">
                                                 <div>
                                                     <div class="form-item form-type-textfield form-item-name">
                                                         <label for="edit-name">Fullname <span class="form-required"
@@ -139,15 +164,13 @@
                                                         <label for="edit-content">Nội dung </label>
                                                         <div class="form-textarea-wrapper"><textarea placeholder="Nội dung"
                                                                 class="form-control form-textarea" id="edit-content"
-                                                                name="content" cols="60" rows="5"></textarea></div>
+                                                                name="message" cols="60" rows="5"></textarea></div>
                                                     </div>
-                                                    <div class="form-item submit-contact"><input
-                                                            class="btn btn-default form-submit" type="submit"
+                                                    <div class="form-item submit-contact">
+                                                        <input class="btn btn-default form-submit" type="submit"
                                                             id="edit-send-content" name="op" value="Gửi"
-                                                            fdprocessedid="w49fjl"></div><input type="hidden"
-                                                        name="form_build_id"
-                                                        value="form-0vnmoL8aV-WwMmXtuoOUkKHCBdU01ZzBKYivX-4mf94">
-                                                    <input type="hidden" name="form_id" value="alla_tech_lien_he">
+                                                            fdprocessedid="w49fjl">
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -155,17 +178,39 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12 contact-infomation contact-infomation-page">
-                                <h2><strong>NÔNG SẢN VIỆT NAM</strong></h2>
+                                <h2><strong>{{ $contactInfo->title ?? 'NÔNG SẢN VIỆT NAM' }}</strong></h2>
 
-                                <p><strong>Địa chỉ:&nbsp;</strong>Ô số 20 LK 03, khu shophouse Loong Toòng, P Yết Kiêu, TP
-                                    Hạ Long, tỉnh Quảng Ninh.</p>
+                                @if($contactInfo)
+                                    @php
+                                        $extraData = $contactInfo->extra_data ?? [];
+                                    @endphp
+                                    @if(isset($extraData['address']))
+                                        <p><strong>Địa chỉ:&nbsp;</strong>{{ $extraData['address'] }}</p>
+                                    @endif
 
-                                <p><strong>Hotline:</strong> <a href="tel:0912900058">0889 333 618</a></p>
+                                    @if(isset($extraData['hotline']))
+                                        <p><strong>Hotline:</strong> <a href="tel:{{ preg_replace('/[^0-9]/', '', $extraData['hotline']) }}">{{ $extraData['hotline'] }}</a></p>
+                                    @endif
 
-                                <p><strong>Email:</strong> nongsanviet.net.vn@gmail.com</p>
+                                    @if(isset($extraData['email']))
+                                        <p><strong>Email:</strong> {{ $extraData['email'] }}</p>
+                                    @endif
 
-                                <p><strong>Fanpage:</strong> <a href="https://www.facebook.com/nongsanviet.net.vn/">Nông Sản
-                                        Việt Nam</a></p>
+                                    @if(isset($extraData['fanpage_url']) && isset($extraData['fanpage_name']))
+                                        <p><strong>Fanpage:</strong> <a href="{{ $extraData['fanpage_url'] }}" target="_blank">{{ $extraData['fanpage_name'] }}</a></p>
+                                    @endif
+                                @else
+                                    {{-- Fallback nếu chưa có dữ liệu trong DB --}}
+                                    <p><strong>Địa chỉ:&nbsp;</strong>Ô số 20 LK 03, khu shophouse Loong Toòng, P Yết Kiêu, TP
+                                        Hạ Long, tỉnh Quảng Ninh.</p>
+
+                                    <p><strong>Hotline:</strong> <a href="tel:0912900058">0889 333 618</a></p>
+
+                                    <p><strong>Email:</strong> nongsanviet.net.vn@gmail.com</p>
+
+                                    <p><strong>Fanpage:</strong> <a href="https://www.facebook.com/nongsanviet.net.vn/">Nông Sản
+                                            Việt Nam</a></p>
+                                @endif
 
                                 <p>&nbsp;</p>
 
@@ -183,6 +228,8 @@
                                     <div class="content">
                                         <form action="/vi/lien-he" method="post" id="block-dang-ky-nhan-tin"
                                             accept-charset="UTF-8">
+                                            @csrf
+                                            <input type="hidden" name="form_id" value="block_dang_ky_nhan_tin">
                                             <div>
                                                 <div class="form-item form-type-emailfield form-item-email">
                                                     <label for="edit-email--2">Email <span class="form-required"
@@ -195,10 +242,7 @@
                                                 <div class="form-item submit-newsletter"><input
                                                         class="btn btn-default form-submit" type="submit"
                                                         id="edit-submit--2" name="op" value="Đăng ký nhận tin"
-                                                        fdprocessedid="pvmreb"></div><input type="hidden"
-                                                    name="form_build_id"
-                                                    value="form-pBWN_N0MtARIcxo5vUAer8wnAMUsrYI88Q-fGVI0BgY">
-                                                <input type="hidden" name="form_id" value="block_dang_ky_nhan_tin">
+                                                        fdprocessedid="pvmreb"></div>
                                             </div>
                                         </form>
                                     </div>
