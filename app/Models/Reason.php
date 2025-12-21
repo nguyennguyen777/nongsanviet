@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Reason extends Model
 {
     protected $fillable = [
         'title',
         'slug',
-        'description',
         'image',
+        'description',
+        'link',
+        'sort_order',
         'status',
     ];
 }

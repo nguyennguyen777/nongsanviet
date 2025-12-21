@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Post;
 use App\Models\Slider;
+use App\Models\Service;
+use App\Models\Testimonial;
+use App\Models\Partner;
+use App\Models\CategorySlide;
 
 class HomeController extends Controller
 {
@@ -14,28 +18,57 @@ class HomeController extends Controller
         // Lấy sản phẩm nổi bật (is_featured = 1)
         $featuredProducts = Product::where('is_featured', 1)
             ->where('status', 1)
+            ->orderBy('created_at', 'desc')
             ->get();
 
         // Lấy bài viết mới nhất
-        $latestPosts = Post::orderBy('created_at', 'desc')
+        $latestPosts = Post::where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        // Lấy tin nổi bật
+        $featuredPosts = Post::where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        // Slider
+        $sliders = Slider::where('status', 1)
+            ->orderBy('sort_order', 'asc')
+            ->get();
+
+        // Category slides (slide sản phẩm/dịch vụ)
+        $categorySlides = CategorySlide::where('status', 1)
+            ->with('category')
+            ->orderBy('sort_order', 'asc')
+            ->get();
+
+        // Dịch vụ nổi bật
+        $featuredServices = Service::where('status', 1)
+            ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
 
-        // Nếu homepage cần slider
-        $sliders = Slider::orderBy('sort_order', 'asc')->get();
+        // Đánh giá khách hàng
+        $testimonials = Testimonial::where('status', 1)
+            ->orderBy('sort_order', 'asc')
+            ->get();
 
-        return view('home', compact('featuredProducts', 'latestPosts', 'sliders'));
+        // Đối tác
+        $partners = Partner::where('status', 1)
+            ->orderBy('sort_order', 'asc')
+            ->get();
 
-        // nếu có bảng testimonials
-        // $testimonials = Testimonial::where('status',1)->orderBy('created_at','desc')->take(4)->get();
-
-        // tạm mẫu testimonials nếu chưa có DB
-        $testimonials = [
-            ['name'=>'Nguyễn A','role'=>'Khách hàng','text'=>'Sản phẩm rất tươi ngon, giao nhanh.'],
-            ['name'=>'Trần B','role'=>'Nhà hàng','text'=>'Chất lượng ổn, ổn định mỗi lần đặt.'],
-            ['name'=>'Lê C','role'=>'Bếp ăn','text'=>'Giá tốt, nguồn gốc rõ ràng.'],
-        ];
-
-        return view('home', compact('featuredProducts','latestPosts','testimonials'));
+        return view('home', compact(
+            'featuredProducts',
+            'latestPosts',
+            'featuredPosts',
+            'sliders',
+            'categorySlides',
+            'featuredServices',
+            'testimonials',
+            'partners'
+        ));
     }
 }

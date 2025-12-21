@@ -70,69 +70,9 @@
                                                 <div class="tinh-thanh">
                                                     <select name="tinh-thanh" id="tinh-thanh" class="form-control">
                                                         <option value="">Chọn thành phố</option>
-                                                        <option value="838">An Giang</option>
-                                                        <option value="739">Bà Rịa - Vũng Tàu</option>
-                                                        <option value="181">Bắc Giang</option>
-                                                        <option value="192">Bắc Kạn</option>
-                                                        <option value="896">Bạc Liêu</option>
-                                                        <option value="201">Bắc Ninh</option>
-                                                        <option value="799">Bến Tre</option>
-                                                        <option value="718">Bình Dương</option>
-                                                        <option value="696">Bình Phước</option>
-                                                        <option value="619">Bình Thuận</option>
-                                                        <option value="579">Bình Định</option>
-                                                        <option value="904">Cà Mau</option>
-                                                        <option value="866">Cần Thơ</option>
-                                                        <option value="210">Cao Bằng</option>
-                                                        <option value="640">Gia Lai</option>
-                                                        <option value="234">Hà Giang</option>
-                                                        <option value="246">Hà Nam</option>
-                                                        <option value="150">Hà Nội</option>
-                                                        <option value="494">Hà Tĩnh</option>
-                                                        <option value="253">Hải Dương</option>
-                                                        <option value="266">Hải Phòng</option>
-                                                        <option value="876">Hậu Giang</option>
-                                                        <option value="748">Hồ Chí Minh</option>
-                                                        <option value="282">Hòa Bình</option>
-                                                        <option value="294">Hưng Yên</option>
-                                                        <option value="601">Khánh Hòa</option>
-                                                        <option value="850">Kiên Giang</option>
-                                                        <option value="630">Kon Tum</option>
-                                                        <option value="305">Lai Châu</option>
-                                                        <option value="683">Lâm Đồng</option>
-                                                        <option value="313">Lạng Sơn</option>
-                                                        <option value="325">Lào Cai</option>
-                                                        <option value="773">Long An</option>
-                                                        <option value="335">Nam Định</option>
-                                                        <option value="472">Nghệ An</option>
-                                                        <option value="346">Ninh Bình</option>
-                                                        <option value="611">Ninh Thuận</option>
-                                                        <option value="355">Phú Thọ</option>
-                                                        <option value="591">Phú Yên</option>
-                                                        <option value="507">Quảng Bình</option>
-                                                        <option value="545">Quảng Nam</option>
-                                                        <option value="564">Quảng Ngãi</option>
-                                                        <option value="369">Quảng Ninh</option>
-                                                        <option value="515">Quảng Trị</option>
-                                                        <option value="884">Sóc Trăng</option>
-                                                        <option value="385">Sơn La</option>
-                                                        <option value="708">Tây Ninh</option>
-                                                        <option value="397">Thái Bình</option>
-                                                        <option value="407">Thái Nguyên</option>
-                                                        <option value="444">Thanh Hóa</option>
-                                                        <option value="526">Thừa Thiên Huế</option>
-                                                        <option value="788">Tiền Giang</option>
-                                                        <option value="809">Trà Vinh</option>
-                                                        <option value="417">Tuyên Quang</option>
-                                                        <option value="818">Vĩnh Long</option>
-                                                        <option value="424">Vĩnh Phúc</option>
-                                                        <option value="434">Yên Bái</option>
-                                                        <option value="536">Đà Nẵng</option>
-                                                        <option value="658">Đắk Lắk</option>
-                                                        <option value="674">Đắk Nông</option>
-                                                        <option value="224">Điện Biên</option>
-                                                        <option value="727">Đồng Nai</option>
-                                                        <option value="827">Đồng Tháp</option>
+                                                        @foreach($provinces as $province)
+                                                            <option value="{{ $province }}">{{ $province }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="quan-huyen">
@@ -146,49 +86,57 @@
                                             </div>
                                             <div class="map-block-content">
                                                 <div class="map-content">
-                                                    <div class="location-item" data-lat="20.258592" data-long="105.889842">
-                                                        <p><strong>CÔNG TY TNHH THÊU MINH TRANG </strong></p>
+                                                    @forelse($distributionPoints as $point)
+                                                        <div class="location-item" 
+                                                             @if($point->latitude && $point->longitude)
+                                                             data-lat="{{ $point->latitude }}" 
+                                                             data-long="{{ $point->longitude }}"
+                                                             @endif>
+                                                            <p><strong>{{ $point->name }}</strong></p>
 
-                                                        <p><strong>Địa chỉ:</strong> Thôn Văn Lâm, xã Ninh Hải, huyện Hoa
-                                                            Lư, tỉnh Ninh Bình, Việt Nam</p>
+                                                            @if($point->address)
+                                                                <p><strong>Địa chỉ:</strong> {{ $point->address }}</p>
+                                                            @endif
 
-                                                        <p><strong>Hotline:</strong> 02293618015</p>
+                                                            @if($point->phone)
+                                                                <p><strong>Hotline:</strong> 
+                                                                    @if(strpos($point->phone, 'tel:') === false)
+                                                                        <a href="tel:{{ preg_replace('/[^0-9]/', '', $point->phone) }}">{{ $point->phone }}</a>
+                                                                    @else
+                                                                        {{ $point->phone }}
+                                                                    @endif
+                                                                </p>
+                                                            @endif
 
-                                                        <p><strong>Email:</strong> info@minhtrang.com.vn</p>
+                                                            @if($point->email)
+                                                                <p><strong>Email:</strong> {{ $point->email }}</p>
+                                                            @endif
 
-                                                        <p><strong>Fanpage:</strong> Minh Trang Handmade</p>
+                                                            @if($point->fanpage)
+                                                                <p><strong>Fanpage:</strong> 
+                                                                    @if(strpos($point->fanpage, 'http') === 0)
+                                                                        <a href="{{ $point->fanpage }}" target="_blank">{{ $point->fanpage }}</a>
+                                                                    @else
+                                                                        {{ $point->fanpage }}
+                                                                    @endif
+                                                                </p>
+                                                            @endif
 
-                                                        <p><strong>Website:</strong> http://minhtranghandmade.vn/</p>
-                                                    </div>
-                                                    <div class="location-item" data-lat="20.951400" data-long="107.083305">
-                                                        <p><strong>CÔNG TY TRÁCH NHIỆM HỮU HẠN ĐẦU TƯ HOÀNG ANH</strong></p>
-
-                                                        <p><strong>Địa chỉ:</strong>&nbsp;162 Lê Thánh Tông, phường Bạch
-                                                            Đằng, thành phố Hạ Long, tỉnh Quảng Ninh</p>
-
-                                                        <p><strong>Hotline:</strong>&nbsp;<a
-                                                                href="tel:0912900058">0912900058</a></p>
-
-                                                        <p><strong>Email:</strong>&nbsp;hoanganhdt.halong@gmail.com</p>
-
-                                                        <p><strong>Fanpage:</strong>&nbsp;<a
-                                                                href="https://www.facebook.com/RauQuaSachVietNam/">Rau Quả
-                                                                Sạch</a></p>
-                                                    </div>
-                                                    <div class="location-item" data-lat="20.800540" data-long="103.712620">
-                                                        <p><strong>HTX Nông nghiệp Nam Phượng</strong></p>
-
-                                                        <p><strong>Địa chỉ:</strong> Bản Lả Mường, xã Sốp Cộp, huyện Sốp
-                                                            Cộp, tỉnh Sơn La</p>
-
-                                                        <p><strong>Hotline:</strong> 0976816499</p>
-
-                                                        <p><strong>Email:</strong> thansopcop@gmail.com</p>
-
-                                                        <p><strong>Fanpage:</strong> Gạo Nếp Tan Mường Và</p>
-
-                                                        <p><strong>Website:</strong> http://gaoneptansonla.vn/</p>
-                                                    </div>
+                                                            @if($point->website)
+                                                                <p><strong>Website:</strong> 
+                                                                    @if(strpos($point->website, 'http') === 0)
+                                                                        <a href="{{ $point->website }}" target="_blank">{{ $point->website }}</a>
+                                                                    @else
+                                                                        {{ $point->website }}
+                                                                    @endif
+                                                                </p>
+                                                            @endif
+                                                        </div>
+                                                    @empty
+                                                        <div class="location-item">
+                                                            <p>Chưa có điểm phân phối nào.</p>
+                                                        </div>
+                                                    @endforelse
                                                 </div>
                                                 <div class="map-block">
                                                     <div id="map-canvas"
