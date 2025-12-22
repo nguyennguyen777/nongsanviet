@@ -84,7 +84,7 @@ class PageController extends Controller
                 'message' => $validated['message'],
             ]);
 
-            return redirect()->route('contact')->with('success', 'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.');
+            return redirect()->route('contact', ['locale' => app()->getLocale()])->with('success', 'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.');
         }
 
         // Xử lý form đăng ký nhận tin
@@ -99,17 +99,17 @@ class PageController extends Controller
                     'status' => true,
                 ]);
 
-                return redirect()->route('contact')->with('success', 'Đăng ký nhận tin thành công!');
+                return redirect()->route('contact', ['locale' => app()->getLocale()])->with('success', 'Đăng ký nhận tin thành công!');
             } catch (\Illuminate\Validation\ValidationException $e) {
                 // Nếu email đã tồn tại, vẫn hiển thị thành công (user-friendly)
                 if (Newsletter::where('email', $request->email)->exists()) {
-                    return redirect()->route('contact')->with('success', 'Email này đã được đăng ký nhận tin!');
+                    return redirect()->route('contact', ['locale' => app()->getLocale()])->with('success', 'Email này đã được đăng ký nhận tin!');
                 }
                 throw $e;
             }
         }
 
-        return redirect()->route('contact')->with('error', 'Có lỗi xảy ra. Vui lòng thử lại.');
+        return redirect()->route('contact', ['locale' => app()->getLocale()])->with('error', 'Có lỗi xảy ra. Vui lòng thử lại.');
     }
 
     /**

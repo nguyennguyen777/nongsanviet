@@ -130,7 +130,7 @@
                                                         <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
                                                             <div class="views-field views-field-name">
                                                                 <span class="field-content">
-                                                                    <a href="{{ url('/vi/' . $cat->slug) }}" {{ $cat->id == $category->id ? 'class="active"' : '' }}>
+                                                                    <a href="{{ locale_url($cat->slug) }}" {{ $cat->id == $category->id ? 'class="active"' : '' }}>
                                                                         {{ $cat->name }}
                                                                     </a>
                                                                 </span>
@@ -164,7 +164,7 @@
 
                                                             <div class="views-field views-field-title">
                                                                 <span class="field-content">
-                                                                    <a href="{{ url('/vi/content/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                    <a href="{{ locale_url('content/' . $post->slug) }}">{{ $post->title }}</a>
                                                                 </span>
                                                             </div>
                                                             <div class="views-field views-field-body">

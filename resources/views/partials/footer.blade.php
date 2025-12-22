@@ -25,16 +25,15 @@
 
         <div class="content">
           <div class="google-map-wrapper company-info">
-            <h2><strong>NÔNG SẢN VIỆT NAM</strong></h2>
+            <h2><strong>{{ __('NÔNG SẢN VIỆT NAM') }}</strong></h2>
 
-            <p><strong>Địa chỉ:&nbsp;</strong>Ô số 20 LK 03, khu shophouse Loong Toòng, P Yết Kiêu, TP Hạ Long, tỉnh
-              Quảng Ninh.</p>
+            <p><strong>{{ __('Địa chỉ') }}:&nbsp;</strong>{{ __('Ô số 20 LK 03, khu shophouse Loong Toòng, P Yết Kiêu, TP Hạ Long, tỉnh Quảng Ninh.') }}</p>
 
-            <p><strong>Hotline:</strong> <a href="tel:0912900058">0889 333 618</a></p>
+            <p><strong>{{ __('Hotline') }}:</strong> <a href="tel:0912900058">0889 333 618</a></p>
 
-            <p><strong>Email:</strong> nongsanviet.net.vn@gmail.com</p>
+            <p><strong>{{ __('Email') }}:</strong> nongsanviet.net.vn@gmail.com</p>
 
-            <p><strong>Fanpage:</strong> <a href="https://www.facebook.com/nongsanviet.net.vn/">Nông Sản Việt Nam</a>
+            <p><strong>{{ __('Fanpage') }}:</strong> <a href="https://www.facebook.com/nongsanviet.net.vn/">{{ __('Nông Sản Việt Nam') }}</a>
             </p>
           </div>
 
@@ -56,7 +55,7 @@
             </li>
           </ul>
           <div class="support-icon-right">
-            <h3 class="toggle-chat-btn"><i class="fa fa-weixin"></i> Chat với chúng tôi</h3>
+            <h3 class="toggle-chat-btn"><i class="fa fa-weixin"></i> {{ __('Chat với chúng tôi') }}</h3>
 
             <div class="online-support text-center">
               <div class="fb-page" data-href="https://www.facebook.com/nongsanviet.net.vn/" data-tabs="messages"
@@ -70,7 +69,7 @@
       <div id="block-views-block-video-block-5" class="block block-views">
 
         <div class="block-title">
-          <h3>Video</h3>
+          <h3>{{ __('Video') }}</h3>
         </div>
 
         <div class="content">
@@ -86,10 +85,9 @@
                     <div class="youtube-container--responsive"><iframe id="youtube-field-player"
                         class="youtube-field-player" width="100%" height="100%"
                         src="https://www.youtube.com/embed/QqxXPKcbZw0?wmode=opaque"
-                        title="Embedded video for Đặc sản Vân Đồn" frameborder="0" allowfullscreen=""
+                        title="{{ __('Đặc sản Vân Đồn') }}" frameborder="0" allowfullscreen=""
                         allow="autoplay; fullscreen"><a
-                          href="https://www.youtube.com/embed/QqxXPKcbZw0?wmode=opaque">Embedded video for Đặc sản Vân
-                          Đồn</a></iframe></div>
+                          href="https://www.youtube.com/embed/QqxXPKcbZw0?wmode=opaque">{{ __('Đặc sản Vân Đồn') }}</a></iframe></div>
                   </div>
                 </div>
               </div>
@@ -101,7 +99,7 @@
       <div id="block-alla-tech-block-lien-he" class="block block-alla-tech">
 
         <div class="block-title">
-          <h3>Chỉ đường</h3>
+          <h3>{{ __('Chỉ đường') }}</h3>
         </div>
 
         <div class="content">
@@ -114,7 +112,7 @@
       <div id="block-alla-tech-block-ket-noi" class="block block-alla-tech">
 
         <div class="block-title">
-          <h3>Kết nối với chúng tôi</h3>
+          <h3>{{ __('Kết nối với chúng tôi') }}</h3>
         </div>
 
         <div class="content">

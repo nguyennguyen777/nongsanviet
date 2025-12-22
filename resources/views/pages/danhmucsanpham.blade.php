@@ -24,7 +24,7 @@
                                             <div class="content">
                                                 <div class="view view-block-san-pham view-id-block_san_pham view-display-id-block_{{ $category->id }} row list san-pham-list">
                                                     <div class="view-header">
-                                                        <a href="{{ url('/vi/' . $category->slug) }}" class="view-more">Xem thêm&gt;&gt;</a>
+                                                        <a href="{{ locale_url($category->slug) }}" class="view-more">Xem thêm&gt;&gt;</a>
                                                     </div>
                                                     <div class="view-content">
                                                         @foreach($categoryProducts[$category->id] as $product)
@@ -77,7 +77,7 @@
                                                     <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
                                                         <div class="views-field views-field-name">
                                                             <span class="field-content">
-                                                                <a href="{{ url('/vi/' . $cat->slug) }}">{{ $cat->name }}</a>
+                                                                <a href="{{ locale_url($cat->slug) }}">{{ $cat->name }}</a>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -108,7 +108,7 @@
                                                     <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
                                                         <div class="views-field views-field-title">
                                                             <span class="field-content">
-                                                                <a href="{{ url('/vi/content/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                <a href="{{ locale_url('content/' . $post->slug) }}">{{ $post->title }}</a>
                                                             </span>
                                                         </div>
                                                         <div class="views-field views-field-body">
