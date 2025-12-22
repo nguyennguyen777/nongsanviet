@@ -70,7 +70,7 @@
                                                         <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
                                                             <div class="views-field views-field-name">
                                                                 <span class="field-content">
-                                                                    <a href="{{ url('/vi/' . $svc->slug) }}" {{ $svc->id == $service->id ? 'class="active"' : '' }}>
+                                                                    <a href="{{ locale_url($svc->slug) }}" {{ $svc->id == $service->id ? 'class="active"' : '' }}>
                                                                         {{ $svc->title }}
                                                                     </a>
                                                                 </span>
@@ -104,7 +104,7 @@
 
                                                             <div class="views-field views-field-title">
                                                                 <span class="field-content">
-                                                                    <a href="{{ url('/vi/content/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                    <a href="{{ locale_url('content/' . $post->slug) }}">{{ $post->title }}</a>
                                                                 </span>
                                                             </div>
                                                             <div class="views-field views-field-body">

@@ -121,7 +121,7 @@
 
 
                                         <div class="content">
-                                            <form action="{{ route('contact') }}" method="post" id="alla-tech-lien-he"
+                                            <form action="{{ locale_route('contact') }}" method="post" id="alla-tech-lien-he"
                                                 accept-charset="UTF-8">
                                                 @csrf
                                                 <input type="hidden" name="form_id" value="alla_tech_lien_he">
