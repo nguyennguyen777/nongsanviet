@@ -16,24 +16,45 @@
                 <div class="content">
 
                   <div class="block-slide-san-pham-dich-vu owl-carousel owl-theme">
-                    @forelse($categorySlides as $slide)
-                      <div class="item">
-                        <div class="item-wrapper">
-                          <div class="image">
-                            <a href="{{ $slide->link ?: ($slide->category ? locale_url($slide->category->slug) : '#') }}">
-                              <img class="img-responsive"
-                                src="{{ $slide->image ? asset('storage/' . $slide->image) : asset('storage/categories/default.jpg') }}"
-                                alt="{{ $slide->title ?: ($slide->category ? $slide->category->name : '') }}">
-                            </a>
-                          </div>
-                          <div class="term-name">
-                            <a href="{{ $slide->link ?: ($slide->category ? locale_url($slide->category->slug) : '#') }}">
-                              {{ $slide->title ?: ($slide->category ? $slide->category->name : '') }}
-                            </a>
+                    @if($categorySlides->count())
+                      @foreach($categorySlides as $slide)
+                        <div class="item">
+                          <div class="item-wrapper">
+                            <div class="image">
+                              <a href="{{ $slide->link ?: ($slide->category ? locale_url($slide->category->slug) : '#') }}">
+                                <img class="img-responsive"
+                                  src="{{ $slide->image ? asset('storage/' . $slide->image) : asset('storage/categories/default.jpg') }}"
+                                  alt="{{ $slide->title ?: ($slide->category ? $slide->category->name : '') }}">
+                              </a>
+                            </div>
+                            <div class="term-name">
+                              <a href="{{ $slide->link ?: ($slide->category ? locale_url($slide->category->slug) : '#') }}">
+                                {{ $slide->title ?: ($slide->category ? $slide->category->name : '') }}
+                              </a>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    @empty
+                      @endforeach
+                    @elseif(!empty($productSlideImages) && count($productSlideImages))
+                      @foreach($productSlideImages as $image)
+                        <div class="item">
+                          <div class="item-wrapper">
+                            <div class="image">
+                              <a href="#">
+                                <img class="img-responsive"
+                                  src="{{ asset('storage/' . $image) }}"
+                                  alt="{{ pathinfo($image, PATHINFO_FILENAME) }}">
+                              </a>
+                            </div>
+                            <div class="term-name">
+                              <a href="#">
+                                {{ ucfirst(str_replace('-', ' ', pathinfo($image, PATHINFO_FILENAME))) }}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      @endforeach
+                    @else
                       {{-- Fallback nếu chưa có dữ liệu --}}
                       <div class="item">
                         <div class="item-wrapper">
@@ -47,7 +68,7 @@
                           </div>
                         </div>
                       </div>
-                    @endforelse
+                    @endif
                   </div>
 
                 </div>
@@ -323,12 +344,24 @@
                     <div class="owl-stage-outer">
                       <div class="owl-stage">
                         @forelse($partners as $partner)
+                          @php
+                            // Chuẩn hóa đường dẫn ảnh và kiểm tra tồn tại
+                            $partnerImagePath = $partner->image ?? '';
+                            $partnerImagePath = str_replace('\\', '/', $partnerImagePath);
+                            $partnerImagePath = preg_replace('/^storage\//', '', $partnerImagePath);
+                            $partnerImagePath = trim($partnerImagePath, " /");
+                            $partnerImageExists = $partnerImagePath && \Illuminate\Support\Facades\Storage::disk('public')->exists($partnerImagePath);
+                            $partnerImageUrl = $partnerImageExists
+                                ? asset('storage/' . $partnerImagePath)
+                                : asset('storage/products/logo-footer.png');
+                          @endphp
                           <div class="owl-item">
                             <div class="item">
                               <div class="image">
                                 <a href="{{ $partner->link ?: '#' }}">
                                   <img class="img-responsive"
-                                    src="{{ $partner->image ? asset('storage/' . $partner->image) : asset('storage/partners/default.png') }}"
+                                    src="{{ $partnerImageUrl }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('storage/products/logo-footer.png') }}';"
                                     alt="{{ $partner->name ?: 'Đối tác' }}" title="{{ $partner->name ?: 'Đối tác' }}">
                                 </a>
                               </div>
@@ -339,7 +372,7 @@
                           <div class="owl-item">
                             <div class="item">
                           <div class="image">
-                            <img class="img-responsive" src="{{ asset('storage/partners/default.png') }}" alt="{{ __('Đối tác') }}">
+                            <img class="img-responsive" src="{{ asset('storage/products/logo-footer.png') }}" alt="{{ __('Đối tác') }}">
                           </div>
                             </div>
                           </div>
