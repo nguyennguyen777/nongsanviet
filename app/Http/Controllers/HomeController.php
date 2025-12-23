@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Partner;
 use App\Models\CategorySlide;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -38,14 +39,34 @@ class HomeController extends Controller
             ->orderBy('sort_order', 'asc')
             ->get();
 
-        // Category slides (slide sản phẩm/dịch vụ)
+        // Category slides (slide sản phẩm/dịch vụ) - chỉ lấy slide có ảnh tồn tại để hiển thị
         $categorySlides = CategorySlide::where('status', 1)
             ->with('category')
             ->orderBy('sort_order', 'asc')
-            ->get();
+            ->get()
+            ->filter(function ($slide) {
+                if (!$slide->image) {
+                    return false;
+                }
+                // Kiểm tra trên disk public để tránh sai đường dẫn/driver
+                return Storage::disk('public')->exists($slide->image);
+            })
+            ->values();
 
-        // Dịch vụ nổi bật
+        // Ảnh slide tĩnh từ thư mục storage/app/public/products
+        $productSlideImages = collect(Storage::files('public/products'))
+            ->filter(function ($path) {
+                return preg_match('/\.(jpg|jpeg|png|gif|webp)$/i', $path);
+            })
+            ->map(function ($path) {
+                // Chuyển từ public/... sang đường dẫn dùng cho asset('storage/...')
+                return str_replace('public/', '', $path);
+            })
+            ->values();
+
+        // Dịch vụ nổi bật: ưu tiên bản ghi chỉnh sửa gần nhất
         $featuredServices = Service::where('status', 1)
+            ->orderBy('updated_at', 'desc')
             ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
@@ -58,7 +79,19 @@ class HomeController extends Controller
         // Đối tác
         $partners = Partner::where('status', 1)
             ->orderBy('sort_order', 'asc')
-            ->get();
+            ->get()
+            ->filter(function ($partner) {
+                if (!$partner->image) {
+                    return true; // giữ lại để dùng fallback
+                }
+                // Chuẩn hóa đường dẫn: bỏ tiền tố storage/, chuyển \ -> /, trim khoảng trắng và /
+                $path = $partner->image;
+                $path = str_replace('\\', '/', $path);
+                $path = preg_replace('/^storage\//', '', $path);
+                $path = trim($path, " /");
+                return $path && Storage::disk('public')->exists($path);
+            })
+            ->values();
 
         return view('home', compact(
             'featuredProducts',
@@ -66,6 +99,7 @@ class HomeController extends Controller
             'featuredPosts',
             'sliders',
             'categorySlides',
+            'productSlideImages',
             'featuredServices',
             'testimonials',
             'partners'
