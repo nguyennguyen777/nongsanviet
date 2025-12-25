@@ -388,6 +388,11 @@
 
 #block-views-block-san-pham-block .views-field-title {
     min-height: 70px;
+    text-transform: none;
+}
+
+#block-views-block-san-pham-block .views-field-title a {
+    text-transform: none;
 }
 
 .san-pham-list .views-field-view-node a {
@@ -399,6 +404,10 @@
     color: #8bc34a;
     text-transform: uppercase;
     font-size: 14px;
+}
+
+.san-pham-list .views-field-view-node a:hover {
+    text-decoration: underline;
 }
 
 #block-views-block-san-pham-block .view-content {
@@ -421,7 +430,7 @@
     background-attachment: fixed;
     height: 350px;
     color: #fff;
-    margin-top: 3640px;
+    margin-top: 3675px;
     margin-bottom: 10px;
 }
 
@@ -676,17 +685,21 @@
 .block-slide-doi-tac-logo .image {
     height: 60px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    overflow: hidden;
 }
 
 #block-alla-tech-block-slide-partner .block-slide-doi-tac-logo img {
-    max-height: 100%;
+    max-height: 85%;
+    max-width: 85%;
     width: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .owl-carousel .owl-item img {
@@ -892,4 +905,44 @@ ul li.expanded {
 .block-slide-doi-tac .owl-prev span,
 .block-slide-doi-tac .owl-next span {
     display: none !important;
+}
+
+/* ============================================
+   HOVER UNDERLINE CHO CÁC TITLE IN ĐẬM
+   ============================================ */
+
+/* Sidebar menu header - Sản phẩm và Dịch vụ (và các mục con) */
+/* Menu cha - Sản phẩm và Dịch vụ */
+nav a.font-bold:hover {
+    text-decoration: underline;
+}
+
+/* Các mục con trong dropdown menu (cấp 1, 2, 3) - các link có font-normal */
+nav a.font-normal:hover {
+    text-decoration: underline;
+}
+
+/* Block sản phẩm dịch vụ */
+.block-slide-san-pham-dich-vu .term-name a:hover {
+    text-decoration: underline;
+}
+
+/* Block 4 lý do */
+#block-views-block-page-block .views-field-title a:hover {
+    text-decoration: underline;
+}
+
+/* Block sản phẩm nổi bật */
+#block-views-block-san-pham-block .views-field-title a:hover {
+    text-decoration: underline;
+}
+
+/* Block dịch vụ nổi bật */
+#block-views-block-san-pham-block-6 .views-field-title a:hover {
+    text-decoration: underline;
+}
+
+/* Block tin nổi bật */
+#block-views-block-bai-viet-block-12 .views-field-title a:hover {
+    text-decoration: underline;
 }
