@@ -83,6 +83,22 @@
         }
       });
 
+      $('.block-slide-doi-tac-logo').owlCarousel({
+        items: 5,
+        loop: true,
+        margin: 30,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 600,
+        responsive: {
+          0: { items: 2 },
+          768: { items: 3 },
+          992: { items: 5 }
+        }
+      });
+
     });
   </script>
 
