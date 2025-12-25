@@ -194,7 +194,7 @@
                           </div>
                           <div class="views-field views-field-title">
                             <span class="field-content">
-                              <a href="{{ route('product.show', $product->slug) }}">{{ strtoupper($product->name) }}</a>
+                              <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                             </span>
                           </div>
                           <div class="views-field views-field-view-node">
@@ -345,13 +345,12 @@
                       <div class="owl-stage">
                         @forelse($partners as $partner)
                           @php
-                            // Chuẩn hóa đường dẫn ảnh và kiểm tra tồn tại
+                            // Chuẩn hóa đường dẫn ảnh
                             $partnerImagePath = $partner->image ?? '';
                             $partnerImagePath = str_replace('\\', '/', $partnerImagePath);
                             $partnerImagePath = preg_replace('/^storage\//', '', $partnerImagePath);
                             $partnerImagePath = trim($partnerImagePath, " /");
-                            $partnerImageExists = $partnerImagePath && \Illuminate\Support\Facades\Storage::disk('public')->exists($partnerImagePath);
-                            $partnerImageUrl = $partnerImageExists
+                            $partnerImageUrl = $partnerImagePath 
                                 ? asset('storage/' . $partnerImagePath)
                                 : asset('storage/products/logo-footer.png');
                           @endphp

@@ -76,22 +76,10 @@ class HomeController extends Controller
             ->orderBy('sort_order', 'asc')
             ->get();
 
-        // Đối tác
+        // Đối tác - không filter dựa trên file tồn tại vì view đã có fallback
         $partners = Partner::where('status', 1)
             ->orderBy('sort_order', 'asc')
-            ->get()
-            ->filter(function ($partner) {
-                if (!$partner->image) {
-                    return true; // giữ lại để dùng fallback
-                }
-                // Chuẩn hóa đường dẫn: bỏ tiền tố storage/, chuyển \ -> /, trim khoảng trắng và /
-                $path = $partner->image;
-                $path = str_replace('\\', '/', $path);
-                $path = preg_replace('/^storage\//', '', $path);
-                $path = trim($path, " /");
-                return $path && Storage::disk('public')->exists($path);
-            })
-            ->values();
+            ->get();
 
         return view('home', compact(
             'featuredProducts',
