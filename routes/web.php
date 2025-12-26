@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PostController;
 
 /*Route::get('/', function () {
     return view('home');
@@ -38,6 +39,8 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en|zh'])->group(function () {
     Route::post('/lien-he', [PageController::class, 'contactStore']);
     Route::get('/he-thong-phan-phoi', [PageController::class, 'hethongphanphoi'])->name('hethongphanphoi');
     Route::get('/danh-muc-san-pham', [PageController::class, 'danhmucsanpham'])->name('danhmucsanpham');
+    Route::get('/tin-tuc', [PostController::class, 'index'])->name('news.index');
+    Route::get('/tin-tuc/{slug}', [PostController::class, 'show'])->name('news.show');
     
     // Dynamic routes - phải đặt sau các routes cụ thể để tránh conflict
     // Route này sẽ handle tất cả các category và service pages
@@ -71,6 +74,12 @@ Route::get('/vi/he-thong-phan-phoi', function () {
 Route::get('/vi/danh-muc-san-pham', function () {
     return redirect()->route('danhmucsanpham', ['locale' => 'vi']);
 });
+Route::get('/vi/tin-tuc', function () {
+    return redirect()->route('news.index', ['locale' => 'vi']);
+});
+Route::get('/vi/tin-tuc/{slug}', function ($slug) {
+    return redirect()->route('news.show', ['locale' => 'vi', 'slug' => $slug]);
+})->where('slug', '[a-z0-9-]+');
 Route::get('/vi/{slug}', function ($slug) {
     return redirect()->route('category.show', ['locale' => 'vi', 'slug' => $slug]);
 })->where('slug', '[a-z0-9-]+');

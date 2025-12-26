@@ -1,0 +1,501 @@
+/* ============================================
+   TRANG TIN TỨC - NEWS PAGE
+   ============================================ */
+
+/* Phần "TIN NỔI BẬT" - Featured News Section */
+.page-news .view-tin-tuc.view-display-id-featured {
+    margin-bottom: 40px;
+}
+
+.page-news .page-tin-tuc-title {
+    background: #8bc34a;
+    color: #fff;
+    padding: 12px 15px;
+    font-family: "UTM-AvoBold";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.page-news .view-display-id-featured .group-class-post {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.page-news .view-display-id-featured .views-row {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.page-news .view-display-id-featured .views-field-field-anh-dai-dien {
+    margin-bottom: 0;
+}
+
+.page-news .view-display-id-featured .views-field-field-anh-dai-dien img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hộp màu xanh lá với chữ trắng cho tin nổi bật */
+.page-news .view-display-id-featured .views-field-title {
+    background: #8bc34a;
+    padding: 12px 15px;
+    margin-top: 0;
+    min-height: auto;
+}
+
+.page-news .view-display-id-featured .views-field-title a {
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.4;
+    text-decoration: none;
+    display: block;
+    font-family: "UTM-Avo";
+}
+
+.page-news .view-display-id-featured .views-field-title a:hover {
+    text-decoration: underline;
+}
+
+.page-news .view-display-id-featured .views-field-body {
+    display: none;
+}
+
+.page-news .view-display-id-featured .views-field-view-node {
+    display: none;
+}
+
+/* ============================================
+   DANH SÁCH TIN TỨC - News List Section
+   ============================================ */
+
+.page-news .page-tin-tuc-list-title {
+    background: #8bc34a;
+    color: #fff;
+    padding: 12px 15px;
+    font-family: "UTM-AvoBold";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.page-news .tin-tuc-list .views-row {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.page-news .tin-tuc-list .views-row:first-child {
+    padding-top: 0;
+}
+
+.page-news .tin-tuc-list .views-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.page-news .tin-tuc-list .views-field-field-anh-dai-dien {
+    flex: 0 0 calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+    margin-right: 20px;
+    padding-right: 0;
+}
+
+.page-news .tin-tuc-list .views-field-field-anh-dai-dien img {
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Container cho phần nội dung bên phải */
+.page-news .tin-tuc-list .views-row > div[style*="flex"] {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-news .tin-tuc-list .views-field-title {
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.page-news .tin-tuc-list .views-field-title a {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-decoration: none;
+    font-family: "UTM-AvoBold";
+    display: block;
+}
+
+.page-news .tin-tuc-list .views-field-title a:hover {
+    color: #8bc34a;
+    text-decoration: underline;
+}
+
+.page-news .tin-tuc-list .views-field-created {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-family: "UTM-Avo";
+    flex-shrink: 0;
+}
+
+.page-news .tin-tuc-list .views-field-body {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: "UTM-Avo";
+    flex: 1;
+}
+
+.page-news .tin-tuc-list .views-field-view-node {
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.page-news .tin-tuc-list .views-field-view-node a {
+    display: inline-block;
+    background: #8bc34a;
+    color: #fff !important;
+    padding: 10px 25px;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "UTM-Avo";
+    transition: background 0.3s;
+    border: none;
+}
+
+.page-news .tin-tuc-list .views-field-view-node a:hover {
+    background: #7cb342;
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.page-news .tin-tuc-list .views-field-view-node a::after {
+    content: " →";
+    margin-left: 5px;
+}
+
+/* ============================================
+   SIDEBAR - Sản phẩm nổi bật và mới
+   ============================================ */
+
+/* Sản phẩm nổi bật - danh sách danh mục */
+.page-news #block-views-block-san-pham-noi-bat .block-title h3 {
+    background: #8bc34a;
+    color: #fff;
+    padding: 12px 15px;
+    font-family: "UTM-AvoBold";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
+}
+
+.page-news #block-views-block-san-pham-noi-bat .content {
+    border: 1px solid #8bc34a;
+    padding: 15px;
+    background: #fff;
+}
+
+.page-news #block-views-block-san-pham-noi-bat .views-row {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.page-news #block-views-block-san-pham-noi-bat .views-row:last-child {
+    border-bottom: none;
+}
+
+.page-news #block-views-block-san-pham-noi-bat .views-field-name a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: "UTM-Avo";
+    line-height: 1.5;
+}
+
+.page-news #block-views-block-san-pham-noi-bat .views-field-name a:hover {
+    color: #8bc34a;
+    text-decoration: underline;
+}
+
+/* Sản phẩm mới - hiển thị dạng grid với ảnh */
+.page-news #block-views-block-san-pham-moi {
+    margin-top: 30px;
+}
+
+.page-news #block-views-block-san-pham-moi .block-title h3 {
+    background: #8bc34a;
+    color: #fff;
+    padding: 12px 15px;
+    font-family: "UTM-AvoBold";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
+}
+
+.page-news #block-views-block-san-pham-moi .content {
+    border: 1px solid #8bc34a;
+    padding: 15px;
+    background: #fff;
+}
+
+.page-news #block-views-block-san-pham-moi .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.page-news #block-views-block-san-pham-moi .views-row {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.page-news #block-views-block-san-pham-moi .views-field-field-anh-dai-dien {
+    margin-bottom: 10px;
+}
+
+.page-news #block-views-block-san-pham-moi .views-field-field-anh-dai-dien img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.page-news #block-views-block-san-pham-moi .views-field-title {
+    margin-top: 8px;
+}
+
+.page-news #block-views-block-san-pham-moi .views-field-title a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: "UTM-Avo";
+    line-height: 1.4;
+    display: block;
+}
+
+.page-news #block-views-block-san-pham-moi .views-field-title a:hover {
+    color: #8bc34a;
+    text-decoration: underline;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.page-news .element-invisible {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+}
+
+.page-news .item-list .pager {
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    font-family: "UTM-Avo";
+}
+
+.page-news .item-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-news .pager {
+    list-style: none;
+}
+
+.page-news .pager:before {
+    display: table;
+    content: " ";
+}
+
+.page-news .item-list .pager li.pager-current {
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    font-weight: normal;
+    background: #8bc34a;
+    color: #fff;
+    line-height: 26px;
+}
+
+.page-news .item-list .pager li {
+    margin: 0 5px;
+    list-style-type: none;
+    padding: 0;
+    background-image: none;
+    display: inline-block;
+}
+
+.page-news .pager li > a,
+.page-news .pager li > span {
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    line-height: 26px;
+    font-family: "UTM-Avo";
+}
+
+.page-news .pager li > a:hover {
+    background: #f5f5f5;
+    border-color: #8bc34a;
+}
+
+.page-news .pager:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* ============================================
+   TRANG CHI TIẾT BÀI VIẾT - Post Detail Page
+   ============================================ */
+
+.page-post .post-detail {
+    margin-bottom: 30px;
+}
+
+.page-post .post-header {
+    margin-bottom: 20px;
+}
+
+.page-post .post-title {
+    font-family: "UTM-AvoBold";
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.page-post .post-meta {
+    color: #999;
+    font-size: 14px;
+    font-family: "UTM-Avo";
+}
+
+.page-post .post-image {
+    margin-bottom: 25px;
+}
+
+.page-post .post-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.page-post .post-content {
+    font-family: "UTM-Avo";
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.page-post .post-content p {
+    margin-bottom: 15px;
+}
+
+.page-post .post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+.page-post .related-title {
+    background: #8bc34a;
+    color: #fff;
+    padding: 12px 15px;
+    font-family: "UTM-AvoBold";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.page-post .related-posts-list {
+    margin: 0 -15px;
+}
+
+.page-post .related-post-item {
+    padding: 0 15px;
+}
+
+.page-post .related-post-image {
+    margin-bottom: 10px;
+}
+
+.page-post .related-post-title a:hover {
+    color: #8bc34a;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .page-news .view-display-id-featured .views-row {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+
+    .page-news .tin-tuc-list .views-row {
+        flex-direction: column;
+    }
+
+    .page-news .tin-tuc-list .views-field-field-anh-dai-dien {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .page-news #block-views-block-san-pham-moi .views-row {
+        flex: 0 0 calc(100% - 20px);
+    }
+
+    .page-post .related-posts-list .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+
