@@ -23,7 +23,21 @@ class CategorySeeder extends Seeder
         Category::updateOrCreate(['slug' => 'gao-ngu-coc'], ['name' => 'Gạo, ngũ cốc']);
         Category::updateOrCreate(['slug' => 'mat-ong'], ['name' => 'Mật ong']);
         Category::updateOrCreate(['slug' => 'thuc-pham-che-bien'], ['name' => 'Thực phẩm chế biến']);
+        // Gạo, ngũ cốc thuộc thực phẩm chế biến (mã 19)
+        $category19 = Category::find(19);
+        if ($category19) {
+            $category19->update(['slug' => 'gao-ngu-coc-che-bien', 'name' => 'Gạo, ngũ cốc']);
+        } else {
+            Category::create(['id' => 19, 'slug' => 'gao-ngu-coc-che-bien', 'name' => 'Gạo, ngũ cốc']);
+        }
         Category::updateOrCreate(['slug' => 'rau-cu-qua-hat'], ['name' => 'Rau, củ, quả, hạt']);
+        // Thịt, trứng, sữa thuộc thực phẩm chế biến (mã 20)
+        $category20 = Category::find(20);
+        if ($category20) {
+            $category20->update(['slug' => 'thit-trung-sua-che-bien', 'name' => 'Thịt, trứng, sữa']);
+        } else {
+            Category::create(['id' => 20, 'slug' => 'thit-trung-sua-che-bien', 'name' => 'Thịt, trứng, sữa']);
+        }
         Category::updateOrCreate(['slug' => 'thuy-hai-san'], ['name' => 'Thủy, hải sản']);
         Category::updateOrCreate(['slug' => 'gia-vi'], ['name' => 'Gia vị']);
 

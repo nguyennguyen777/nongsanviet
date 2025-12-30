@@ -119,9 +119,9 @@
                       opacity-0 scale-95 transition-all duration-200" x-show="openSubSub" x-transition
                       :class="openSubSub && 'opacity-100 scale-100 pointer-events-auto'" x-cloak>
 
-                      <a href="{{ locale_url('gao-ngu-coc') }}" class="block px-4 py-2 hover:bg-gray-50">{{ __('Gạo, ngũ cốc') }}</a>
+                      <a href="{{ locale_url('gao-ngu-coc-che-bien') }}" class="block px-4 py-2 hover:bg-gray-50">{{ __('Gạo, ngũ cốc') }}</a>
                       <a href="{{ locale_url('rau-cu-qua-hat') }}" class="block px-4 py-2 hover:bg-gray-50">{{ __('Rau, củ, quả, hạt') }}</a>
-                      <a href="{{ locale_url('thit-trung-sua') }}" class="block px-4 py-2 hover:bg-gray-50">{{ __('Thịt, trứng, sữa') }}</a>
+                      <a href="{{ locale_url('thit-trung-sua-che-bien') }}" class="block px-4 py-2 hover:bg-gray-50">{{ __('Thịt, trứng, sữa') }}</a>
                       <a href="{{ locale_url('thuy-hai-san') }}" class="block px-4 py-2 hover:bg-gray-50">{{ __('Thủy, hải sản') }}</a>
                     </div>
                   </div>
