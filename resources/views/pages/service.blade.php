@@ -26,23 +26,42 @@
                                                 </div>
 
                                                 <div class="view-content">
-                                                    @if($service->image)
-                                                        <div class="service-image mb-4">
-                                                            <img class="img-responsive" 
-                                                                src="{{ asset('storage/' . $service->image) }}" 
-                                                                alt="{{ $service->title }}">
-                                                        </div>
-                                                    @endif
+                                                    @for($i = 1; $i <= 8; $i++)
+                                                        @php
+                                                            $imageField = $i === 1 ? 'image' : 'image' . $i;
+                                                            $titleField = $i === 1 ? 'title1' : 'title' . $i;
+                                                            $descriptionField = $i === 1 ? 'description' : 'description' . $i;
+                                                            $image = $service->$imageField ?? null;
+                                                            $pointTitle = $service->$titleField ?? null;
+                                                            $description = $service->$descriptionField ?? null;
+                                                        @endphp
 
-                                                    @if($service->description)
-                                                        <div class="service-description">
-                                                            {!! nl2br(e($service->description)) !!}
-                                                        </div>
-                                                    @else
-                                                        <div class="service-description">
-                                                            <p>Nội dung đang được cập nhật...</p>
-                                                        </div>
-                                                    @endif
+                                                        @if($image || $pointTitle || $description)
+                                                            <div class="service-point mb-5">
+                                                                @if($pointTitle)
+                                                                    <h3 class="service-point-title mb-3">{{ $pointTitle }}</h3>
+                                                                @endif
+
+                                                                @if($image)
+                                                                    <div class="service-image mb-4">
+                                                                        <img class="img-responsive" 
+                                                                            src="{{ asset('storage/' . $image) }}" 
+                                                                            alt="{{ $pointTitle ?? $service->title }}">
+                                                                    </div>
+                                                                @endif
+
+                                                                @if($description)
+                                                                    <div class="service-description mb-4">
+                                                                        {!! nl2br(e($description)) !!}
+                                                                    </div>
+                                                                @elseif($i === 1 && !$description)
+                                                                    <div class="service-description mb-4">
+                                                                        <p>Nội dung đang được cập nhật...</p>
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+                                                        @endif
+                                                    @endfor
                                                 </div>
 
                                             </div>
