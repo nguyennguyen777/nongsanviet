@@ -369,6 +369,9 @@
     text-align: center;
     width: 25%; /* 4 item trên 1 hàng */
     float: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 @media (min-width: 992px) {
@@ -395,11 +398,16 @@
     text-transform: none;
 }
 
+.san-pham-list .views-field-view-node {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
 .san-pham-list .views-field-view-node a {
     display: inline-block;
     border: 1px solid #8bc34a;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 0;
     padding: 2px 15px;
     color: #8bc34a;
     text-transform: uppercase;

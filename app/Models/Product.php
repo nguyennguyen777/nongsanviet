@@ -12,7 +12,10 @@ class Product extends Model
         'slug',
         'price',
         'description', 'description_en', 'description_zh',
+        'short_description',
         'image',
+        'background_image',
+        'view_count',
         'is_featured',
         'status'
     ];
