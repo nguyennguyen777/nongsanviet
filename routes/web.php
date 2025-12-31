@@ -8,6 +8,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProductController;
 
 /*Route::get('/', function () {
     return view('home');
@@ -15,6 +17,29 @@ use App\Http\Controllers\PostController;
 
 // Route chuyển ngôn ngữ - phải đặt trước các route khác
 Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('language.switch');
+
+// Admin Routes (phải đặt trước để tránh conflict)
+Route::prefix('admin')->group(function () {
+    // Login routes (public)
+    Route::get('/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [AdminController::class, 'login']);
+    Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    
+    // Protected admin routes
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        
+        // Products management
+        Route::resource('products', AdminProductController::class)->names([
+            'index' => 'admin.products.index',
+            'create' => 'admin.products.create',
+            'store' => 'admin.products.store',
+            'edit' => 'admin.products.edit',
+            'update' => 'admin.products.update',
+            'destroy' => 'admin.products.destroy',
+        ]);
+    });
+});
 
 // Route trang chủ - redirect đến locale mặc định
 Route::get('/', function () {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Post;
 
 class ProductController extends Controller
 {
@@ -56,6 +57,17 @@ class ProductController extends Controller
                     ->take(4)
                     ->get();
 
-        return view('product.show', compact('product', 'related'));
+        // Lấy danh sách categories cho sidebar "Sản phẩm nổi bật"
+        $featuredCategories = Category::orderBy('name')
+            ->take(7)
+            ->get();
+
+        // Lấy tin tức mới nhất cho sidebar
+        $latestPosts = Post::where('status', 1)
+            ->orderByDesc('created_at')
+            ->take(6)
+            ->get();
+
+        return view('product.show', compact('product', 'related', 'featuredCategories', 'latestPosts'));
     }
 }
