@@ -1,8 +1,206 @@
-.product-gallery-thumb {
-    border: 2px solid transparent;
-    cursor: pointer;
+/* ============================================
+   TRANG CHI TIẾT SẢN PHẨM - Product Detail Page
+   ============================================ */
+
+.page-product-detail .container-content-common-all {
+    background: url(/public/storage/products/bg-common-01.jpg) repeat;
+    float: left;
+    width: 100%;
+    margin-top: -5px;
+    position: initial;
 }
 
-.product-gallery-thumb:hover {
-    border-color: #00b894;
+@media (min-width: 1200px) {
+    .page-product-detail .container {
+        width: 1170px;
+    }
+}
+
+.page-product-detail .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1024px) {
+    .page-product-detail .container-content-common-all .container-content {
+        padding: 15px;
+        background: #fff;
+        box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+            12px 0 15px -4px rgba(0, 0, 0, 0.2),
+            -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+        float: left;
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+
+.page-product-detail .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 992px) {
+    .page-product-detail .col-md-9 {
+        width: 75%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 30px;
+        padding-top: 30px;
+    }
+
+    .page-product-detail .col-md-3 {
+        width: 25%;
+        float: left;
+    }
+}
+
+/* Product Header */
+.page-product-detail .product-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #8bc34a;
+}
+
+.page-product-detail .product-title {
+    font-family: "UTM-AvoBold" !important;
+    font-size: 28px;
+    color: #8bc34a;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.page-product-detail .product-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "UTM-Avo";
+    font-size: 14px;
+    color: #666;
+}
+
+.page-product-detail .view-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.page-product-detail .view-count i {
+    color: #8bc34a;
+}
+
+/* Product Content */
+.page-product-detail .product-content {
+    float: left;
+    width: 100%;
+}
+
+.page-product-detail .product-image-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.page-product-detail .product-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Description */
+.page-product-detail .product-description {
+    font-family: "UTM-Avo";
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.page-product-detail .product-short-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.page-product-detail .product-full-description {
+    line-height: 1.8;
+}
+
+.page-product-detail .product-description p {
+    margin-bottom: 15px;
+}
+
+/* Background Image Section */
+.page-product-detail .product-background-section {
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-product-detail .product-background-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: blur(2px);
+}
+
+/* Sidebar */
+.page-product-detail #content-right .block {
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-right: 15px;
+}
+
+.page-product-detail #content-right .block-title h3 {
+    text-transform: uppercase;
+    font-family: "UTM-AvoBold";
+    margin-top: 0px;
+    color: #fff;
+    background: #8bc34a;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.page-product-detail #content-right .block-border .content {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8bc34a;
+    font-family: "UTM-Avo";
+}
+
+.page-product-detail .related-product-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.page-product-detail .views-row {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-product-detail .views-row:last-child {
+    border-bottom: none;
+}
+
+.page-product-detail .views-field-title a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-product-detail .views-field-title a:hover {
+    color: #8bc34a;
+    text-decoration: underline;
 }

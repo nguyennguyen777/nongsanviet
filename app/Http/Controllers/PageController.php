@@ -18,18 +18,26 @@ class PageController extends Controller
      */
     public function danhmucsanpham()
     {
-        // Lấy các category và sản phẩm theo từng category
-        $categories = Category::orderBy('name')->get();
+        // Lấy 3 danh mục cụ thể theo thứ tự: đồ uống giải khát, thực phẩm chế biến, gia vị
+        $categorySlugs = ['do-uong-giai-khat', 'thuc-pham-che-bien', 'gia-vi'];
+        $categories = Category::whereIn('slug', $categorySlugs)
+            ->orderByRaw("FIELD(slug, 'do-uong-giai-khat', 'thuc-pham-che-bien', 'gia-vi')")
+            ->get();
         
-        // Lấy sản phẩm theo từng category (ví dụ: lấy 8 sản phẩm đầu tiên của mỗi category)
+        // Lấy sản phẩm theo từng category
+        // Thực phẩm chế biến: 4 sản phẩm, các danh mục khác: 8 sản phẩm
         $categoryProducts = [];
         foreach ($categories as $category) {
+            $limit = $category->slug === 'thuc-pham-che-bien' ? 4 : 8;
             $categoryProducts[$category->id] = Product::where('category_id', $category->id)
                 ->where('status', 1)
                 ->orderBy('created_at', 'desc')
-                ->take(8)
+                ->take($limit)
                 ->get();
         }
+
+        // Lấy tất cả categories cho sidebar (sản phẩm nổi bật)
+        $allCategories = Category::orderBy('name')->get();
 
         // Lấy tin tức mới nhất
         $latestPosts = Post::where('status', 1)
@@ -37,7 +45,7 @@ class PageController extends Controller
             ->take(6)
             ->get();
 
-        return view('pages.danhmucsanpham', compact('categories', 'categoryProducts', 'latestPosts'));
+        return view('pages.danhmucsanpham', compact('categories', 'categoryProducts', 'allCategories', 'latestPosts'));
     }
 
     /**

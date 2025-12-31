@@ -205,7 +205,7 @@
                                                             </div>
                                                             <div class="views-field views-field-title">
                                                                 <span class="field-content">
-                                                                    <a href="{{ route('product.show', $product->slug) }}">{{ strtoupper($product->name) }}</a>
+                                                                    <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                                                 </span>
                                                             </div>
                                                         </div>

@@ -45,6 +45,9 @@ class ProductController extends Controller
                     ->where('status', 1)
                     ->firstOrFail();
 
+        // Tăng view_count
+        $product->increment('view_count');
+
         // Related products: cùng category, khác id, lấy 4, sắp xếp mới nhất
         $related = Product::where('category_id', $product->category_id)
                     ->where('id', '!=', $product->id)

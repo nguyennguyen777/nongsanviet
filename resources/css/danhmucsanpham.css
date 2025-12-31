@@ -122,8 +122,19 @@ h3 {
     padding: 15px;
 }
 
+.page-danhmucsanpham .san-pham-list .view-content {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important; /* Bắt đầu từ trái */
+    align-items: stretch !important;
+}
+
 .page-danhmucsanpham .san-pham-list .views-row {
     text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    float: none !important;
 }
 
 .page-danhmucsanpham .san-pham-list .views-row a:hover {
@@ -136,6 +147,13 @@ h3 {
 
 .page-danhmucsanpham .block-san-pham-danh-muc .views-field-title {
     min-height: 50px;
+    flex-grow: 0;
+}
+
+.page-danhmucsanpham .san-pham-list .views-row .views-field-view-node {
+    margin-top: auto !important;
+    padding-top: 10px !important;
+    flex-shrink: 0;
 }
 
 .page-danhmucsanpham #content-right .block {
@@ -195,15 +213,25 @@ h3 {
     font-family: "UTM-Avo";
 }
 
+/* Style cho tiêu đề category - áp dụng cho tất cả các trang category */
+.page-danhmucsanpham .page-san-pham-list-title,
+.page-category .page-san-pham-list-title,
 .page-thucphamthosoche .page-san-pham-list-title,
 .page-thucphamchebien .page-san-pham-list-title,
 .page-giavi .page-san-pham-list-title,
 .page-thucphamtuoisong .page-san-pham-list-title,
-.page-raucuqua .page-san-pham-list-title {
-    font-family: "UTM-AvoBold";
+.page-raucuqua .page-san-pham-list-title,
+.page-do-uong-giai-khat .page-san-pham-list-title {
+    font-family: "UTM-AvoBold" !important;
+    font-weight: bold !important;
     text-transform: uppercase;
     padding-bottom: 10px;
     border-bottom: 2px solid #8bc34a;
+    font-size: 18px;
+    color: #000;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .page-thucphamthosoche .page-san-pham-list .view-header,
@@ -214,49 +242,68 @@ h3 {
     padding: 0px 15px;
 }
 
+.page-thucphamthosoche .san-pham-list .views-field-view-node,
+.page-thucphamchebien .san-pham-list .views-field-view-node,
+.page-giavi .san-pham-list .views-field-view-node,
+.page-thucphamtuoisong .san-pham-list .views-field-view-node,
+.page-raucuqua .san-pham-list .views-field-view-node {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
 .page-thucphamthosoche .san-pham-list .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-field-view-node a {
+.page-thucphamchebien .san-pham-list .views-field-view-node a,
+.page-giavi .san-pham-list .views-field-view-node a,
+.page-thucphamtuoisong .san-pham-list .views-field-view-node a,
+.page-raucuqua .san-pham-list .views-field-view-node a {
     display: inline-block;
     border: 1px solid #8bc34a;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 0;
     padding: 2px 15px;
     color: #8bc34a;
     text-transform: uppercase;
     font-size: 14px;
 }
 
-.page-thucphamthosoche .san-pham-list .views-row-2 .views-field-view-node a,
-.page-thucphamthosoche .san-pham-list .views-row-11 .views-field-view-node a,
-.page-thucphamthosoche .san-pham-list .views-row-12 .views-field-view-node a {
-    margin-top: 5px !important;
-}
+/* Đã xóa các rule riêng lẻ vì đã dùng margin-top: auto để căn đều */
 
 .page-thucphamthosoche .group-class-product,
 .page-thucphamchebien .group-class-product,
 .page-giavi .group-class-product,
 .page-thucphamtuoisong .group-class-product,
 .page-raucuqua .group-class-product {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* ÉP BẮT ĐẦU TỪ TRÁI */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important; /* ÉP BẮT ĐẦU TỪ TRÁI */
+    align-items: stretch !important;
 }
 
-.page-thucphamchebien .san-pham-list .views-row-3 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-4 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-2 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-7 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-8 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-10 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-11 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-16 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-20 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-25 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-27 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-31 .views-field-view-node a,
-.page-thucphamchebien .san-pham-list .views-row-32 .views-field-view-node a {
-    margin-top: 5px !important;
+/* Đảm bảo các sản phẩm bắt đầu từ trái và có cùng chiều cao */
+.page-thucphamthosoche .group-class-product .views-row,
+.page-thucphamchebien .group-class-product .views-row,
+.page-giavi .group-class-product .views-row,
+.page-thucphamtuoisong .group-class-product .views-row,
+.page-raucuqua .group-class-product .views-row {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    align-items: stretch !important;
+    float: none !important;
 }
+
+/* Căn chỉnh nút "Xem chi tiết" ở cùng vị trí */
+.page-thucphamthosoche .group-class-product .views-row .views-field-view-node,
+.page-thucphamchebien .group-class-product .views-row .views-field-view-node,
+.page-giavi .group-class-product .views-row .views-field-view-node,
+.page-thucphamtuoisong .group-class-product .views-row .views-field-view-node,
+.page-raucuqua .group-class-product .views-row .views-field-view-node {
+    margin-top: auto !important;
+    padding-top: 10px !important;
+    flex-shrink: 0;
+}
+
+/* Đã xóa các rule riêng lẻ vì đã dùng margin-top: auto để căn đều */
 
 .page-thucphamchebien .element-invisible,
 .page-thucphamtuoisong .element-invisible,
@@ -351,54 +398,8 @@ h3 {
     content: " ";
 }
 
-.page-giavi .san-pham-list .views-row-1 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-2 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-5 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-6 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-7 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-9 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-12 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-14 .views-field-view-node a,
-.page-giavi .san-pham-list .views-row-16 .views-field-view-node a {
-    margin-top: 35px !important;
-}
+/* Đã xóa các rule riêng lẻ vì đã dùng margin-top: auto để căn đều */
 
-.page-thucphamtuoisong .san-pham-list .views-row-1 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-2 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-4 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-5 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-6 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-7 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-8 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-9 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-10 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-11 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-12 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-13 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-15 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-18 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-20 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-21 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-23 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-27 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-28 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-30 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-31 .views-field-view-node a,
-.page-thucphamtuoisong .san-pham-list .views-row-32 .views-field-view-node a {
-    margin-top: 35px !important;
-}
+/* Đã xóa các rule riêng lẻ vì đã dùng margin-top: auto để căn đều */
 
-.page-raucuqua .san-pham-list .views-field-view-node a {
-    margin-top: 35px;
-}
-
-.page-raucuqua .san-pham-list .views-row-3 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-10 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-12 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-13 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-16 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-17 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-18 .views-field-view-node a,
-.page-raucuqua .san-pham-list .views-row-21 .views-field-view-node a {
-    margin-top: 10px !important;
-}
+/* Đã xóa các rule riêng lẻ vì đã dùng margin-top: auto để căn đều */

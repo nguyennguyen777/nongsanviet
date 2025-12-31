@@ -14,7 +14,7 @@
                                 </div>
                             </div>
                             <div class="region region-content">
-                                @foreach($categories->take(3) as $category)
+                                @foreach($categories as $category)
                                     @if(isset($categoryProducts[$category->id]) && $categoryProducts[$category->id]->count() > 0)
                                         <div id="block-views-block-san-pham-block-{{ $category->id }}"
                                             class="block block-views block-san-pham-danh-muc">
@@ -26,9 +26,9 @@
                                                     <div class="view-header">
                                                         <a href="{{ locale_url($category->slug) }}" class="view-more">Xem thêm&gt;&gt;</a>
                                                     </div>
-                                                    <div class="view-content">
+                                                    <div class="view-content" style="display: flex !important; flex-wrap: wrap !important; justify-content: flex-start !important; align-items: stretch !important;">
                                                         @foreach($categoryProducts[$category->id] as $product)
-                                                            <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-3 col-sm-6 col-xs-12">
+                                                            <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-3 col-sm-6 col-xs-12" style="display: flex !important; flex-direction: column !important; height: 100% !important; float: none !important;">
                                                                 <div class="views-field views-field-field-anh-dai-dien">
                                                                     <div class="field-content">
                                                                         <a href="{{ route('product.show', $product->slug) }}">
@@ -40,10 +40,10 @@
                                                                 </div>
                                                                 <div class="views-field views-field-title">
                                                                     <span class="field-content">
-                                                                        <a href="{{ route('product.show', $product->slug) }}">{{ strtoupper($product->name) }}</a>
+                                                                        <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                                                     </span>
                                                                 </div>
-                                                                <div class="views-field views-field-view-node">
+                                                                <div class="views-field views-field-view-node" style="margin-top: auto !important; padding-top: 10px !important;">
                                                                     <span class="field-content">
                                                                         <a href="{{ route('product.show', $product->slug) }}">Xem chi tiết</a>
                                                                     </span>
@@ -73,7 +73,7 @@
                                             class="view view-block-cate view-id-block_cate view-display-id-block_2 view-dom-id-58eb84ddc28a26f01b0e26f15094a22b">
 
                                             <div class="view-content">
-                                                @forelse($categories as $cat)
+                                                @forelse($allCategories as $cat)
                                                     <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
                                                         <div class="views-field views-field-name">
                                                             <span class="field-content">

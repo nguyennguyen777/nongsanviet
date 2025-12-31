@@ -180,9 +180,9 @@
                   <div
                     class="view view-block-san-pham view-id-block_san_pham view-display-id-block row list san-pham-list view-dom-id-213739d6424e3c946404288d33d31998 jquery-once-1-processed refresh-processed">
 
-                    <div class="view-content">
+                    <div class="view-content" style="display: flex !important; flex-wrap: wrap !important; justify-content: flex-start !important; align-items: stretch !important;">
                       @forelse($featuredProducts as $product)
-                        <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-3 col-sm-6 col-xs-12">
+                        <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-3 col-sm-6 col-xs-12" style="display: flex !important; flex-direction: column !important; height: 100% !important; float: none !important;">
                           <div class="views-field views-field-field-anh-dai-dien">
                             <div class="field-content">
                               <a href="{{ route('product.show', $product->slug) }}">
@@ -197,7 +197,7 @@
                               <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                             </span>
                           </div>
-                          <div class="views-field views-field-view-node">
+                          <div class="views-field views-field-view-node" style="margin-top: auto !important; padding-top: 10px !important;">
                             <span class="field-content">
                               <a href="{{ route('product.show', $product->slug) }}">{{ __('Xem chi tiết') }}</a>
                             </span>

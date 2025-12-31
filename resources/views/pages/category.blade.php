@@ -22,15 +22,15 @@
                                             <div
                                                 class="view view-san-pham view-id-san_pham view-display-id-page_1 row list san-pham-list page-san-pham-list view-dom-id-b5d5146fa8df9b318b11b020dd78c4c9 jquery-once-1-processed refresh-processed">
                                                 <div class="view-header">
-                                                    <div class="page-san-pham-list-title">{{ $category->name }}</div>
+                                                    <div class="page-san-pham-list-title" style="font-family: 'UTM-AvoBold' !important; font-weight: bold !important; text-transform: uppercase; padding-bottom: 10px; border-bottom: 2px solid #8bc34a; font-size: 18px; color: #000; line-height: 1.25; margin-top: 0; margin-bottom: 0;">{{ $category->name }}</div>
                                                 </div>
 
                                                 <div class="view-content">
                                                     <div class="group-class-product-wrapper">
-                                                        <div class="group-class-product">
+                                                        <div class="group-class-product" style="display: flex !important; flex-wrap: wrap !important; justify-content: flex-start !important; align-items: stretch !important;">
                                                             @forelse($products as $product)
                                                                 <div
-                                                                    class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-3 col-sm-6 col-xs-12">
+                                                                    class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-3 col-sm-6 col-xs-12" style="display: flex !important; flex-direction: column !important; height: 100% !important; float: none !important;">
 
                                                                     <div class="views-field views-field-field-anh-dai-dien">
                                                                         <div class="field-content">
@@ -45,10 +45,10 @@
                                                                     </div>
                                                                     <div class="views-field views-field-title">
                                                                         <span class="field-content">
-                                                                            <a href="{{ route('product.show', $product->slug) }}">{{ strtoupper($product->name) }}</a>
+                                                                            <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                                                         </span>
                                                                     </div>
-                                                                    <div class="views-field views-field-view-node">
+                                                                    <div class="views-field views-field-view-node" style="margin-top: auto !important; padding-top: 10px !important;">
                                                                         <span class="field-content">
                                                                             <a href="{{ route('product.show', $product->slug) }}">Xem chi tiết</a>
                                                                         </span>
