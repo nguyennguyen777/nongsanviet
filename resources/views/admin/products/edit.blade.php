@@ -172,23 +172,35 @@
                 Cài đặt
             </h3>
 
-            <div style="display: flex; gap: 30px;">
-                <div class="form-check">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="sort_order">Thứ tự sắp xếp</label>
+                    <input type="number" 
+                           name="sort_order" 
+                           id="sort_order" 
+                           class="form-control" 
+                           value="{{ old('sort_order', $product->sort_order ?? 0) }}" 
+                           min="0"
+                           placeholder="Số nhỏ hơn hiển thị trước">
+                    <small style="color: #7f8c8d;">Số nhỏ hơn sẽ hiển thị trước (mặc định: 0)</small>
+                </div>
+
+                <div class="form-check" style="display: flex; align-items: center;">
                     <input type="checkbox" 
                            name="is_featured" 
                            id="is_featured" 
                            value="1"
                            {{ old('is_featured', $product->is_featured) ? 'checked' : '' }}>
-                    <label for="is_featured" style="margin: 0; font-weight: normal;">Sản phẩm nổi bật</label>
+                    <label for="is_featured" style="margin: 0; font-weight: normal; margin-left: 8px;">Sản phẩm nổi bật</label>
                 </div>
 
-                <div class="form-check">
+                <div class="form-check" style="display: flex; align-items: center;">
                     <input type="checkbox" 
                            name="status" 
                            id="status" 
                            value="1"
                            {{ old('status', $product->status) ? 'checked' : '' }}>
-                    <label for="status" style="margin: 0; font-weight: normal;">Hiển thị</label>
+                    <label for="status" style="margin: 0; font-weight: normal; margin-left: 8px;">Hiển thị</label>
                 </div>
             </div>
         </div>

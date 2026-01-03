@@ -17,6 +17,7 @@ class Product extends Model
         'background_image',
         'view_count',
         'is_featured',
+        'sort_order',
         'status'
     ];
 

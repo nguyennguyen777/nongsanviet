@@ -10,6 +10,10 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminServiceController;
+use App\Http\Controllers\AdminContactController;
 
 /*Route::get('/', function () {
     return view('home');
@@ -37,6 +41,43 @@ Route::prefix('admin')->group(function () {
             'edit' => 'admin.products.edit',
             'update' => 'admin.products.update',
             'destroy' => 'admin.products.destroy',
+        ]);
+        
+        // Categories management
+        Route::resource('categories', AdminCategoryController::class)->names([
+            'index' => 'admin.categories.index',
+            'create' => 'admin.categories.create',
+            'store' => 'admin.categories.store',
+            'edit' => 'admin.categories.edit',
+            'update' => 'admin.categories.update',
+            'destroy' => 'admin.categories.destroy',
+        ]);
+        
+        // Posts management
+        Route::resource('posts', AdminPostController::class)->names([
+            'index' => 'admin.posts.index',
+            'create' => 'admin.posts.create',
+            'store' => 'admin.posts.store',
+            'edit' => 'admin.posts.edit',
+            'update' => 'admin.posts.update',
+            'destroy' => 'admin.posts.destroy',
+        ]);
+        
+        // Services management
+        Route::resource('services', AdminServiceController::class)->names([
+            'index' => 'admin.services.index',
+            'create' => 'admin.services.create',
+            'store' => 'admin.services.store',
+            'edit' => 'admin.services.edit',
+            'update' => 'admin.services.update',
+            'destroy' => 'admin.services.destroy',
+        ]);
+        
+        // Contacts management
+        Route::resource('contacts', AdminContactController::class)->only(['index', 'show', 'destroy'])->names([
+            'index' => 'admin.contacts.index',
+            'show' => 'admin.contacts.show',
+            'destroy' => 'admin.contacts.destroy',
         ]);
     });
 });

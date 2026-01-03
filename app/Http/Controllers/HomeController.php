@@ -19,7 +19,8 @@ class HomeController extends Controller
         // Lấy sản phẩm nổi bật (is_featured = 1)
         $featuredProducts = Product::where('is_featured', 1)
             ->where('status', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('sort_order', 'asc')
+            ->orderBy('id', 'asc')
             ->get();
 
         // Lấy bài viết mới nhất
@@ -64,10 +65,9 @@ class HomeController extends Controller
             })
             ->values();
 
-        // Dịch vụ nổi bật: ưu tiên bản ghi chỉnh sửa gần nhất
+        // Dịch vụ nổi bật: sắp xếp theo ID tăng dần
         $featuredServices = Service::where('status', 1)
-            ->orderBy('updated_at', 'desc')
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'asc')
             ->take(5)
             ->get();
 

@@ -1,29 +1,18 @@
 @extends('admin.layout')
 
-@section('title', 'Quản lý sản phẩm')
-@section('page-title', 'Quản lý sản phẩm')
+@section('title', 'Quản lý dịch vụ')
+@section('page-title', 'Quản lý dịch vụ')
 
 @section('content')
 <div class="search-filter">
-    <form method="GET" action="{{ route('admin.products.index') }}">
+    <form method="GET" action="{{ route('admin.services.index') }}">
         <div class="form-group">
             <label>Tìm kiếm</label>
             <input type="text" 
                    name="search" 
                    class="form-control" 
-                   placeholder="Tìm theo tên hoặc mô tả..."
+                   placeholder="Tìm theo tiêu đề hoặc mô tả..."
                    value="{{ request('search') }}">
-        </div>
-        <div class="form-group">
-            <label>Danh mục</label>
-            <select name="category_id" class="form-control">
-                <option value="">Tất cả danh mục</option>
-                @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}" {{ request('category_id') == $cat->id ? 'selected' : '' }}>
-                        {{ $cat->name }}
-                    </option>
-                @endforeach
-            </select>
         </div>
         <div class="form-group">
             <label>Trạng thái</label>
@@ -44,34 +33,32 @@
 
 <div class="content-box">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h2 style="color: #2c3e50;">Danh sách sản phẩm ({{ $products->total() }})</h2>
-        <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Thêm sản phẩm mới
+        <h2 style="color: #2c3e50;">Danh sách dịch vụ ({{ $services->total() }})</h2>
+        <a href="{{ route('admin.services.create') }}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Thêm dịch vụ mới
         </a>
     </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Thứ tự</th>
                 <th>ID</th>
                 <th>Ảnh</th>
-                <th>Tên sản phẩm</th>
-                <th>Danh mục</th>
-                <th>Giá</th>
+                <th>Tiêu đề</th>
+                <th>Slug</th>
                 <th>Trạng thái</th>
-                <th>Nổi bật</th>
+                <th>Ngày tạo</th>
                 <th>Thao tác</th>
             </tr>
         </thead>
         <tbody>
-            @forelse($products as $product)
+            @forelse($services as $service)
                 <tr>
-                    <td>{{ $product->id }}</td>
+                    <td>{{ $service->id }}</td>
                     <td>
-                        @if($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" 
-                                 alt="{{ $product->name }}" 
+                        @if($service->image)
+                            <img src="{{ asset('storage/' . $service->image) }}" 
+                                 alt="{{ $service->title }}" 
                                  style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;">
                         @else
                             <div style="width: 60px; height: 60px; background: #ddd; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
@@ -79,31 +66,35 @@
                             </div>
                         @endif
                     </td>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->category->name ?? '-' }}</td>
-                    <td>{{ $product->price ? number_format($product->price) . ' đ' : '-' }}</td>
                     <td>
-                        @if($product->status)
+                        <strong>{{ $service->attributes['title'] ?? $service->title }}</strong>
+                        @if(isset($service->attributes['title_en']) || isset($service->attributes['title_zh']))
+                            <br>
+                            <small style="color: #7f8c8d;">
+                                @if(isset($service->attributes['title_en']) && $service->attributes['title_en']) EN: {{ $service->attributes['title_en'] }} @endif
+                                @if(isset($service->attributes['title_zh']) && $service->attributes['title_zh']) | ZH: {{ $service->attributes['title_zh'] }} @endif
+                            </small>
+                        @endif
+                    </td>
+                    <td>
+                        <code style="background: #f8f9fa; padding: 3px 6px; border-radius: 3px;">{{ $service->slug }}</code>
+                    </td>
+                    <td>
+                        @if($service->status)
                             <span class="badge badge-success">Hiển thị</span>
                         @else
                             <span class="badge badge-danger">Ẩn</span>
                         @endif
                     </td>
-                    <td>
-                        @if($product->is_featured)
-                            <span class="badge badge-warning">Nổi bật</span>
-                        @else
-                            -
-                        @endif
-                    </td>
+                    <td>{{ $service->created_at->format('d/m/Y H:i') }}</td>
                     <td>
                         <div class="actions">
-                            <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-primary" style="padding: 5px 10px; font-size: 12px;">
+                            <a href="{{ route('admin.services.edit', $service) }}" class="btn btn-primary" style="padding: 5px 10px; font-size: 12px;">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <form action="{{ route('admin.products.destroy', $product) }}" 
+                            <form action="{{ route('admin.services.destroy', $service) }}" 
                                   method="POST" 
-                                  onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');"
+                                  onsubmit="return confirm('Bạn có chắc chắn muốn xóa dịch vụ này?');"
                                   style="display: inline;">
                                 @csrf
                                 @method('DELETE')
@@ -116,73 +107,67 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="9" style="text-align: center; padding: 40px; color: #999;">
-                        Không tìm thấy sản phẩm nào
+                    <td colspan="7" style="text-align: center; padding: 40px; color: #999;">
+                        Không tìm thấy dịch vụ nào
                     </td>
                 </tr>
             @endforelse
         </tbody>
     </table>
 
-    @if($products->hasPages() || $products->total() > 0)
+    @if($services->hasPages() || $services->total() > 0)
         <div class="pagination">
             <div class="pagination-info">
-                Hiển thị {{ ($products->currentPage() - 1) * $products->perPage() + 1 }} 
-                đến {{ min($products->currentPage() * $products->perPage(), $products->total()) }} 
-                trong tổng số {{ $products->total() }} sản phẩm
+                Hiển thị {{ ($services->currentPage() - 1) * $services->perPage() + 1 }} 
+                đến {{ min($services->currentPage() * $services->perPage(), $services->total()) }} 
+                trong tổng số {{ $services->total() }} dịch vụ
             </div>
             
-            @if($products->hasPages())
+            @if($services->hasPages())
                 <div class="pagination-links">
-                    {{-- Previous Page Link --}}
-                    @if ($products->onFirstPage())
+                    @if ($services->onFirstPage())
                         <span class="disabled" aria-disabled="true">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                     @else
-                        <a href="{{ $products->appends(request()->query())->previousPageUrl() }}" 
+                        <a href="{{ $services->appends(request()->query())->previousPageUrl() }}" 
                            rel="prev" 
                            class="page-link">
                             <i class="fas fa-chevron-left"></i>
                         </a>
                     @endif
 
-                    {{-- Pagination Elements --}}
                     @php
-                        $currentPage = $products->currentPage();
-                        $lastPage = $products->lastPage();
+                        $currentPage = $services->currentPage();
+                        $lastPage = $services->lastPage();
                         $startPage = max(1, $currentPage - 2);
                         $endPage = min($lastPage, $currentPage + 2);
                     @endphp
 
-                    {{-- First page --}}
                     @if ($startPage > 1)
-                        <a href="{{ $products->appends(request()->query())->url(1) }}" class="page-link">1</a>
+                        <a href="{{ $services->appends(request()->query())->url(1) }}" class="page-link">1</a>
                         @if ($startPage > 2)
                             <span class="disabled">...</span>
                         @endif
                     @endif
 
-                    {{-- Page numbers around current page --}}
                     @for ($page = $startPage; $page <= $endPage; $page++)
                         @if ($page == $currentPage)
                             <span class="active" aria-current="page">{{ $page }}</span>
                         @else
-                            <a href="{{ $products->appends(request()->query())->url($page) }}" class="page-link">{{ $page }}</a>
+                            <a href="{{ $services->appends(request()->query())->url($page) }}" class="page-link">{{ $page }}</a>
                         @endif
                     @endfor
 
-                    {{-- Last page --}}
                     @if ($endPage < $lastPage)
                         @if ($endPage < $lastPage - 1)
                             <span class="disabled">...</span>
                         @endif
-                        <a href="{{ $products->appends(request()->query())->url($lastPage) }}" class="page-link">{{ $lastPage }}</a>
+                        <a href="{{ $services->appends(request()->query())->url($lastPage) }}" class="page-link">{{ $lastPage }}</a>
                     @endif
 
-                    {{-- Next Page Link --}}
-                    @if ($products->hasMorePages())
-                        <a href="{{ $products->appends(request()->query())->nextPageUrl() }}" 
+                    @if ($services->hasMorePages())
+                        <a href="{{ $services->appends(request()->query())->nextPageUrl() }}" 
                            rel="next" 
                            class="page-link">
                             <i class="fas fa-chevron-right"></i>
