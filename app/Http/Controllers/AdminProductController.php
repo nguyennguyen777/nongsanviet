@@ -36,7 +36,9 @@ class AdminProductController extends Controller
             $query->where('status', $request->status);
         }
 
-        $products = $query->orderBy('created_at', 'desc')->paginate(20);
+        $products = $query->orderBy('sort_order', 'asc')
+            ->orderBy('id', 'asc')
+            ->paginate(10);
         $categories = Category::orderBy('name')->get();
 
         return view('admin.products.index', compact('products', 'categories'));
@@ -70,6 +72,7 @@ class AdminProductController extends Controller
             'image' => 'nullable|image|max:2048',
             'background_image' => 'nullable|image|max:2048',
             'is_featured' => 'boolean',
+            'sort_order' => 'nullable|integer|min:0',
             'status' => 'boolean',
         ]);
 

@@ -215,6 +215,10 @@
             background: #fff3cd;
             color: #856404;
         }
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
         .actions {
             display: flex;
             gap: 10px;
@@ -306,8 +310,28 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('admin.categories.index') }}" class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
+                        <i class="fas fa-folder"></i> Quản lý danh mục
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('admin.products.index') }}" class="{{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
                         <i class="fas fa-box"></i> Quản lý sản phẩm
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.posts.index') }}" class="{{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
+                        <i class="fas fa-newspaper"></i> Quản lý bài viết
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.services.index') }}" class="{{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
+                        <i class="fas fa-cogs"></i> Quản lý dịch vụ
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.contacts.index') }}" class="{{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">
+                        <i class="fas fa-envelope"></i> Quản lý liên hệ
                     </a>
                 </li>
             </ul>
@@ -330,6 +354,12 @@
             @if(session('success'))
                 <div class="alert alert-success">
                     <i class="fas fa-check-circle"></i> {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i> {{ session('error') }}
                 </div>
             @endif
 

@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('view_count')->default(0)->after('status');
-            $table->string('background_image')->nullable()->after('image');
-            $table->text('short_description')->nullable()->after('description');
+            $table->integer('sort_order')->default(0)->after('is_featured');
         });
     }
 
@@ -24,12 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn(['view_count', 'background_image', 'short_description']);
+            $table->dropColumn('sort_order');
         });
     }
 };
-
-
-
-
-
