@@ -138,7 +138,20 @@ class PageController extends Controller
             ->orderBy('province')
             ->pluck('province')
             ->toArray();
+
+        // Danh sách quận/huyện theo từng tỉnh để fill vào select động
+        $provinceDistricts = DistributionPoint::where('status', 1)
+            ->whereNotNull('province')
+            ->get()
+            ->groupBy('province')
+            ->map(function ($items) {
+                return $items->whereNotNull('district')
+                    ->pluck('district')
+                    ->unique()
+                    ->values();
+            })
+            ->toArray();
         
-        return view('pages.hethongphanphoi', compact('distributionPoints', 'provinces'));
+        return view('pages.hethongphanphoi', compact('distributionPoints', 'provinces', 'provinceDistricts'));
     }
 }

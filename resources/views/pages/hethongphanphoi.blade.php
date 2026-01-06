@@ -88,6 +88,8 @@
                                                 <div class="map-content">
                                                     @forelse($distributionPoints as $point)
                                                         <div class="location-item" 
+                                                             data-province="{{ $point->province ?? '' }}"
+                                                             data-district="{{ $point->district ?? '' }}"
                                                              @if($point->latitude && $point->longitude)
                                                              data-lat="{{ $point->latitude }}" 
                                                              data-long="{{ $point->longitude }}"
@@ -137,6 +139,9 @@
                                                             <p>Chưa có điểm phân phối nào.</p>
                                                         </div>
                                                     @endforelse
+                                                </div>
+                                                <div id="no-location-message" style="display: none; padding: 12px; color: #666;">
+                                                    Không tìm thấy điểm phân phối phù hợp.
                                                 </div>
                                                 <div class="map-block">
                                                     <div id="map-canvas"
@@ -894,3 +899,75 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const provinceSelect = document.getElementById('tinh-thanh');
+            const districtSelect = document.getElementById('quan-huyen');
+            const findBtn = document.querySelector('.find-map');
+            const provinceDistricts = @json($provinceDistricts);
+            const items = Array.from(document.querySelectorAll('.location-item'));
+            const noMessage = document.getElementById('no-location-message');
+
+            const renderDistricts = (province) => {
+                if (!districtSelect) return;
+
+                districtSelect.innerHTML = '';
+                const defaultOpt = document.createElement('option');
+                defaultOpt.value = '';
+                defaultOpt.textContent = 'Chọn quận/huyện/thị xã';
+                districtSelect.appendChild(defaultOpt);
+
+                if (province && provinceDistricts[province]) {
+                    provinceDistricts[province].forEach((district) => {
+                        const opt = document.createElement('option');
+                        opt.value = district;
+                        opt.textContent = district;
+                        districtSelect.appendChild(opt);
+                    });
+                }
+            };
+
+            const filterList = () => {
+                const province = provinceSelect?.value || '';
+                const district = districtSelect?.value || '';
+                let visible = 0;
+
+                items.forEach((item) => {
+                    const itemProvince = item.dataset.province || '';
+                    const itemDistrict = item.dataset.district || '';
+                    const match =
+                        (!province || itemProvince === province) &&
+                        (!district || itemDistrict === district);
+
+                    item.style.display = match ? 'block' : 'none';
+                    if (match) visible += 1;
+                });
+
+                if (noMessage) {
+                    noMessage.style.display = visible === 0 ? 'block' : 'none';
+                }
+            };
+
+            provinceSelect?.addEventListener('change', () => {
+                renderDistricts(provinceSelect.value);
+                filterList();
+            });
+
+            districtSelect?.addEventListener('change', filterList);
+
+            findBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                filterList();
+                const list = document.querySelector('.map-content');
+                if (list) {
+                    list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            renderDistricts(provinceSelect?.value || '');
+            filterList();
+        });
+    </script>
+@endpush

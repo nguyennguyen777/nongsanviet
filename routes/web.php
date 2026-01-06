@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
@@ -88,6 +90,15 @@ Route::get('/', function () {
     return redirect('/' . $locale);
 });
 
+// Trang tìm kiếm (không locale) -> redirect theo locale đang chọn
+Route::get('/search', function (Request $request) {
+    $locale = session('locale', 'vi');
+    return redirect()->route('search', [
+        'locale' => $locale,
+        'q' => $request->query('q'),
+    ]);
+});
+
 // Route trang chủ với locale
 Route::get('/{locale}', [HomeController::class, 'index'])->name('home')->where(['locale' => 'vi|en|zh']);
 
@@ -95,9 +106,6 @@ Route::get('/products', [ProductController::class, 'index'])
     ->name('products.index');
 Route::get('/product/{slug}', [ProductController::class, 'show'])
     ->name('product.show');
-Route::get('/search', function () {
-    return 'search page';
-})->name('search');
 // Routes với locale prefix - hỗ trợ vi, en, zh
 Route::prefix('{locale}')->where(['locale' => 'vi|en|zh'])->group(function () {
     Route::get('/ve-chung-toi', [PageController::class, 'about'])->name('about');
@@ -105,8 +113,10 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en|zh'])->group(function () {
     Route::post('/lien-he', [PageController::class, 'contactStore']);
     Route::get('/he-thong-phan-phoi', [PageController::class, 'hethongphanphoi'])->name('hethongphanphoi');
     Route::get('/danh-muc-san-pham', [PageController::class, 'danhmucsanpham'])->name('danhmucsanpham');
+    Route::get('/dich-vu', [ServiceController::class, 'index'])->name('services.index');
     Route::get('/tin-tuc', [PostController::class, 'index'])->name('news.index');
     Route::get('/tin-tuc/{slug}', [PostController::class, 'show'])->name('news.show');
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
 
     // Dynamic routes - phải đặt sau các routes cụ thể để tránh conflict
     // Route này sẽ handle tất cả các category và service pages

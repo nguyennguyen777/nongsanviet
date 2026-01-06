@@ -363,7 +363,7 @@
         </nav>
 
         <!-- search -->
-        <form action="{{ route('search') }}" class="hidden md:flex items-center bg-white ml-auto">
+        <form action="{{ locale_route('search') }}" class="hidden md:flex items-center bg-white ml-auto">
           <div class="relative flex items-center">
             <input type="search" name="q" placeholder="{{ __('Tìm kiếm...') }}" class="w-40 border border-gray-300 shadow-sm rounded-md pl-3 pr-3 py-1 
                     focus:outline-none

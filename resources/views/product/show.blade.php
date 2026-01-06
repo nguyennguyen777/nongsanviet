@@ -31,10 +31,11 @@
                                     @endif
 
                                     @if($product->description)
-                                        <div class="product-full-description">
-                                            {!! nl2br(e($product->description)) !!}
-                                        </div>
-                                    @endif
+    <div class="product-full-description product-description">
+        {!! $product->description !!}
+    </div>
+@endif
+
                                 </div>
 
                                 {{-- Product Image Section --}}
