@@ -53,7 +53,7 @@
               <div class="relative" x-data="{ openSub: false }" @mouseenter="openSub = true"
                 @mouseleave="openSub = false">
 
-                <a href="{{ locale_url('thuc-pham') }}"
+                <a href="{{ locale_url('danh-muc-san-pham') }}"
                   class="flex justify-between items-center px-4 py-2 hover:bg-gray-50 font-normal uppercase">
                   {{ __('Thực phẩm') }}
                   <img src="{{ asset('storage/products/li-expanded-right.png') }}" class="w-3 h-3">

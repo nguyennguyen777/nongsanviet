@@ -17,25 +17,45 @@ class CategoryController extends Controller
         // Tìm category theo slug
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Lấy danh sách products thuộc category này, chỉ lấy những sản phẩm active
-        $products = Product::where('category_id', $category->id)
-            ->where('status', 1)
+        // Lấy ID các category con (nếu có)
+        $childCategoryIds = Category::where('parent_id', $category->id)
+            ->pluck('id')
+            ->toArray();
+
+        // Lấy sản phẩm:
+        // - thuộc category hiện tại
+        // - HOẶC thuộc các category con
+        $products = Product::where('status', 1)
+            ->where(function ($query) use ($category, $childCategoryIds) {
+                $query->where('category_id', $category->id);
+
+                if (!empty($childCategoryIds)) {
+                    $query->orWhereIn('category_id', $childCategoryIds);
+                }
+            })
             ->orderByDesc('created_at')
             ->paginate(24);
 
-        // Lấy danh sách categories để hiển thị sidebar (có thể lấy tất cả hoặc limit)
-        // Bạn có thể thêm điều kiện lọc nếu cần, ví dụ: ->where('status', 1) nếu có field status
+        // Sidebar category
         $categories = Category::where('id', '!=', $category->id)
             ->orderBy('name')
+            ->take(7)
             ->get();
 
-        // Lấy tin tức mới nhất để hiển thị sidebar
+        // Tin tức mới
         $latestPosts = Post::where('status', 1)
             ->orderByDesc('created_at')
             ->take(6)
             ->get();
 
-        return view('pages.category', compact('category', 'products', 'categories', 'latestPosts'));
+        return view('pages.category', compact(
+            'category',
+            'products',
+            'categories',
+            'latestPosts'
+        ));
     }
+
+
 }
 
