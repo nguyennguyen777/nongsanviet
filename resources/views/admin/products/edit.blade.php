@@ -91,26 +91,23 @@
 
                 <div class="form-group">
                     <label for="description">Mô tả (Tiếng Việt)</label>
-                    <textarea name="description" 
-                              id="description" 
-                              class="form-control" 
-                              rows="8">{{ old('description', $product->description) }}</textarea>
+                    <textarea name="description" id="editor">
+        {{ old('description', $product->description ?? '') }}
+    </textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="description_en">Mô tả (Tiếng Anh)</label>
-                    <textarea name="description_en" 
-                              id="description_en" 
-                              class="form-control" 
-                              rows="8">{{ old('description_en', $product->description_en) }}</textarea>
+                    <textarea name="description" id="editor">
+        {{ old('description', $product->description ?? '') }}
+    </textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="description_zh">Mô tả (Tiếng Trung)</label>
-                    <textarea name="description_zh" 
-                              id="description_zh" 
-                              class="form-control" 
-                              rows="8">{{ old('description_zh', $product->description_zh) }}</textarea>
+                    <textarea name="description" id="editor">
+        {{ old('description', $product->description ?? '') }}
+    </textarea>
                 </div>
             </div>
         </div>
@@ -217,6 +214,7 @@
 </div>
 
 @push('scripts')
+<script src="https://cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 <script>
 function previewImage(input, previewId) {
     if (input.files && input.files[0]) {
@@ -229,6 +227,11 @@ function previewImage(input, previewId) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+CKEDITOR.replace('editor', {
+        height: 400,
+        extraAllowedContent: 'img(*)'
+    });
 </script>
 @endpush
 @endsection

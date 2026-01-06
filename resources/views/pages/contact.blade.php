@@ -226,7 +226,7 @@
                                     </div>
 
                                     <div class="content">
-                                        <form action="/vi/lien-he" method="post" id="block-dang-ky-nhan-tin"
+                                        <form action="{{ locale_route('contact') }}" method="post" id="block-dang-ky-nhan-tin"
                                             accept-charset="UTF-8">
                                             @csrf
                                             <input type="hidden" name="form_id" value="block_dang_ky_nhan_tin">

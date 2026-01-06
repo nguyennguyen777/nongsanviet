@@ -123,7 +123,7 @@
 
                                                             <div class="views-field views-field-title">
                                                                 <span class="field-content">
-                                                                    <a href="{{ locale_url('content/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                    <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
                                                                 </span>
                                                             </div>
                                                             <div class="views-field views-field-body">
