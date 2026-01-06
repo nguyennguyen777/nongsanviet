@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'name_en', 'name_zh',
+        'name',
+        'name_en',
+        'name_zh',
         'slug',
-        'description', 'description_en', 'description_zh',
+        'description',
+        'description_en',
+        'description_zh',
         'image'
     ];
 
@@ -46,5 +50,15 @@ class Category extends Model
             return $this->attributes['description_zh'];
         }
         return $value;
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
     }
 }
