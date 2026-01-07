@@ -71,4 +71,36 @@ class ProductController extends Controller
 
         return view('product.show', compact('product', 'related', 'featuredCategories', 'latestPosts'));
     }
+
+    public function update(Request $request, Product $product)
+    {
+        // (khuyến khích) validate trước
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'category_id' => 'nullable|exists:categories,id',
+        ]);
+
+        $product->update([
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'name_en' => $request->name_en,
+            'name_zh' => $request->name_zh,
+            'slug' => $request->slug,
+            'price' => $request->price,
+            'short_description' => $request->short_description,
+
+            'description' => $request->description,
+            'description_en' => $request->description_en,
+            'description_zh' => $request->description_zh,
+
+            'sort_order' => $request->sort_order ?? 0,
+            'is_featured' => $request->has('is_featured'),
+            'status' => $request->has('status'),
+        ]);
+
+        return redirect()
+            ->route('admin.products.index')
+            ->with('success', 'Cập nhật sản phẩm thành công');
+    }
+
 }
