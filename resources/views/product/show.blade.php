@@ -38,23 +38,23 @@
 
                                 </div>
 
-                                {{-- Product Image Section --}}
+                                <!-- {{-- Product Image Section --}}
                                 @if($product->image)
                                 <div class="product-image-section">
                                     <img src="{{ asset('storage/' . $product->image) }}" 
                                          alt="{{ $product->name }}" 
                                          class="product-main-image">
                                 </div>
-                                @endif
+                                @endif -->
 
                                 {{-- Background Image Section --}}
-                                @if($product->background_image)
+                                <!-- @if($product->background_image)
                                 <div class="product-background-section">
                                     <img src="{{ asset('storage/' . $product->background_image) }}" 
                                          alt="Background" 
                                          class="product-background-image">
                                 </div>
-                                @endif
+                                @endif -->
                             </div>
                         </div>
                     </div>

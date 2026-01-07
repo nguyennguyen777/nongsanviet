@@ -96,15 +96,15 @@
 
                 <div class="form-group">
                     <label for="description_en">Mô tả (Tiếng Anh)</label>
-                    <textarea name="description" id="editor">
-        {{ old('description', $product->description ?? '') }}
+                    <textarea name="description_en" id="editor_en">
+        {{ old('description_en', $product->description_en ?? '') }}
     </textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="description_zh">Mô tả (Tiếng Trung)</label>
-                    <textarea name="description" id="editor">
-        {{ old('description', $product->description ?? '') }}
+                    <textarea name="description_zh" id="editor_zh">
+        {{ old('description_zh', $product->description_zh ?? '') }}
     </textarea>
                 </div>
             </div>
@@ -208,6 +208,8 @@ CKEDITOR.replace('editor', {
         height: 400,
         extraAllowedContent: 'img(*)'
     });
+    CKEDITOR.replace('editor_en', { height: 400, extraAllowedContent: 'img(*)' });
+CKEDITOR.replace('editor_zh', { height: 400, extraAllowedContent: 'img(*)' });
 </script>
 @endpush
 @endsection
