@@ -12,7 +12,7 @@ class PostController extends Controller
     /**
      * Hiển thị trang danh sách tin tức
      */
-    public function index()
+    public function index($locale)
     {
         // Lấy tin nổi bật (3 tin đầu tiên)
         $featuredPosts = Post::where('status', 1)
@@ -55,17 +55,27 @@ class PostController extends Controller
     /**
      * Hiển thị chi tiết một bài viết
      */
-    public function show($slug)
+    public function show($locale, $slug)
     {
         $post = Post::where('slug', $slug)
             ->where('status', 1)
             ->firstOrFail();
 
-        // Lấy tin tức liên quan
+        // Tăng view_count
+        $post->increment('view_count');
+
+        // Lấy tin tức liên quan (cho phần "Tin khác")
         $relatedPosts = Post::where('status', 1)
             ->where('id', '!=', $post->id)
             ->orderByDesc('created_at')
-            ->take(6)
+            ->take(5)
+            ->get();
+
+        // Lấy tin nổi bật (cho phần "Tin nổi bật")
+        $featuredPosts = Post::where('status', 1)
+            ->where('id', '!=', $post->id)
+            ->orderByDesc('created_at')
+            ->take(5)
             ->get();
 
         // Lấy tin tức mới nhất cho sidebar
@@ -75,14 +85,18 @@ class PostController extends Controller
             ->take(6)
             ->get();
 
-        // Lấy sản phẩm nổi bật cho sidebar
-        $featuredProducts = Product::where('is_featured', 1)
-            ->where('status', 1)
+        // Lấy danh mục sản phẩm cho sidebar "Sản phẩm nổi bật"
+        $featuredCategories = Category::orderBy('name')
+            ->take(10)
+            ->get();
+
+        // Lấy sản phẩm mới cho sidebar
+        $newProducts = Product::where('status', 1)
             ->orderByDesc('created_at')
             ->take(6)
             ->get();
 
-        return view('pages.post', compact('post', 'relatedPosts', 'latestPosts', 'featuredProducts'));
+        return view('pages.new-detail', compact('post', 'relatedPosts', 'featuredPosts', 'latestPosts', 'featuredCategories', 'newProducts'));
     }
 }
 

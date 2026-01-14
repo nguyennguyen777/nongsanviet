@@ -5,154 +5,111 @@
     <div class="page-search">
         <div class="page-danhmucsanpham">
             <div class="container-content-common-all">
-                <div class="container">
-                    <div class="container-content">
-                        <div class="content-top"></div>
-                        <div class="row">
-                            <div id="content-center" class="col-md-9 col-sm-12 col-xs-12">
-                                <div class="alla-action-link">
-                                    <div class="tabs"></div>
-                                </div>
+                 <div class="container" style="width: 100%;">
+                    <div class="container-content" style="width: 100%;">
+                     
+                       
+                            <div id="content-center">
+                              
                                 <div class="region region-content">
                                     <div id="block-system-main" class="block block-system">
-                                        <div class="content">
-                                            <div class="view view-search view-id-search view-display-id-page_1 row list search-list page-search-list">
-                                                <div class="view-header">
-                                                    <div class="page-tin-tuc-list-title">
-                                                        {{ $keyword !== '' ? "Kết quả cho: \"{$keyword}\"" : 'Nhập từ khóa để tìm kiếm' }}
+                                        <div class="content" style="width: 100%;">
+                                            <!-- Search Form -->
+                                            <form
+                                                class="search-form"
+                                                action="{{ route('search', ['locale' => app()->getLocale()]) }}"
+                                                method="get"
+                                                id="search-form"
+                                                accept-charset="UTF-8"
+                                            >
+                                                <div>
+                                                    <div class="container-inline form-wrapper" id="edit-basic">
+                                                        <div class="form-item form-type-textfield form-item-keys">
+                                                            <input
+                                                                class="form-control form-text"
+                                                                type="text"
+                                                                id="edit-keys"
+                                                                name="q"
+                                                                value="{{ $keyword }}"
+                                                                size="40"
+                                                                maxlength="255"
+                                                                placeholder="Nhập từ khóa tìm kiếm..."
+                                                            />
+                                                        </div>
+                                                        <input
+                                                            type="submit"
+                                                            id="edit-submit"
+                                                            name="op"
+                                                            value="Tìm kiếm"
+                                                            class="form-submit"
+                                                        />
                                                     </div>
                                                 </div>
+                                            </form>
 
-                                                @if($keyword === '')
-                                                    <p style="padding: 20px 0; color: #666;">Vui lòng nhập từ khóa để hiển thị kết quả.</p>
+                                            @if($keyword === '')
+                                                <p style="padding: 20px 0; color: #666;">Vui lòng nhập từ khóa để hiển thị kết quả.</p>
+                                            @else
+                                                @php
+                                                    $hasAny = $products->count() + $services->count() + $posts->count() > 0;
+                                                @endphp
+
+                                                @if($hasAny)
+                                                    <h2>Kết quả tìm kiếm</h2>
+                                                    <ol class="search-results node-results">
+                                                        <!-- Products -->
+                                                        @foreach($products as $product)
+                                                            <li class="search-result">
+                                                                <h3 class="title">
+                                                                    <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                                                                </h3>
+                                                                <div class="search-snippet-info">
+                                                                    <p class="search-snippet">
+                                                                        {{ \Illuminate\Support\Str::limit(strip_tags($product->description ?? ''), 200) }}
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        @endforeach
+
+                                                        <!-- Services -->
+                                                        @foreach($services as $service)
+                                                            <li class="search-result">
+                                                                <h3 class="title">
+                                                                    <a href="{{ locale_url($service->slug) }}">{{ $service->title }}</a>
+                                                                </h3>
+                                                                <div class="search-snippet-info">
+                                                                    <p class="search-snippet">
+                                                                        {{ \Illuminate\Support\Str::limit(strip_tags($service->description ?? ''), 200) }}
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        @endforeach
+
+                                                        <!-- Posts -->
+                                                        @foreach($posts as $post)
+                                                            <li class="search-result">
+                                                                <h3 class="title">
+                                                                    <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                </h3>
+                                                                <div class="search-snippet-info">
+                                                                    <p class="search-snippet">
+                                                                        {{ \Illuminate\Support\Str::limit(strip_tags($post->content ?? ''), 200) }}
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        @endforeach
+                                                    </ol>
                                                 @else
-                                                    @php
-                                                        $hasAny = $products->count() + $services->count() + $posts->count() > 0;
-                                                    @endphp
-
-                                                    @unless($hasAny)
-                                                        <p style="padding: 20px 0; color: #666;">Không tìm thấy kết quả phù hợp.</p>
-                                                    @endunless
-
-                                                    <!-- Products -->
-                                                    @if($products->count() > 0)
-                                                        <div class="view-header" style="margin-top: 10px;">
-                                                            <div class="page-tin-tuc-list-title">SẢN PHẨM</div>
-                                                        </div>
-                                                        <div class="view-content">
-                                                            <div class="group-class-post-wrapper">
-                                                                <div class="group-class-post row">
-                                                                    @foreach($products as $product)
-                                                                        <div class="views-row views-row-{{ $loop->iteration }} col-md-6 col-sm-6 col-xs-12">
-                                                                            <div class="views-field views-field-field-anh-dai-dien">
-                                                                                <div class="field-content">
-                                                                                    <a href="{{ route('product.show', $product->slug) }}">
-                                                                                        <img class="img-responsive"
-                                                                                            src="{{ $product->image ? asset('storage/' . $product->image) : asset('storage/products/default.jpg') }}"
-                                                                                            alt="{{ $product->name }}">
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="views-field views-field-title" style="margin-top: 10px;">
-                                                                                <span class="field-content">
-                                                                                    <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="views-field views-field-body" style="margin-top: 6px;">
-                                                                                <span class="field-content">
-                                                                                    {{ \Illuminate\Support\Str::limit(strip_tags($product->description ?? ''), 150) }}...
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endif
-
-                                                    <!-- Services -->
-                                                    @if($services->count() > 0)
-                                                        <div class="view-header" style="margin-top: 20px;">
-                                                            <div class="page-tin-tuc-list-title">DỊCH VỤ</div>
-                                                        </div>
-                                                        <div class="view-content">
-                                                            <div class="group-class-post-wrapper">
-                                                                <div class="group-class-post row">
-                                                                    @foreach($services as $service)
-                                                                        <div class="views-row views-row-{{ $loop->iteration }} col-md-6 col-sm-6 col-xs-12">
-                                                                            <div class="views-field views-field-field-anh-dai-dien">
-                                                                                <div class="field-content">
-                                                                                    <a href="{{ locale_url($service->slug) }}">
-                                                                                        <img class="img-responsive"
-                                                                                            src="{{ $service->image ? asset('storage/' . $service->image) : asset('storage/services/default.jpg') }}"
-                                                                                            alt="{{ $service->title }}">
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="views-field views-field-title" style="margin-top: 10px;">
-                                                                                <span class="field-content">
-                                                                                    <a href="{{ locale_url($service->slug) }}">{{ $service->title }}</a>
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="views-field views-field-body" style="margin-top: 6px;">
-                                                                                <span class="field-content">
-                                                                                    {{ \Illuminate\Support\Str::limit(strip_tags($service->description ?? ''), 150) }}...
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endif
-
-                                                    <!-- Posts -->
-                                                    @if($posts->count() > 0)
-                                                        <div class="view-header" style="margin-top: 20px;">
-                                                            <div class="page-tin-tuc-list-title">TIN TỨC</div>
-                                                        </div>
-                                                        <div class="view-content">
-                                                            <div class="group-class-post-wrapper">
-                                                                <div class="group-class-post">
-                                                                    @foreach($posts as $post)
-                                                                        <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
-                                                                            <div class="views-field views-field-title">
-                                                                                <span class="field-content">
-                                                                                    <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="views-field views-field-body">
-                                                                                <span class="field-content">
-                                                                                    {{ \Illuminate\Support\Str::limit(strip_tags($post->content ?? ''), 180) }}...
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endif
+                                                    <h2>Không tìm thấy kết quả nào.</h2>
+                                                    <ul>
+                                                        <li>Bạn hãy kiểm tra lại từ khóa tìm kiếm.</li>
+                                                    </ul>
                                                 @endif
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
-                                <div class="content-bottom"></div>
-                            </div>
-
-                            <div id="content-right" class="col-md-3 col-sm-12 col-xs-12">
-                                <div class="region region-content-right-sp">
-                                    <div class="block block-views block-border">
-                                        <div class="block-title">
-                                            <h3>{{ __('Hệ thống phân phối') }}</h3>
-                                        </div>
-                                        <div class="content">
-                                            <p style="padding: 12px; color: #444;">
-                                                {{ __('Tìm kiếm sản phẩm, dịch vụ, tin tức và hệ thống phân phối của Nông Sản Việt Nam.') }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>

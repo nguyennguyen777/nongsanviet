@@ -57,6 +57,14 @@
                                 @endif -->
                             </div>
                         </div>
+                        <!-- Content Bottom: Social Sharing + Tin khác + Tin nổi bật -->
+                         @include('partials.content-bottom', [
+                             'item' => $product,
+                             'relatedItems' => $relatedPosts ?? collect(),
+                             'featuredItems' => $featuredPosts ?? collect(),
+                             'detailRoute' => 'tin-tuc/',
+                             'detailUrl' => request()->url()
+                         ])
                     </div>
 
                     {{-- Sidebar --}}

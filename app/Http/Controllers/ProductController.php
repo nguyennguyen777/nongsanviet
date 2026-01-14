@@ -69,7 +69,19 @@ class ProductController extends Controller
             ->take(6)
             ->get();
 
-        return view('product.show', compact('product', 'related', 'featuredCategories', 'latestPosts'));
+        // Lấy tin tức liên quan cho content-bottom "Tin khác"
+        $relatedPosts = Post::where('status', 1)
+            ->orderByDesc('created_at')
+            ->take(5)
+            ->get();
+
+        // Lấy tin nổi bật cho content-bottom "Tin nổi bật"
+        $featuredPosts = Post::where('status', 1)
+            ->orderByDesc('created_at')
+            ->take(5)
+            ->get();
+
+        return view('product.show', compact('product', 'related', 'featuredCategories', 'latestPosts', 'relatedPosts', 'featuredPosts'));
     }
 
     public function update(Request $request, Product $product)
