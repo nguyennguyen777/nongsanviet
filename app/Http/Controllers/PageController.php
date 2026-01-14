@@ -23,7 +23,7 @@ class PageController extends Controller
         $categories = Category::whereIn('slug', $categorySlugs)
             ->orderByRaw("FIELD(slug, 'do-uong-giai-khat', 'thuc-pham-che-bien', 'gia-vi')")
             ->get();
-        
+
         // Lấy sản phẩm theo từng category
         // Thực phẩm chế biến: 4 sản phẩm, các danh mục khác: 8 sản phẩm
         $categoryProducts = [];
@@ -63,7 +63,7 @@ class PageController extends Controller
     {
         // Lấy thông tin liên hệ từ page_contents
         $contactInfo = PageContent::where('page_key', 'contact_info')->first();
-        
+
         return view('pages.contact', compact('contactInfo'));
     }
 
@@ -123,35 +123,30 @@ class PageController extends Controller
     /**
      * Trang hệ thống phân phối
      */
-    public function hethongphanphoi()
+    public function hethongphanphoi(\Illuminate\Http\Request $request)
     {
-        // Lấy danh sách các điểm phân phối
-        $distributionPoints = DistributionPoint::where('status', 1)
+        // Điều kiện tìm kiếm đơn giản theo province / district (text)
+        $provinceFilter = $request->query('tinh-thanh');
+        $districtFilter = $request->query('quan-huyen');
+
+        $distributionQuery = DistributionPoint::where('status', 1);
+
+        if (!empty($provinceFilter)) {
+            $distributionQuery->where('province', 'like', '%' . $provinceFilter . '%');
+        }
+
+        if (!empty($districtFilter)) {
+            $distributionQuery->where('district', 'like', '%' . $districtFilter . '%');
+        }
+
+        // Lấy danh sách các điểm phân phối (đã áp dụng filter nếu có)
+        $distributionPoints = $distributionQuery
             ->orderBy('sort_order')
             ->orderBy('name')
             ->get();
-        
-        // Lấy danh sách tỉnh/thành duy nhất để hiển thị trong select
-        $provinces = DistributionPoint::where('status', 1)
-            ->whereNotNull('province')
-            ->distinct()
-            ->orderBy('province')
-            ->pluck('province')
-            ->toArray();
 
-        // Danh sách quận/huyện theo từng tỉnh để fill vào select động
-        $provinceDistricts = DistributionPoint::where('status', 1)
-            ->whereNotNull('province')
-            ->get()
-            ->groupBy('province')
-            ->map(function ($items) {
-                return $items->whereNotNull('district')
-                    ->pluck('district')
-                    ->unique()
-                    ->values();
-            })
-            ->toArray();
-        
-        return view('pages.hethongphanphoi', compact('distributionPoints', 'provinces', 'provinceDistricts'));
+        // Provinces / districts cho dropdown được lấy từ API ở phía client,
+        // nên ở đây chỉ cần trả về danh sách điểm phân phối.
+        return view('pages.hethongphanphoi', compact('distributionPoints'));
     }
 }
