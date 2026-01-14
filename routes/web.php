@@ -114,6 +114,45 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en|zh'])->group(function () {
     Route::get('/he-thong-phan-phoi', [PageController::class, 'hethongphanphoi'])->name('hethongphanphoi');
     Route::get('/danh-muc-san-pham', [PageController::class, 'danhmucsanpham'])->name('danhmucsanpham');
     Route::get('/dich-vu', [ServiceController::class, 'index'])->name('services.index');
+    // Trang Du lịch tổng quan (grid tỉnh)
+    Route::get('/du-lich', function ($locale) {
+        return app(ServiceController::class)->typeIndex('du-lich');
+    });
+
+    // Bộ lọc theo loại dịch vụ chung
+    Route::get('/nha-hang', function ($locale) {
+        return app(ServiceController::class)->typeIndex('nha-hang');
+    });
+    Route::get('/khach-san', function ($locale) {
+        return app(ServiceController::class)->typeIndex('khach-san');
+    });
+    Route::get('/van-tai', function ($locale) {
+        return app(ServiceController::class)->typeIndex('van-tai');
+    });
+
+    // Routes cho du lịch theo vùng miền
+    Route::get('/du-lich-mien-bac', function ($locale) {
+        return app(ServiceController::class)->regionTourism('du-lich-mien-bac');
+    });
+    Route::get('/du-lich-mien-trung', function ($locale) {
+        return app(ServiceController::class)->regionTourism('du-lich-mien-trung');
+    });
+    Route::get('/du-lich-mien-nam', function ($locale) {
+        return app(ServiceController::class)->regionTourism('du-lich-mien-nam');
+    });
+
+    // Route động cho du lịch theo tỉnh (du-lich-{province_slug})
+    Route::get('/du-lich-{province}', function ($locale, $province) {
+        return app(ServiceController::class)->provinceTourism('du-lich-' . $province);
+    })->where('province', '[a-z-]+');
+
+    // Tiểu loại vận tải (chỉ dùng phân loại theo Service.type)
+    Route::get('/xe-khach', function ($locale) {
+        return app(ServiceController::class)->subtypeIndex('xe-khach');
+    });
+    Route::get('/van-chuyen-hang-hoa', function ($locale) {
+        return app(ServiceController::class)->subtypeIndex('van-chuyen-hang-hoa');
+    });
     Route::get('/tin-tuc', [PostController::class, 'index'])->name('news.index');
     Route::get('/tin-tuc/{slug}', [PostController::class, 'show'])->name('news.show');
     Route::get('/search', [SearchController::class, 'index'])->name('search');

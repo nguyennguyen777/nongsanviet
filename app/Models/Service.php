@@ -7,27 +7,167 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     protected $fillable = [
-        'title', 'title_en', 'title_zh',
+        'type',
+        'parent_id',
+        'province_id',
+        'content_type',
+        'sort_order',
+        'icon',
+        'title',
+        'title_en',
+        'title_zh',
         'slug',
-        'description', 'description_en', 'description_zh',
-        'image', 'title1', 'title1_en', 'title1_zh',
-        'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8',
-        'title2', 'title2_en', 'title2_zh',
-        'title3', 'title3_en', 'title3_zh',
-        'title4', 'title4_en', 'title4_zh',
-        'title5', 'title5_en', 'title5_zh',
-        'title6', 'title6_en', 'title6_zh',
-        'title7', 'title7_en', 'title7_zh',
-        'title8', 'title8_en', 'title8_zh',
-        'description2', 'description2_en', 'description2_zh',
-        'description3', 'description3_en', 'description3_zh',
-        'description4', 'description4_en', 'description4_zh',
-        'description5', 'description5_en', 'description5_zh',
-        'description6', 'description6_en', 'description6_zh',
-        'description7', 'description7_en', 'description7_zh',
-        'description8', 'description8_en', 'description8_zh',
+        'description',
+        'description_en',
+        'description_zh',
+        'image',
+        'title1',
+        'title1_en',
+        'title1_zh',
+        'image2',
+        'image3',
+        'image4',
+        'image5',
+        'image6',
+        'image7',
+        'image8',
+        'title2',
+        'title2_en',
+        'title2_zh',
+        'title3',
+        'title3_en',
+        'title3_zh',
+        'title4',
+        'title4_en',
+        'title4_zh',
+        'title5',
+        'title5_en',
+        'title5_zh',
+        'title6',
+        'title6_en',
+        'title6_zh',
+        'title7',
+        'title7_en',
+        'title7_zh',
+        'title8',
+        'title8_en',
+        'title8_zh',
+        'description2',
+        'description2_en',
+        'description2_zh',
+        'description3',
+        'description3_en',
+        'description3_zh',
+        'description4',
+        'description4_en',
+        'description4_zh',
+        'description5',
+        'description5_en',
+        'description5_zh',
+        'description6',
+        'description6_en',
+        'description6_zh',
+        'description7',
+        'description7_en',
+        'description7_zh',
+        'description8',
+        'description8_en',
+        'description8_zh',
+        'meta_title',
+        'meta_description',
+        'view_count',
         'status',
     ];
+
+    /**
+     * Relationship: Parent service
+     */
+    public function parent()
+    {
+        return $this->belongsTo(Service::class, 'parent_id');
+    }
+
+    /**
+     * Relationship: Children services
+     */
+    public function children()
+    {
+        return $this->hasMany(Service::class, 'parent_id')
+            ->where('status', 1)
+            ->orderBy('sort_order', 'asc')
+            ->orderBy('title', 'asc');
+    }
+
+    /**
+     * Relationship: Province
+     */
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    /**
+     * Scope: Chỉ lấy categories (không phải articles)
+     */
+    public function scopeCategories($query)
+    {
+        return $query->where('content_type', 'category');
+    }
+
+    /**
+     * Scope: Chỉ lấy articles
+     */
+    public function scopeArticles($query)
+    {
+        return $query->where('content_type', 'article');
+    }
+
+    /**
+     * Scope: Lọc theo type
+     */
+    public function scopeOfType($query, $type)
+    {
+        return $query->where('type', $type);
+    }
+
+    /**
+     * Scope: Lọc theo region
+     */
+    public function scopeOfRegion($query, $region)
+    {
+        return $query->where('region', $region);
+    }
+
+    /**
+     * Check if this is a category
+     */
+    public function isCategory()
+    {
+        return $this->content_type === 'category';
+    }
+
+    /**
+     * Check if this is an article
+     */
+    public function isArticle()
+    {
+        return $this->content_type === 'article';
+    }
+
+    /**
+     * Lấy tên tỉnh theo locale
+     */
+    public function getProvinceNameAttribute()
+    {
+        $locale = app()->getLocale();
+        if ($locale === 'en' && $this->province_en) {
+            return $this->province_en;
+        }
+        if ($locale === 'zh' && $this->province_zh) {
+            return $this->province_zh;
+        }
+        return $this->province;
+    }
 
     /**
      * Lấy tiêu đề theo locale hiện tại

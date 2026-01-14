@@ -1,0 +1,81 @@
+/* =====================================================
+   SERVICE ARTICLES LAYOUT (DU LICH GRID LIST)
+   Matches article-dulich.html/article-dulich.css structure
+   ===================================================== */
+
+.page-dich-vu-list {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.page-dich-vu-list .view-header {
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.page-san-pham-list-title {
+    font-family: "UTM-AvoBold";
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8bc34a;
+}
+
+.group-class-product-wrapper {
+    width: 100%;
+}
+
+.group-class-product {
+    width: 100%;
+}
+
+.group-class-product::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.page-dich-vu-list .views-row {
+    float: left;
+    width: 33.3333%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.page-dich-vu-list .views-field-field-anh-dai-dien img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.page-dich-vu-list .views-field-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.page-dich-vu-list .views-field-title a {
+    color: #000;
+    font-family: "UTM-AvoBold";
+    text-decoration: none;
+}
+
+.page-dich-vu-list .views-field-title a:hover {
+    color: #ed4136;
+}
+
+.page-dich-vu-list .views-field-body {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+    .page-dich-vu-list .views-row {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-dich-vu-list .views-row {
+        width: 100%;
+    }
+}
