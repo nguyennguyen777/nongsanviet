@@ -15,138 +15,73 @@
                                 <div class="region region-content">
                                     <div id="block-system-main" class="block block-system">
                                         <div class="content">
-                                            <div class="view view-service view-id-service view-display-id-page_1">
-                                              
+                                            <div class="view view-service view-id-service view-display-id-page_1 page-dich-vu-list">
                                                 <div class="view-header">
-                                                    <div class="du-lich-header">
-                                                      <b>{{ __('dịch vụ') }}</b> / {{ isset($typeName) ? $typeName : (isset($regionName) ? $regionName : __('Du lịch')) }}
+                                                    <div class="page-san-pham-list-title">
+                                                        {{ $typeName ?? $regionName ?? __('Du lịch') }}
                                                     </div>
                                                 </div>
 
-                                            
-
                                                 <div class="view-content">
-                                                    @if(isset($layoutType) && $layoutType === 'tourism')
-                                                        {{-- TOURISM LAYOUT: Grid hiển thị các tỉnh --}}
-                                                        <div class="row-du-lich">
-                                                            @forelse($provinces as $index => $province)
-                                                                @php
-                                                                    // Grid pattern: 3-1-3-2-3 = 12 items
-                                                                    // Pattern: 3 items nhỏ (30%), 1 item lớn (100%), 3 items nhỏ (30%), 2 items vừa (50%), 3 items nhỏ (30%)
-                                                                    if ($index < 3) {
-                                                                        // Items 0-2: 3 items nhỏ
-                                                                        $sizeClass = 'du-lich-views3';
-                                                                    } elseif ($index === 3) {
-                                                                        // Item 3: 1 item lớn
-                                                                        $sizeClass = 'du-lich-views1';
-                                                                    } elseif ($index < 7) {
-                                                                        // Items 4-6: 3 items nhỏ
-                                                                        $sizeClass = 'du-lich-views3';
-                                                                    } elseif ($index < 9) {
-                                                                        // Items 7-8: 2 items vừa
-                                                                        $sizeClass = 'du-lich-views2';
-                                                                    } else {
-                                                                        // Items 9-11: 3 items nhỏ
-                                                                        $sizeClass = 'du-lich-views3';
-                                                                    }
-                                                                    
-                                                                    // Tìm province để lấy slug
-                                                                    $provinceModel = \App\Models\Province::find($province->province_id);
-                                                                    $provinceSlug = $provinceModel ? $provinceModel->slug : '';
-                                                                    $provinceImage = $provinceModel && $provinceModel->image 
-                                                                        ? asset('storage/' . $provinceModel->image) 
-                                                                        : asset('storage/dulich/mienbac/thung-nai-hoa-binh3_0.jpg');
-                                                                @endphp
-                                                                <div class="du-lich-views {{ $sizeClass }}">
-                                                                    <div class="du-lich-wrapper" style="width: 100%;">
-                                                                        <div class="du-lich-image">
-                                                                            <a href="{{ locale_url('du-lich-' . $provinceSlug) }}">
-                                                                                <img src="{{ $provinceImage }}" 
-                                                                                     alt="{{ $province->province_name }}">
-                                                                            </a>
-                                                                        </div>
-                                                                        <div class="du-lich-name">
-                                                                            <a href="{{ locale_url('du-lich-' . $provinceSlug) }}">
-                                                                                {{ $province->province_name }}
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            @empty
-                                                                <div class="col-12">
-                                                                    <p class="text-center" style="padding: 30px 0; color: #999;">{{ __('Chưa có tỉnh nào.') }}</p>
-                                                                </div>
-                                                            @endforelse
-                                                        </div>
-                                                    @else
-                                                        {{-- LIST LAYOUT: Nhà hàng, Khách sạn, Vận tải --}}
-                                                        <div class="services-list">
+                                                    <div class="group-class-product-wrapper">
+                                                        <div class="group-class-product">
                                                             @forelse($services as $service)
                                                                 <div class="views-row">
-                                                                    <div class="views-field-field-anh-dai-dien">
-                                                                        <a href="{{ locale_url($service->slug) }}">
-                                                                            <img class="img-responsive" 
-                                                                                 src="{{ $service->image ? asset('storage/' . $service->image) : asset('storage/dulich/mienbac/thung-nai-hoa-binh3_0.jpg') }}" 
-                                                                                 alt="{{ $service->title }}">
-                                                                        </a>
+                                                                    <div class="views-field views-field-field-anh-dai-dien">
+                                                                        <div class="field-content">
+                                                                            <a href="{{ locale_url($service->slug) }}">
+                                                                                <img class="img-responsive"
+                                                                                     src="{{ $service->image ? asset('storage/' . $service->image) : asset('storage/dulich/mienbac/thung-nai-hoa-binh3_0.jpg') }}"
+                                                                                     alt="{{ $service->title }}">
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="views-field-nothing">
-                                                                        <div class="views-field-title">
+                                                                    <div class="views-field views-field-title">
+                                                                        <span class="field-content">
                                                                             <a href="{{ locale_url($service->slug) }}">{{ $service->title }}</a>
-                                                                        </div>
-                                                                        <div class="views-field-body">
-                                                                            {{ \Illuminate\Support\Str::limit(strip_tags($service->description ?? ''), 200) }}
-                                                                        </div>
+                                                                        </span>
                                                                     </div>
-                                                                    <div style="clear:both;"></div>
+                                                                    <div class="views-field views-field-body">
+                                                                        <span class="field-content">
+                                                                            {{ Str::limit(strip_tags($service->description ?? $service->content ?? ''), 180) }}
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
                                                             @empty
                                                                 <div class="col-12">
-                                                                    <p class="text-center" style="padding: 30px 0; color: #999;">{{ __('Chưa có dịch vụ nào.') }}</p>
+                                                                    <p class="text-center" style="padding: 30px 0; color: #999;">{{ __('Chưa có bài viết nào.') }}</p>
                                                                 </div>
                                                             @endforelse
                                                         </div>
-                                                    @endif
+                                                    </div>
                                                 </div>
 
-                                                <!-- @if($services->hasPages())
+                                                @if($services->hasPages())
                                                     <h2 class="element-invisible">Trang</h2>
                                                     <div class="item-list">
                                                         <ul class="pager">
                                                             @if ($services->currentPage() > 1)
                                                                 <li class="pager-first first">
-                                                                    <a title="Đến trang đầu" href="{{ $services->url(1) }}">«</a>
+                                                                    <a href="{{ $services->url(1) }}" title="{{ __('Trang đầu') }}">« {{ __('đầu') }}</a>
                                                                 </li>
                                                                 <li class="pager-previous">
-                                                                    <a title="Đến trang trước" href="{{ $services->previousPageUrl() }}">‹</a>
+                                                                    <a href="{{ $services->previousPageUrl() }}" title="{{ __('Trang trước') }}" rel="prev">‹ {{ __('trước') }}</a>
                                                                 </li>
-                                                                @if ($services->currentPage() > 2)
-                                                                    <li class="pager-item">
-                                                                        <a title="Đến trang {{ $services->currentPage() - 1 }}" href="{{ $services->url($services->currentPage() - 1) }}">{{ $services->currentPage() - 1 }}</a>
-                                                                    </li>
-                                                                @endif
                                                             @endif
 
                                                             <li class="pager-current">{{ $services->currentPage() }}</li>
 
-                                                            @if ($services->currentPage() < $services->lastPage())
-                                                                @if ($services->currentPage() < $services->lastPage() - 1)
-                                                                    <li class="pager-item">
-                                                                        <a title="Đến trang {{ $services->currentPage() + 1 }}" href="{{ $services->url($services->currentPage() + 1) }}">{{ $services->currentPage() + 1 }}</a>
-                                                                    </li>
-                                                                @endif
-                                                                @if ($services->hasMorePages())
-                                                                    <li class="pager-next">
-                                                                        <a title="Đến trang sau" href="{{ $services->nextPageUrl() }}">›</a>
-                                                                    </li>
-                                                                    <li class="pager-last last">
-                                                                        <a title="Đến trang cuối" href="{{ $services->url($services->lastPage()) }}">»</a>
-                                                                    </li>
-                                                                @endif
+                                                            @if ($services->hasMorePages())
+                                                                <li class="pager-next">
+                                                                    <a href="{{ $services->nextPageUrl() }}" title="{{ __('Trang sau') }}" rel="next">{{ __('sau') }} ›</a>
+                                                                </li>
+                                                                <li class="pager-last last">
+                                                                    <a href="{{ $services->url($services->lastPage()) }}" title="{{ __('Trang cuối') }}">{{ __('cuối') }} »</a>
+                                                                </li>
                                                             @endif
                                                         </ul>
                                                     </div>
-                                                @endif -->
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -154,8 +89,42 @@
                                 <div class="content-bottom"></div>
                             </div>
 
-                        
-                              {{-- Sidebar --}}
+                            <!-- <div id="content-right" class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="region region-content-right-sp">
+                                    <div id="block-views-block-bai-viet-block-1" class="block block-views">
+                                        <div class="block-title">
+                                            <h3>{{ __('Tin tức mới nhất') }}</h3>
+                                        </div>
+                                        <div class="content">
+                                            <div class="view view-block-bai-viet view-id-block_bai_viet view-display-id-block_1">
+                                                <div class="view-content">
+                                                    @forelse($latestPosts as $post)
+                                                        <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
+                                                            <div class="views-field views-field-title">
+                                                                <span class="field-content">
+                                                                    <a href="{{ locale_url($post->slug) }}">{{ $post->title }}</a>
+                                                                </span>
+                                                            </div>
+                                                            <div class="views-field views-field-body">
+                                                                <span class="field-content">
+                                                                    <p>{{ Str::limit(strip_tags($post->content), 100) }}</p>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    @empty
+                                                        <div class="views-row">
+                                                            <div class="views-field views-field-title">
+                                                                <span class="field-content">{{ __('Chưa có tin tức nào.') }}</span>
+                                                            </div>
+                                                        </div>
+                                                    @endforelse
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            {{-- Sidebar --}}
                     <div id="content-right" class="col-md-3 col-sm-12 col-xs-12">
                         <div class="region region-content-right-sp">
                             <div id="block-views-block-san-pham-noi-bat" class="block block-views block-border">

@@ -9,6 +9,11 @@
 @import "./hethongphanphoi.css";
 @import "./danhmucsanpham.css";
 @import "./news.css";
+@import "./services.css";
+@import "./services-tourism.css";
+@import "./services-list.css";
+@import "./service-articles.css";
+@import "./service-article-detail.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

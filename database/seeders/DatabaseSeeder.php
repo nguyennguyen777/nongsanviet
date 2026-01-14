@@ -37,7 +37,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             ProductSeeder::class,
+            ProvinceSeeder::class,
             ServiceSeeder::class,
+            ServiceTourismSeeder::class,
             SliderSeeder::class,
             CategorySlideSeeder::class,
             TestimonialSeeder::class,

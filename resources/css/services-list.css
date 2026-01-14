@@ -1,0 +1,78 @@
+/* =====================================================
+   SERVICES LIST LAYOUT (NHÀ HÀNG, KHÁCH SẠN, VẬN TẢI)
+   List layout với image bên trái, content bên phải
+   ===================================================== */
+
+.services-list {
+    padding-bottom: 30px;
+}
+
+.services-list .views-row {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.services-list .views-row:last-child {
+    border-bottom: none;
+}
+
+.services-list .views-field-field-anh-dai-dien {
+    float: left;
+    width: 50%;
+}
+
+.services-list .views-field-field-anh-dai-dien img {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.services-list .views-field-nothing {
+    float: left;
+    width: 50%;
+    position: relative;
+    background: #f7f7f7;
+    z-index: 9;
+    padding: 20px;
+    margin-left: -40px;
+    margin-top: 60px;
+    border-radius: 0px;
+}
+
+.services-list .views-field-title {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.services-list .views-field-title a {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.services-list .views-field-title a:hover {
+    color: #ed4136;
+}
+
+.services-list .views-field-body {
+    font-size: 15px;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .services-list .views-field-field-anh-dai-dien {
+        width: 100%;
+        float: none;
+    }
+
+    .services-list .views-field-nothing {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+        border-radius: 0px;
+        float: none;
+    }
+}
