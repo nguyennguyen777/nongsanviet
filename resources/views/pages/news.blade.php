@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- css dùng chung với danhmucsanpham.css -->
+<!-- CSS được import trong app.css -->
 
 @section('content')
     <div class="page-news">
@@ -8,6 +8,38 @@
                 <div class="container">
                     <div class="container-content">
                         <div class="content-top">
+                            <div class="region region-content-top">
+                                <!-- Tin nổi bật -->
+                                @if($featuredPosts->count() > 0)
+                                    <div id="block-views-block-bai-viet-block-2" class="block block-views">
+                                        <div class="block-title"><h3>Tin nổi bật</h3></div>
+                                        <div class="content">
+                                            <div class="view view-block-bai-viet view-id-block_bai_viet view-display-id-block_2">
+                                                <div class="view-content">
+                                                    @foreach($featuredPosts as $post)
+                                                        <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
+                                                            <div class="views-field views-field-nothing">
+                                                                <div class="field-content">
+                                                                    <div class="views-field views-field-field-anh-dai-dien">
+                                                                        <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">
+                                                                            <img class="img-responsive" 
+                                                                                src="{{ $post->image ? asset('storage/' . $post->image) : asset('storage/posts/default.jpg') }}" 
+                                                                                alt="{{ $post->title }}">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="views-field views-field-title">
+                                                                        <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
                         <div class="row">
                             <div id="content-center" class="col-md-9 col-sm-12 col-xs-12">
@@ -18,89 +50,40 @@
                                 <div class="region region-content">
                                     <div id="block-system-main" class="block block-system">
                                         <div class="content">
-                                            <!-- Tin nổi bật -->
-                                            @if($featuredPosts->count() > 0)
-                                                <div class="view view-tin-tuc view-id-tin_tuc view-display-id-featured">
-                                                    <div class="view-header">
-                                                        <div class="page-tin-tuc-title">TIN NỔI BẬT</div>
-                                                    </div>
-                                                    <div class="view-content">
-                                                        <div class="group-class-post-wrapper">
-                                                            <div class="group-class-post row">
-                                                                @foreach($featuredPosts as $post)
-                                                                    <div class="views-row views-row-{{ $loop->iteration }} col-md-4 col-sm-6 col-xs-12">
-                                                                        <div class="views-field views-field-field-anh-dai-dien">
-                                                                            <div class="field-content">
-                                                                                <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">
-                                                                                    <img class="img-responsive" 
-                                                                                        src="{{ $post->image ? asset('storage/' . $post->image) : asset('storage/posts/default.jpg') }}" 
-                                                                                        alt="{{ $post->title }}">
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="views-field views-field-title">
-                                                                            <span class="field-content">
-                                                                                <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endif
 
                                             <!-- Danh sách tin tức -->
-                                            <div class="view view-tin-tuc view-id-tin_tuc view-display-id-page_1 row list tin-tuc-list page-tin-tuc-list">
-                                                <div class="view-header">
-                                                    <div class="page-tin-tuc-list-title">TIN TỨC</div>
-                                                </div>
-
+                                            <div class="view view-bai-viet view-id-bai_viet view-display-id-page_1 tin-tuc-list row">
                                                 <div class="view-content">
-                                                    <div class="group-class-post-wrapper">
-                                                        <div class="group-class-post">
-                                                            @forelse($posts as $post)
-                                                                <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }}">
-                                                                    <div class="views-field views-field-field-anh-dai-dien">
-                                                                        <div class="field-content">
-                                                                            <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">
-                                                                                <img class="img-responsive" 
-                                                                                    src="{{ $post->image ? asset('storage/' . $post->image) : asset('storage/posts/default.jpg') }}" 
-                                                                                    alt="{{ $post->title }}">
-                                                                            </a>
-                                                                        </div>
+                                                    @forelse($posts as $post)
+                                                        <div class="views-row views-row-{{ $loop->iteration }} views-row-{{ $loop->odd ? 'odd' : 'even' }} {{ $loop->first ? 'views-row-first' : '' }} {{ $loop->last ? 'views-row-last' : '' }} col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="views-field views-field-field-anh-dai-dien">
+                                                                <div class="field-content">
+                                                                    <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">
+                                                                        <img class="img-responsive" 
+                                                                            src="{{ $post->image ? asset('storage/' . $post->image) : asset('storage/posts/default.jpg') }}" 
+                                                                            alt="{{ $post->title }}">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="views-field views-field-nothing">
+                                                                <div class="field-content">
+                                                                    <div class="views-field views-field-title">
+                                                                        <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
                                                                     </div>
-                                                                    <div style="flex: 1; display: flex; flex-direction: column;">
-                                                                        <div class="views-field views-field-title">
-                                                                            <span class="field-content">
-                                                                                <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">{{ $post->title }}</a>
-                                                                            </span>
-                                                                        </div>
-                                                                        <div class="views-field views-field-created">
-                                                                            <span class="field-content">
-                                                                                {{ $post->created_at->format('d/m/Y') }}
-                                                                            </span>
-                                                                        </div>
-                                                                        <div class="views-field views-field-body">
-                                                                            <span class="field-content">
-                                                                                {{ \Illuminate\Support\Str::limit(strip_tags($post->content ?? ''), 200) }}...
-                                                                            </span>
-                                                                        </div>
-                                                                        <div class="views-field views-field-view-node">
-                                                                            <span class="field-content">
-                                                                                <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">Đọc tiếp</a>
-                                                                            </span>
-                                                                        </div>
+                                                                    <div class="views-field views-field-body">
+                                                                        {{ \Illuminate\Support\Str::limit(strip_tags($post->content ?? ''), 200) }}...
+                                                                    </div>
+                                                                    <div class="views-field views-field-view-node">
+                                                                        <a href="{{ locale_url('tin-tuc/' . $post->slug) }}">Đọc tiếp</a>
                                                                     </div>
                                                                 </div>
-                                                            @empty
-                                                                <div class="col-12">
-                                                                    <p class="text-center" style="padding: 40px; color: #999;">Chưa có tin tức nào.</p>
-                                                                </div>
-                                                            @endforelse
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    @empty
+                                                        <div class="col-12">
+                                                            <p class="text-center" style="padding: 40px; color: #999;">Chưa có tin tức nào.</p>
+                                                        </div>
+                                                    @endforelse
                                                 </div>
 
                                                 <!-- Pagination -->
